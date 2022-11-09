@@ -1,13 +1,10 @@
 
-// import Cart from './components/cart_page/Cart';
-
-import ItemList from "./components/cart_page/ItemList";
+import Cart from './components/cart_page/Cart';
 
 function App() {
   return (
     <div >
-      {/* <Cart /> */}
-      <ItemList />
+      <Cart />
     </div>
   );
 }

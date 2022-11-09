@@ -39,7 +39,6 @@
 .item-list-box{
     background-color: rgb(242, 241, 241);
     padding: 0.8rem;
-    border: 1px solid ;
 }
 .sh-l1{
     padding: 0.5rem;
@@ -62,4 +61,51 @@
 }
 .sh-l2{
     padding: 0.5rem;
+    display: flex;
+    gap: 1rem;
+    background-color: aliceblue;
+}
+.sh-l2-1{
+    padding: 0.5rem;
+}
+.sh-l2-1-1{
+    display: flex;
+    justify-content: space-between;
+    width: 30rem;
+}
+.sh-link{
+    font-size: 0.9rem;
+}
+.sh-link:hover{
+    text-decoration: underline;
+}
+.sh-l2-1-2{
+    display: flex;
+    justify-content: space-between;
+    width: 30rem;
+    margin-top: 0.5rem;
+}
+.sh-btns{
+    display: flex;
+    gap: 1rem;
+}
+.change-btn{
+    border: 1px solid black;
+    border-radius: 2rem;
+    font-size: 12px;
+    margin-top: 0.3rem;
+    padding: 0.3rem 0rem;
+    width: 8rem;
+}
+.additional-main{
+    margin: 1rem 0rem;
+}
+.add-btn{
+    border: 2px solid black;
+    border-radius: 2rem;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0.3rem 0rem;
+    width: 5rem;
+    margin-top: 2rem;
 }
