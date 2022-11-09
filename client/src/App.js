@@ -1,9 +1,11 @@
-import Navbar from './components/navbar/Navbar';
+import Navbar from "./components/navbar/Navbar";
+import SingleProduct from "./pages/SingleProduct/SingleProduct";
 
 function App() {
   return (
     <div>
-      <Navbar/>
+      {/* <Navbar /> */}
+      <SingleProduct />
     </div>
   );
 }
