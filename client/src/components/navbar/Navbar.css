@@ -26,6 +26,7 @@
        margin: auto;
        height: 100px;
    }
+   
    #nav2>div:first-child{
    display: flex;
    justify-content: space-evenly;
@@ -37,22 +38,35 @@
        justify-content: center;
        align-items: center;
    }
-   #nav2>div:first-child>div>p{
+   #nav2>div:first-child>p{
        /* margin-left: 7px; */
        font-weight: 600;
+       margin-top: -20px;
    }
+
+   #nav2>div:first-child>input{
+    margin-top: -20px;
+}
+ 
    #nav2>div:first-child>div>span>img{
        width: 30px;
    }
    #nav2>div:first-child>p:first-child{
        font-size: 25px;
-       letter-spacing: 5px;
+       /* letter-spacing: 5px; */
    }#nav2>div:first-child>input{
        height: 35px;
        width: 30%;
        border: 2px solid transparent;
        border-radius: 15px;
        background-color: rgb(240, 240, 240);
+   }
+   .nav2-sub-section{
+    font-size: 14px;
+    color: #9ca7a8;
+   }
+   #nav2>div>div>p{
+    margin-top: -20px;
    }
    .search{
        width: 30px;
@@ -62,10 +76,12 @@
        width: 13%;
        display: flex;
        justify-content: space-between;
+       margin-top: -20px;
    }
    #nav5{
        background-color: black;
        height: 60px;
+       margin-top: -20px;
    }
 
    .hover-item-li{
@@ -184,96 +200,8 @@ margin-left: 100px;
     margin-left: 90px;
   }
 
-   
-   .Beauty-Offers+.swiper{
-       height: 530px;
-     }
-     .Beauty-Offers+.swiper>.swiper-wrapper>.swiper-slide>p+p{
-       margin-top: -20px;
-     }
-     .Beauty-Offers+.swiper>.swiper-wrapper>.swiper-slide>.new{
-       top: 30px;
-     }
-     .Beauty-Offers+.swiper>.swiper-wrapper>.swiper-slide>p{
-        font-size: 15px;
-     }
-     .Beauty-Offers+.swiper>.swiper-wrapper>.swiper-slide>div{
-        display: flex;
-        width: 80%;
-        margin: auto;
-        justify-content: space-between;
-        margin-top: 60px;
-        margin-bottom: 30px;
-     }
-     .Beauty-Offers+.swiper>.swiper-wrapper>.swiper-slide>div>button{
-        color: black;
-        border: 1px solid black;
-        background-color: transparent;
-        border-radius: 15px;
-        font-size: 16px;
-     }
-     .Beauty-Offers+.swiper>.swiper-wrapper>.swiper-slide>div>button:hover{
-        color: purple;
-        border: 1px solid purple;
-        cursor: pointer;
-     }
-     .Beauty-Offers+.swiper>.swiper-wrapper>.swiper-slide>div>a{
-        text-decoration: none;
-        color: skyblue;
-        font-size: 16px;
-     }
-     .Beauty-Offers+.swiper>.swiper-wrapper>.swiper-slide>div>a:hover{
-        text-decoration: underline;
-        cursor: pointer;
-     }
-   
- 
-   #big-card{
-       width: 100%;
-       display: grid;
-       grid-template-columns: repeat(3,1fr);
-       grid-template-rows: 1;
-       gap: 20px;
-       border: 2px solid transparent;
-       margin-top: 50px;
-       
-   }
-   #big-card>div{
-       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-       background-color: #000;
-   }
-   #big-card>div:hover>p{
-   text-decoration: underline;
-   }
-   #big-card>div:hover>h3{
-       text-decoration: underline;
-   }
-   #big-card>div>p{
-       margin-top: -15px;
-   }
-   #big-card>div>img{
-       width: 100%;
-   }
-   #big-card>div>h2{
-       margin-left: 10px;
-       color:#fff;
-   }
-   #big-card>div>p{
-       margin-left: 10px;
-       color:#fff;
-   }
-   #big-card>div>h3>a{
-       margin-left: 10px;
-       text-decoration: none;
-       color: #fff;
-   }
-   
-   .new{
-       position: absolute;
-       color: white;
-       background-color: #000;
-   }
-   
+  
+
    @media all and (min-width: 768px) and (max-width: 1024px){
        #nav2>div:first-child>div{
            display: none;

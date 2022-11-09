@@ -15,7 +15,7 @@ const Navbar = () => {
             <input type="text" name="" id="" placeholder="🔍 Search" />
             <div>
                 <span><img src="https://cdn-icons-png.flaticon.com/512/3443/3443338.png" alt="" /></span>
-                <p>Stores & Services <br/><span st>Pick a Store</span> </p>
+                <p>Stores & Services <br/><span className='nav2-sub-section'>Pick a Store</span> </p>
 
             </div>
             <div>
