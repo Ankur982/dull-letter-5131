@@ -1,0 +1,161 @@
+
+
+  .footer1 {
+    padding: 0 5%;
+    background-color: rgb(177, 173, 173);
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+    padding: 1px;
+}
+
+.footer2 {
+    background-color: black;
+    color: white;
+    padding: 25px;
+    padding-bottom: 77px;
+    
+
+}
+
+.labelBox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.label-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+.labelBox>div>img {
+    width: 30px;
+
+
+
+}
+
+.label-text>div {
+    margin-right: 15px;
+    margin-left: 15px;
+    align-self: flex-end;
+}
+
+hr {
+    background-color: rgb(85, 84, 84);
+
+
+    margin-bottom: 25px;
+}
+
+.details {
+    padding: 20px 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    line-height: 28px;
+
+}
+
+.details>div {
+
+    font-size: 14px;
+}
+
+.details>p {
+    width: 75px;
+}
+
+.countries {
+    width: 28px;
+    display: block;
+}
+
+.last {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+}
+
+.last>div {
+    margin-top: 180px;
+}
+
+.last>h2 {
+
+    font-size: 25px;
+}
+
+.last{
+    border: 5 px solid white;
+}
+.last>div>button {
+    border-radius: 15px;
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.last>div>div>input {
+    border-radius: 5px;
+    padding-left: 10px;
+    height: 40px;
+    width: 100%;
+
+}
+
+.last>div {
+    display: flex;
+}
+
+.labelInput2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.labelInput {
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+    font-size: 20px;
+    width: 310px;
+}
+
+span {
+    margin-right: 15px;
+}
+
+.last2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+
+    font-size: 14px;
+}
+
+#icons{
+    display: flex;
+}
+#icons>img {
+    width: 40px;
+}
+
+.details>div>h6 {
+    font-size: 18px;
+}
+
+.gapText>p{
+    line-height: 20px;
+    
+}
