@@ -50,32 +50,38 @@ function SingleProduct() {
             </Box>
           </Box>
           <Box mt={5}>
-            <Text as="b" fontSize="md">
-              Get it Shipped
-            </Text>
-            <RadioGroup defaultValue="1">
-              <Stack spacing={5} direction="column">
-                <Radio mt={2} colorScheme="green" value="1">
-                  Standard
-                </Radio>
-                <Radio colorScheme="red" value="2">
-                  Same-Day DeliverySame-Day Delivery not available for your
-                  location Change your location
-                </Radio>
-              </Stack>
-              <Box mt={5}>
-                <Box>
-                  <Text as="b" fontSize="md">
-                    Buy Online & Pick Up
-                  </Text>
-                </Box>
-                <Box mt={2}>
-                  <Radio colorScheme="red" value="3">
-                    Select to see availability at stores near you
+            <Box>
+              <Text as="b" fontSize="md">
+                Get it Shipped
+              </Text>
+            </Box>
+            <Box mt={10}>
+              <RadioGroup defaultValue="1">
+                <Stack spacing={5} direction="column">
+                  <Radio mt={2} colorScheme="green" value="1">
+                    Standard
                   </Radio>
+                  <Radio colorScheme="red" value="2">
+                    Same-Day DeliverySame-Day Delivery not available for your
+                    location Change your location
+                  </Radio>
+                </Stack>
+                <Box mt={5}>
+                  <Box>
+                    <Text as="b" fontSize="md">
+                      Buy Online & Pick Up
+                    </Text>
+                  </Box>
+                  <Box mt={2}>
+                    <Box mt={10}>
+                      <Radio colorScheme="red" value="3">
+                        Select to see availability at stores near you
+                      </Radio>
+                    </Box>
+                  </Box>
                 </Box>
-              </Box>
-            </RadioGroup>
+              </RadioGroup>
+            </Box>
           </Box>
           <Box mt={10}>
             <Button

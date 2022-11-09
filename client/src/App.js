@@ -1,11 +1,11 @@
+import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
-import SingleProduct from "./pages/SingleProduct/SingleProduct";
 
 function App() {
   return (
     <div>
-      {/* <Navbar /> */}
-      <SingleProduct />
+      <Navbar />
+      <Footer />
     </div>
   );
 }
