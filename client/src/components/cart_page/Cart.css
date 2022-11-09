@@ -6,10 +6,10 @@
 .head{
     font-size: 1.5rem;
     font-weight: 600;
-    /* font-family: "Helvetica neue",Arial, Helvetica, sans-serif; */
 }
 .item-box{
     width: 40rem;
+    padding: 1rem;
     border: 1px solid green;
 }
 .payment-box{
@@ -29,9 +29,37 @@
     align-items: center;
 }
 .credit-btn{
-
     border: 2px solid black;
     border-radius: 2rem;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
+    padding: 0.3rem 0rem;
+    width: 8rem;
+}
+.item-list-box{
+    background-color: rgb(242, 241, 241);
+    padding: 0.8rem;
+    border: 1px solid ;
+}
+.sh-l1{
+    padding: 0.5rem;
+    background-color: aliceblue;
+}
+.sh-l1-1{
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+.sh-l1-2{
+    display: flex;
+    gap: 0.5rem;
+}
+.sh-l1-2-1{
+    border: 1px solid rgb(224, 215, 215);
+    padding: 0.8rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.sh-l2{
+    padding: 0.5rem;
 }
