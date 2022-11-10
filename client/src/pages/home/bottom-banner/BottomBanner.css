@@ -3,7 +3,7 @@
     margin: auto;
 }
 .bottomBanner_container{
-   
+    width: 100%;
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -12,6 +12,7 @@
 }
 .bottomBanner_item{
     width: 88%;
+    border: 1px solid grey;
 }
 
 .bottomBanner_item_img_box>img{
