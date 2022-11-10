@@ -2,7 +2,7 @@ import { Link, VStack, Image, Box, Text, Heading, Button } from "@chakra-ui/reac
 import React from "react";
 // import { Navigate, useNavigate } from "react-router-dom";
 
-export default function ProductCard({ image,name,des,id }) {
+export default function ProductCard({ image,name,brand,colors,price,rating }) {
 //   const navigate=useNavigate()
   return (
     <>
@@ -12,7 +12,7 @@ export default function ProductCard({ image,name,des,id }) {
           alignItems="start"
           textAlign="start"
           w="100%"
-          h="500px"
+          // h="500px"
           // border="1px"
           borderColor="blue.400"
           rounded="xl"
@@ -21,18 +21,20 @@ export default function ProductCard({ image,name,des,id }) {
           
             <Image
               src={image}
-              alt="Postman"
+              alt={name}
               mt="3"
-             
+              h="200px"
               w="100%"
             />
-          <Heading fontSize={"25px"} textAlign={"start"}>{name}</Heading>
-          <Box h="110px" border={"1px black"} overflow="hidden">
-          <Text fontSize="18px" pb="3">
-            {des}
+          <Text fontSize="18px" fontWeight={"20px"}>
+            {brand}
           </Text>
-          </Box>
-          <Button color={"blue"} bg="white" border={"1px solid blue"} borderRadius="20px">Read More</Button>
+          <Text>{name}</Text>
+          <Text color={"gray"}>{colors.length} colors</Text>
+          <Text>{rating}</Text>
+          <Text fontWeight={"bold"} color={"red"}>${price}</Text>
+          
+        
         </VStack>
      
     </>
