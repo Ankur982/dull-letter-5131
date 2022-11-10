@@ -10,127 +10,109 @@ const JustDropped = () => {
   const chevronWidth = 8;
   const items = [
     {
-        "title": "Charlotte Tilbury",
-        "image":"https://www.sephora.com/productimages/sku/s2419786-main-zoom.jpg?imwidth=166",
-        "desc":"Charlotte Tilbury",
+        "title": "Hourglass",
+        "image":"https://www.sephora.com/productimages/sku/s2586741-main-zoom.jpg?imwidth=122",
+        "desc":"Ambient Soft Glow Foundation",
         "color":"#8ec9e9"
+    },
+    {
+        "title": "amika",
+        "image":"https://www.sephora.com/productimages/sku/s2592194-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=122",
+        "desc":"Perk Up Plus Extended Clean Dry Shampoo",
+        "color":"#dcb796" 
+    },
+    {
+        "title": "Anastasia Beverly Hills",
+        "image":"https://www.sephora.com/productimages/sku/s2614584-main-zoom.jpg?imwidth=122",
+        "desc":"Rose Metals Eyeshadow Palette",
+        "color":"#01474f"
         
+    },
+    
+    {
+        "title": "Natasha Denona",
+        "image":"https://www.sephora.com/productimages/sku/s2618981-main-zoom.jpg?imwidth=122",
+        "desc":"Retro Glam Eyeshadow Palette",
+        "color":"#59a19e"
+        
+    },
+    {
+        "title": "HUDA BEAUTY",
+        "image":"https://www.sephora.com/productimages/sku/s2602654-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=122",
+        "desc":"Glowish Blur Jam Silicone Free Smoothing Primer",
+        "color":"#8ec9e9"  
+    },
+    {
+        "title": "Bobbi Brown",
+        "image":"https://www.sephora.com/productimages/sku/s2618999-main-zoom.jpg?imwidth=122",
+        "desc":"Vitamin Enriched Face Base Priming Moisturizer Duo S..",
+        "color":"#dcb796" 
+    },
+    {
+        "title": "PAT McGRATH LABS",
+        "image":"https://www.sephora.com/productimages/sku/s2619096-main-zoom.jpg?imwidth=122",
+        "desc":"MTHRSHP MEGA: Celestial Nirvana",
+        "color":"#01474f" 
+    },
+    {
+        "title": "Briogeo",
+        "image":"https://www.sephora.com/productimages/sku/s2592079-main-zoom.jpg?pb=clean-planet-positive-badge-2021&imwidth=122",
+        "desc":"Scalp Revival™ Shampoo & Don't Despair, Repair!™ Hair Mask Gift Set",
+        "color":"#8ec9e9"
     },
     {
         "title": "MAKEUP BY MARIO",
-        "image":"https://www.sephora.com/productimages/sku/s2594364-main-zoom.jpg?imwidth=166",
+        "image":"https://www.sephora.com/productimages/sku/s2594364-main-zoom.jpg?imwidth=122",
         "desc":"Mario's Lip Lift™ Kit",
         "color":"#dcb796" 
-        
     },
     {
-        "title": "Charlotte Tilbury",
-        "image":"https://www.sephora.com/productimages/sku/s2619146-main-zoom.jpg?imwidth=166",
-        "desc":"Pillow Talk Beautifying Lip Set",
+        "title": "Givenchy",
+        "image":"https://www.sephora.com/productimages/sku/s2624468-main-zoom.jpg?imwidth=122",
+        "desc":"Le Rouge Interdit Intense Silk Satin Matte Lipstick- Limited Edition",
         "color":"#01474f"
-        
     },
     {
-        "title": "HAUS LABS BY LADY GAGA",
-        "image":"https://www.sephora.com/productimages/sku/s2597268-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=166",
-        "desc":"Triclone Skin Tech Medium Coverage Foundation with..",
+        "title": "Anastasia Beverly Hills",
+        "image":"https://www.sephora.com/productimages/sku/s2614584-main-zoom.jpg?imwidth=122",
+        "desc":"Rose Metals Eyeshadow Palette",
         "color":"#59a19e"
-        
-    },
-
-   
-
-    {
-        "title": "Fenty Beauty by Rihanna",
-        "image":"https://www.sephora.com/productimages/sku/s2590032-main-zoom.jpg?imwidth=166",
-        "desc":"Pro Filt’r Soft Matte Longwear Liquid Foundation.",
-        "color":"#8ec9e9"
-        
-    },
-    {
-        "title": "Charlotte Tilbury",
-        "image":"https://www.sephora.com/productimages/sku/s2606085-main-zoom.jpg?imwidth=166",
-        "desc":"Airbrush Flawless Finish Setting Powder.",
-        "color":"#dcb796" 
         
     },
     {
         "title": "Sol de Janeiro",
-        "image":"https://www.sephora.com/productimages/sku/s1930759-main-zoom.jpg?imwidth=166",
-        "desc":"Brazilian Crush Cheirosa ’62 Bum Bum Hair & Body.",
-        "color":"#01474f"
-        
-    },
-    {
-        "title": "LANEIGE",
-        "image":"https://www.sephora.com/productimages/sku/s1966258-main-zoom.jpg?pb=2020-03-allure-readers-choice-2019&imwidth=166",
-        "desc":"Lip Sleeping Mask Intense Hydration with Vitamin C.",
-        "color":"#59a19e"
-        
-    },
-    
-  {
-        "title": "NARS",
-        "image":"https://www.sephora.com/productimages/sku/s2172310-main-zoom.jpg?imwidth=166",
-        "desc":"Radiant Creamy Concealer.",
+        "image":"https://www.sephora.com/productimages/sku/s2619260-main-zoom.jpg?imwidth=122",
+        "desc":"Radiant Rhythm Bom Dia Set",
         "color":"#8ec9e9"
-        
     },
     {
-        "title": "Sol de Janeiro",
-        "image":"https://www.sephora.com/productimages/sku/s1802412-main-zoom.jpg?imwidth=166",
-        "desc":"Brazilian Bum Bum Body Cream",
+        "title": "Tatcha",
+        "image":"https://www.sephora.com/productimages/sku/s2618486-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=122",
+        "desc":"Clarifying Cleanse + Hydrate Duo",
         "color":"#dcb796" 
-        
     },
     {
-        "title": "Charlotte Tilbury",
-        "image":"https://www.sephora.com/productimages/sku/s2244804-main-zoom.jpg?imwidth=166",
-        "desc":"Airbrush Flawless Longwear Foundation",
+        "title": "SEPHORA COLLECTION",
+        "image":"https://www.sephora.com/productimages/sku/s2579878-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=122",
+        "desc":"Wishing You Mask Wishes",
         "color":"#01474f"
-        
     },
     {
-        "title": "Dior",
-        "image":"https://www.sephora.com/productimages/sku/s2579340-main-zoom.jpg?imwidth=166",
-        "desc":"Dior Addict Lip Glow",
+        "title": "Moroccanoil",
+        "image":"https://www.sephora.com/productimages/sku/s2612844-main-zoom.jpg?imwidth=122",
+        "desc":"Hydrating Shampoo, Conditioner & Moroccanoil",
         "color":"#59a19e"
-        
     },
-    
-
     {
         "title": "Glow Recipe",
-        "image":"https://www.sephora.com/productimages/sku/s2404846-main-zoom.jpg?pb=clean-planet-positive-badge-2021&imwidth=166",
-        "desc":"Watermelon Glow Niacinamide Dew Drops",
-        "color":"#8ec9e9"
-        
-    },
-    {
-        "title": "NARS",
-        "image":"https://www.sephora.com/productimages/sku/s2514586-main-zoom.jpg?imwidth=166",
-        "desc":"Light Reflecting Advanced Skincare Foundation",
-        "color":"#dcb796" 
-        
-    },
-    {
-        "title": "Sol de Janeiro",
-        "image":"https://www.sephora.com/productimages/sku/s2205417-main-zoom.jpg?imwidth=166",
-        "desc":"Bum Bum Jet Set",
-        "color":"#01474f"
-        
-    },
-    {
-        "title": "Sol de Janeiro",
-        "image":"https://www.sephora.com/productimages/sku/s1985118-main-zoom.jpg?imwidth=166",
-        "desc":"Mini Brazilian Crush Body Fragrance Mist",
+        "image":"https://www.sephora.com/productimages/sku/s2619310-main-zoom.jpg?pb=clean-planet-positive-badge-2021&imwidth=122",
+        "desc":"Hey You, You're Glowing Watermelon Set",
         "color":"#59a19e"
-        
-    },
+    }
   ];
   return (
     <div style={{ padding: `${chevronWidth}px 2px` }} className="dropped_container">
-         <Heading as='h4' size='md'>
+         <Heading as='h4' size='md' mb='30px'>
          Just Dropped
         </Heading>
 
@@ -149,6 +131,9 @@ const JustDropped = () => {
           <div className="dropped_item">
           <div className="dropped_item_img_box">
             <img alt="test product" src={item.image} />
+            <button className='dropped_item_img_btn'><Heading  as='h6' size='xs' p="5px" >
+            Quicklook
+          </Heading></button>
           </div>  
           <div style={{ backgroundColor:`${item.color}` }} className="dropped_item_txt_box">
           <Heading  as='h6' size='xs' mt="-5px" >

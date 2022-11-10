@@ -37,7 +37,13 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding: 15px;
-    height: 110px;
+    height: 270px;
 }
 
+.beauty_item_txt_btn{
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-top: 25px;
+}
 

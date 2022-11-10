@@ -12,14 +12,14 @@
 
 .banner_item_img_box>img{
     width: 100%;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    /* border-top-left-radius: 5px;
+    border-top-right-radius: 5px; */
 }
 
 .banner_item_txt_box{
     width: 100%;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    /* border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; */
     padding: 30px;
 }
 

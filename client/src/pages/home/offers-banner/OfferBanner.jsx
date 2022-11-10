@@ -6,7 +6,7 @@ return (
 <div className="banner_container">
   <div className="banner_item">
     <div style={{ backgroundColor:"#fecfc5" }} className="banner_item_txt_box">
-      <Heading as='h4' size='md' mt="-5px">
+      <Heading as='h4' size='md' mt="-5px" >
         Charlotte Tilbury's Greatest Hits
       </Heading>
       <Text fontSize='sm' ml="0px" mt="0px">
