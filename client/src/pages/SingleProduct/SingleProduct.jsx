@@ -1,12 +1,9 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import {
-  Accordion,
-  AccordionButton,
-  AccordionItem,
-  AccordionPanel,
   Box,
   Button,
-  Checkbox,
   Flex,
   Image,
   Radio,
@@ -15,11 +12,30 @@ import {
   Text,
   useMediaQuery,
 } from "@chakra-ui/react";
-import AccordionComponent from "../../components/Accordion";
 import Subcategory from "../../components/Subcategory";
+import AccordionComponent from "../../components/AccordionComponent";
+import { getSingleProduct } from "../../store/SingleProduct/singleProduct.action";
+import { useEffect } from "react";
+import ReviewSection from "../../components/ReviewSection";
 
 function SingleProduct() {
   const [isLargerThan600] = useMediaQuery("(min-width: 600px)");
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { loading, error, data } = useSelector((store) => store.singleProduct);
+
+  useEffect(() => {
+    dispatch(getSingleProduct(id));
+  }, [id]);
+
+  // if (loading) {
+  //   return <h3>Loading ...</h3>;
+  // }
+
+  // if (error) {
+  //   return <h3>Something Went Wrong !</h3>;
+  // }
+
   return (
     <Stack>
       <Flex
@@ -55,7 +71,7 @@ function SingleProduct() {
             </Text>
             <RadioGroup defaultValue="1">
               <Stack spacing={5} direction="column">
-                <Radio mt={2} colorScheme="green" value="1">
+                <Radio mt={10} colorScheme="green" value="1">
                   Standard
                 </Radio>
                 <Radio colorScheme="red" value="2">
@@ -69,7 +85,7 @@ function SingleProduct() {
                     Buy Online & Pick Up
                   </Text>
                 </Box>
-                <Box mt={2}>
+                <Box mt={10}>
                   <Radio colorScheme="red" value="3">
                     Select to see availability at stores near you
                   </Radio>
@@ -82,7 +98,7 @@ function SingleProduct() {
               size={"lg"}
               pl={20}
               pr={20}
-              borderRadius={20}
+              borderRadius={50}
               fontSize="14px"
               colorScheme="red"
             >
@@ -157,11 +173,42 @@ function SingleProduct() {
       </Box>
       <Box>
         <Box ml={3}>
-          <Text p={5} fontSize={"20px"} as="b">
-            Compare Similar Products
-          </Text>
+          <Box>
+            <Text p={5} fontSize={"20px"} as="b">
+              Ratings & Reviews (2K)
+            </Text>
+          </Box>
+          <Box m={5}>
+            <ReviewSection />
+          </Box>
         </Box>
       </Box>
+      <Flex
+        style={{ marginTop: "50px", marginLeft: "10px", marginBottom: "50px" }}
+        ml={5}
+        gap={15}
+        justify={"flex-start"}
+        direction={isLargerThan600 ? "row" : "column"}
+      >
+        <Box>
+          <Image
+            m={"auto"}
+            src="https://tpc.googlesyndication.com/simgad/16160614607739331938"
+          />
+        </Box>
+        <Box>
+          <Image
+            m={"auto"}
+            src="https://tpc.googlesyndication.com/simgad/14177892550749632546"
+          />
+        </Box>
+        <Box>
+          <Image
+            m={"auto"}
+            src="https://tpc.googlesyndication.com/simgad/17810597195573312581"
+          />
+        </Box>
+      </Flex>
     </Stack>
   );
 }
