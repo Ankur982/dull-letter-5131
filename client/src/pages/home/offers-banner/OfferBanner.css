@@ -1,0 +1,29 @@
+.banner_container{
+    width: 85%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.banner_item{
+    width: 88%;
+}
+
+.banner_item_img_box>img{
+    width: 100%;
+    /* border-top-left-radius: 5px;
+    border-top-right-radius: 5px; */
+}
+
+.banner_item_txt_box{
+    width: 100%;
+    /* border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; */
+    padding: 30px;
+}
+
+.banner_item_txt_box>button{
+    margin-top: 10px;
+}
+

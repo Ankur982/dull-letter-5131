@@ -1,13 +1,12 @@
-import Footer from "./components/footer/Footer";
-import Navbar from "./components/navbar/Navbar";
+import AllRoutes from './AllRoutes';
+import './App.css';
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <Footer />
+     <AllRoutes />
     </div>
-  );
+  )
 }
 
 export default App;
