@@ -27,10 +27,39 @@
 }
 
 
+.selling_item_img_box{
+    position: relative;
+}
+
+.selling_item:hover .selling_item_img_btn{
+    display: block;
+    /* margin-bottom: -80px; */
+  }
+
+.selling_item_img_btn{
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    display: none;
+    bottom: 0;
+    background-color: rgb(38, 38, 38);
+    color: #fff;
+    opacity: 0.8;
+    padding: 3px;
+}
+.selling_item_img_btn:hover{
+    cursor: pointer;
+}
+
 
 .selling_item_img_box>img{
     border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-right-radius: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
 }
 
 .selling_item_txt_box{

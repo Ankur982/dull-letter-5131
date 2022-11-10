@@ -1,0 +1,47 @@
+.featured_hr_box{
+    width: 100%;
+    margin: auto;
+}
+
+.featured_container{
+    width: 85%;
+    display: flex;
+    margin: auto;
+}
+
+.featured_box1{
+    text-align: start;
+    width: 25%;
+}
+
+.featured_box2{
+    display: flex;
+    margin: auto;
+    gap: 8px;
+    width: 75%;
+    font-size: 15px;
+}
+
+.featured_sub_box{
+    width: 14.2%;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgb(0 0 0 / 20%);
+    height: 130px;
+}
+
+.featured_sub_box:hover{
+    cursor: pointer;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.featured_sub_box>img{
+    width: 50px;
+    display: flex;
+    margin: 20px 0px 0px 40px;
+    align-self: flex-end;
+    display: block;
+    margin-bottom: 0;
+    margin-right: 0;
+}
