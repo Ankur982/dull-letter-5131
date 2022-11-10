@@ -1,13 +1,11 @@
 import React from 'react'
-import { FcGoogle } from 'react-icons/fc';
-import { signInWithEmailAndPassword, signInWithPopup} from "firebase/auth";
+import { FcGoogle, FcPhoneAndroid } from 'react-icons/fc';
 import {
   Flex,
   Box,
   FormControl,
   FormLabel,
   Input,
-  Checkbox,
   Stack,
   Button,
   Heading,
@@ -15,70 +13,47 @@ import {
   Center,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { auth } from '../../firebase';
+
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { GoogleAuthProvider } from "firebase/auth";
 import Dashboard from '../Dashboard';
+import { useUserAuth } from '../../context/UserAuthcontext';
 
 
 export default function Login() {
     const [email,setEmail]= useState("");
     const [password,setPassword]= useState("");
     const navigate= useNavigate()
-    const provider = new GoogleAuthProvider();
+    const {logIn,googleSignIn}= useUserAuth()
 
 
-    const handleLogin=(e)=>{
+    const handleLogin= async (e)=>{
      e.preventDefault()
-     signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    const user = userCredential.user;
-    navigate("/dashboard")
-  })
-  .catch((error) => {
+     try{
+       await logIn(email,password)
+      navigate("/dashboard")
+     }
+    catch(error){
     const errorCode = error.code;
     const errorMessage = error.message;
       console.log(errorMessage)
-  });
+  };
 
     }
 
-function signInGoogle(){
-   signInWithPopup(auth,provider).then((res)=>{
-     console.log(res)
-    const pname= res.user.displayName;
-    const pemail= res.user.email;
-    const profilePic= res.user.photoURL;
-    console.log(pname,pemail,profilePic)
-    navigate("/dashboard")
-   }).catch((err)=>{
-    console.log(err)
-   })
+async function signInGoogle(e){
+  e.preventDefault()
+  try{
+  await googleSignIn();
+  navigate("/dashboard")
+  }catch(err){
+      console.log(err.message)
+  }
    } 
 
   return (
     <div>
-      {/* <h1>Login</h1>
-        <form onSubmit={handleLogin}>
-            <Input onChange={e=>setEmail(e.target.value)} type="email" placeholder="email"/>
-            <Input onChange={e=>setPassword(e.target.value)} type="password" placeholder="password"/>
-            <Button backgroundColor="black" color="white" type="submit">Sign In</Button>
-        </form>
-    <Center p={8}>
-      <Button
-      onClick={signInGoogle}
-        // w={'full'}
-        // maxW={'md'}
-        variant={'outline'}
-        leftIcon={<FcGoogle />}>
-        <Center>
-          <Text>Sign in with Google</Text>
-        </Center>
-      </Button>
-    </Center> */}
-
 <Flex
       minH={'100vh'}
       align={'center'}
@@ -93,14 +68,15 @@ function signInGoogle(){
           bg={useColorModeValue('white', 'gray.700')}
           boxShadow={'lg'}
           p={8}>
+            <form onSubmit={handleLogin}>
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
-              <Input type="email" />
+              <Input onChange={e=>setEmail(e.target.value)} type="email" />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
-              <Input type="password" />
+              <Input  onChange={e=>setPassword(e.target.value)} type="password" />
             </FormControl>
             <Stack spacing={10}>
               <Stack
@@ -113,6 +89,7 @@ function signInGoogle(){
               <Button
                 bg={'black'}
                 color={'white'}
+                type="submit"
                 _hover={{
                   bg: 'pink',
                 }}>
@@ -133,7 +110,22 @@ function signInGoogle(){
         </Center>
       </Button>
     </Center>
+    <Link to="/phonelogin">
+    <Center mt={2}>
+      <Button
+        w={'full'}
+        maxW={'md'}
+        colorScheme={'green'}
+        leftIcon={<FcPhoneAndroid/>}>
+        <Center>
+          <Text>Sign in with Phone</Text>
+        </Center>
+      </Button>
+    
+    </Center>
+    </Link>
     <Center py={2}>Don't have an account?<Link to="/signup"> <Text as="u">SignUp</Text></Link> </Center>
+    </form>
         </Box>
       </Stack>
       

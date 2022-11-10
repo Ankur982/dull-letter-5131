@@ -13,11 +13,15 @@ import {
     Heading,
     Text,
     useColorModeValue,
+    Alert,
+    AlertIcon,
+    AlertTitle,
+    AlertDescription,
   } from '@chakra-ui/react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useUserAuth } from '../../context/UserAuthcontext';
 
 
@@ -25,6 +29,7 @@ export default function Signup() {
     const [email,setEmail]= useState("");
     const [password,setPassword]= useState("");
     const [err,setErr]= useState("")
+    const Navigate= useNavigate()
     const [showPassword, setShowPassword] = useState(false)
        const {signUp}= useUserAuth()
 
@@ -33,6 +38,7 @@ export default function Signup() {
      setErr("")
      try{
        await signUp(email,password)
+       Navigate("/login")
      }
      catch(e){
      setErr(e.message)
@@ -42,17 +48,19 @@ export default function Signup() {
     }
   return (
     <div>
-       {/* <h1>SignUp</h1>
-        <form onSubmit={handleSignup}>
-            <Input onChange={e=>setEmail(e.target.value)} type="email" placeholder="email"/>
-            <Input onChange={e=>setPassword(e.target.value)} type="password" placeholder="password"/>
-            <Button backgroundColor="black" color="white" type="submit">Create an Account</Button>
-        </form> */}
        <Flex
       minH={'100vh'}
       align={'center'}
       justify={'center'}
       bg={'white'}>
+          {
+            err && <Alert status='error'>
+            <AlertIcon />
+            <AlertTitle>{err}</AlertTitle>
+            <AlertDescription>Your Chakra experience may be degraded.</AlertDescription>
+          </Alert>   
+          }
+
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
           <Heading fontSize={'4xl'} textAlign={'center'}>
