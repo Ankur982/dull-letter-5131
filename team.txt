@@ -2,11 +2,17 @@ Team name:- dull-letter-5131
 Project:- https://www.sephora.com/
 
 IA Manager:- Srikanth Chiramana - sssrikanthhh
-Member1:- fw17_1087 - Shivam Maurya - shivam0626 - 7310941087
-Member2:- fw18_1110 - Rohit Mourya - MrRohitMI - 8077837822
-Member3:- fw18_1209 - Arul Xavier - arulxavierax - 9497302870
-Member4:- fw18_1246 - Gaurav Mishra - GauravMishra28 - 9044123468
-Team Lead:- fw19_0272 - Ankur Singh - Ankur982 - 8504899838
+Member1:- fw17_1087 - Shivam Maurya - shivam0626 
+Member2:- fw18_1110 - Rohit Mourya - MrRohitMI 
+Member3:- fw18_1209 - Arul Xavier - arulxavierax 
+<<<<<<< HEAD
+Member4:- fw18_1246 - Gaurav Mishra - GauravMishra28 
+Team Lead:- fw19_0272 - Ankur Singh - Ankur982
+
+=======
+Member4:- fw18_1246 - Gaurav Mishra - GauravMishra28
+Team Lead:- fw19_0272 - Ankur Singh - Ankur982 
+>>>>>>> 1c3ae6611cfe40687532fcdacadb23e4b6ddafa3
 
 
 
