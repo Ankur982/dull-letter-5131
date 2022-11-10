@@ -27,6 +27,30 @@
 }
 
 
+.dropped_item_img_box{
+    position: relative;
+}
+
+.dropped_item:hover .dropped_item_img_btn{
+    display: block;
+    /* margin-bottom: -80px; */
+  }
+
+.dropped_item_img_btn{
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    display: none;
+    bottom: 0;
+    background-color: rgb(38, 38, 38);
+    color: #fff;
+    opacity: 0.8;
+    padding: 3px;
+}
+.dropped_item_img_btn:hover{
+    cursor: pointer;
+}
+
 
 .dropped_item_img_box>img{
     border-top-left-radius: 5px;

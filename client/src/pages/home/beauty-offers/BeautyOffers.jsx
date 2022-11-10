@@ -10,134 +10,77 @@ const BeautyOffers = () => {
   const chevronWidth = 8;
   const items = [
     {
-        "title": "Charlotte Tilbury",
-        "image":"https://www.sephora.com/productimages/sku/s2419786-main-zoom.jpg?imwidth=166",
-        "desc":"Charlotte Tilbury",
-        "color":"#8ec9e9"
-        
+        "title": "Spend More, Get More Fragrance",
+        "image":"https://www.sephora.com/contentimages/promo/beautyoffers/2022/November/2022-fragrance-q4-site-beauty-offers-banner-1000x750-smgm-us-khols.jpg?imwidth=240",
+        "desc":"Get 1 mini with $45 product purchase, 2 minis with $75 product purchase, or 3 minis with $105 product purchase.*",
+        "sub_desc1": "Get 1 mini with $45 product purchase, 2 minis with $75 product purchase, or 3 minis with $105 product purchase.*",
+        "sub_desc2": "Online only",
+        "sub_desc3": "*Exclusions/terms apply. While supplies last.",
+        "color":"#8ec9e9"   
     },
     {
-        "title": "MAKEUP BY MARIO",
-        "image":"https://www.sephora.com/productimages/sku/s2594364-main-zoom.jpg?imwidth=166",
-        "desc":"Mario's Lip Lift™ Kit",
+        "title": "Get 10% off Your Next Purchase**",
+        "image":"https://www.sephora.com/contentimages/promo/beautyoffers/2022/November/percent-off-basket-app-content-card-promo.png?imwidth=240",
+        "sub_desc1": "When you sign up for text updates. Plus, never miss out on exclusive releases, events, and offers.",
+        "sub_desc2": "Beauty Insider members only.",
+        "sub_desc3": "In store & online • Ends 1/23/2023**Exclusions/terms apply.",
         "color":"#dcb796" 
         
     },
     {
-        "title": "Charlotte Tilbury",
-        "image":"https://www.sephora.com/productimages/sku/s2619146-main-zoom.jpg?imwidth=166",
-        "desc":"Pillow Talk Beautifying Lip Set",
+        "title": "Get a FREE Skinfix Trial Size",
+        "image":"https://www.sephora.com/contentimages/promo/beautyoffers/2022/November/2022-11-9-skinfix-core-focus-site-desktop-mobile-app-beauty-offers-page-banner-en-us-can.jpg?imwidth=240",
+        "sub_desc1": "Target dark circles, puffiness, and fine lines with the Triple Lipid Eye Cream. ",
+        "sub_desc2": "Free with $25 purchase.*Beauty Insider members only.",
+        "sub_desc3": "*Exclusions/terms apply. While supplies last.",
         "color":"#01474f"
         
     },
     {
-        "title": "HAUS LABS BY LADY GAGA",
-        "image":"https://www.sephora.com/productimages/sku/s2597268-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=166",
-        "desc":"Triclone Skin Tech Medium Coverage Foundation with..",
-        "color":"#59a19e"
-        
+        "title": "Choose 2 Complimentary Hair-Care Trial Sizes",
+        "image":"https://www.sephora.com/contentimages/promo/beautyoffers/2022/October/2022-10-24-slotting-promo-app-beauty-offers-banner-STRONGERHAIR-us-handoff.jpg?imwidth=240",
+        "sub_desc1": "Pick 2 trial sizes for stronger hair from Olaplex, Virtue, Briogeo, or Christohpe Robin.",
+        "sub_desc2": "Complimentary with $35 purchase.*Beauty Insider members only.",
+        "sub_desc3": " Online only",
+        "color":"#59a19e"  
     },
-
-   
-
     {
-        "title": "Fenty Beauty by Rihanna",
-        "image":"https://www.sephora.com/productimages/sku/s2590032-main-zoom.jpg?imwidth=166",
-        "desc":"Pro Filt’r Soft Matte Longwear Liquid Foundation.",
+        "title": "Free Danessa Myricks Beauty Trial Size",
+        "image":"https://www.sephora.com/contentimages/promo/beautyoffers/2022/October/2022-10-27-black-owned-brands-site-desktop-mobile-app-beauty-offers-page-banner-en-us.jpg?imwidth=240",
+        "sub_desc1": "Cut back on shine with the bestselling Yummy Skin Blurring Balm Powder.",
+        "sub_desc2": "Free with $25 purchase.*Beauty Insider members only.",
+        "sub_desc3": "*Exclusions/terms apply.",
         "color":"#8ec9e9"
-        
     },
     {
-        "title": "Charlotte Tilbury",
-        "image":"https://www.sephora.com/productimages/sku/s2606085-main-zoom.jpg?imwidth=166",
-        "desc":"Airbrush Flawless Finish Setting Powder.",
-        "color":"#dcb796" 
-        
+        "title": "Spend More, Get More",
+        "image":"https://www.sephora.com/contentimages/promo/beautyoffers/2022/October/2022-october-smgm-site-desktop-mobile-app-beauty-offers-page-banner-1000x750-us.jpg?imwidth=240",
+        "sub_desc1": "Pick up to six free trial sizes from Pureology, COLOR WOW, shu uemura, and more!",
+        "sub_desc2": "Free with $100 purchase.* Beauty Insider members only",
+        "sub_desc3": "*Exclusions/terms apply.",
+        "color":"#dcb796"  
     },
     {
-        "title": "Sol de Janeiro",
-        "image":"https://www.sephora.com/productimages/sku/s1930759-main-zoom.jpg?imwidth=166",
-        "desc":"Brazilian Crush Cheirosa ’62 Bum Bum Hair & Body.",
+        "title": "Choose a Complimentary Skincare Trial Size",
+        "image":"https://www.sephora.com/contentimages/promo/beautyoffers/2022/September/2022-09-29-slotting-promo-app-beauty-offers-banner-SKINLUXE-us-handoff.jpg?imwidth=240",
+       "sub_desc1": "Pick a luxe trial size from Lancôme, Guerlain, SK-II, Augustinus Bader, or La Mer.",
+        "sub_desc2": "Complimentary with $55 purchase.*Beauty Insider members only.",
+        "sub_desc3": "*Exclusions/terms apply.",
         "color":"#01474f"
-        
-    },
-    {
-        "title": "LANEIGE",
-        "image":"https://www.sephora.com/productimages/sku/s1966258-main-zoom.jpg?pb=2020-03-allure-readers-choice-2019&imwidth=166",
-        "desc":"Lip Sleeping Mask Intense Hydration with Vitamin C.",
-        "color":"#59a19e"
         
     },
     
-  {
-        "title": "NARS",
-        "image":"https://www.sephora.com/productimages/sku/s2172310-main-zoom.jpg?imwidth=166",
-        "desc":"Radiant Creamy Concealer.",
-        "color":"#8ec9e9"
-        
-    },
-    {
-        "title": "Sol de Janeiro",
-        "image":"https://www.sephora.com/productimages/sku/s1802412-main-zoom.jpg?imwidth=166",
-        "desc":"Brazilian Bum Bum Body Cream",
-        "color":"#dcb796" 
-        
-    },
-    {
-        "title": "Charlotte Tilbury",
-        "image":"https://www.sephora.com/productimages/sku/s2244804-main-zoom.jpg?imwidth=166",
-        "desc":"Airbrush Flawless Longwear Foundation",
-        "color":"#01474f"
-        
-    },
-    {
-        "title": "Dior",
-        "image":"https://www.sephora.com/productimages/sku/s2579340-main-zoom.jpg?imwidth=166",
-        "desc":"Dior Addict Lip Glow",
-        "color":"#59a19e"
-        
-    },
-    
-
-    {
-        "title": "Glow Recipe",
-        "image":"https://www.sephora.com/productimages/sku/s2404846-main-zoom.jpg?pb=clean-planet-positive-badge-2021&imwidth=166",
-        "desc":"Watermelon Glow Niacinamide Dew Drops",
-        "color":"#8ec9e9"
-        
-    },
-    {
-        "title": "NARS",
-        "image":"https://www.sephora.com/productimages/sku/s2514586-main-zoom.jpg?imwidth=166",
-        "desc":"Light Reflecting Advanced Skincare Foundation",
-        "color":"#dcb796" 
-        
-    },
-    {
-        "title": "Sol de Janeiro",
-        "image":"https://www.sephora.com/productimages/sku/s2205417-main-zoom.jpg?imwidth=166",
-        "desc":"Bum Bum Jet Set",
-        "color":"#01474f"
-        
-    },
-    {
-        "title": "Sol de Janeiro",
-        "image":"https://www.sephora.com/productimages/sku/s1985118-main-zoom.jpg?imwidth=166",
-        "desc":"Mini Brazilian Crush Body Fragrance Mist",
-        "color":"#59a19e"
-        
-    },
   ];
   return (
-    <div style={{ padding: `${chevronWidth}px 2px` }} className="beauty_container">
-         <Heading as='h4' size='md'>
+    <div style={{ padding: `${chevronWidth}px 2px`}} className="beauty_container">
+         <Heading as='h4' size='md' mb='30px'>
          Beauty Offers (7)
         </Heading>
 
     <ItemsCarousel
       requestToChangeActive={setActiveItemIndex}
       activeItemIndex={activeItemIndex}
-      numberOfCards={6}
+      numberOfCards={5}
       gutter={8}
       leftChevron={ <div className="beauty_carousel_btn_box_L"> <ChevronLeftIcon boxSize={10} color='white'/> </div>}
       rightChevron={<div className="beauty_carousel_btn_box_R"> <ChevronRightIcon boxSize={10} color='white'/> </div>}
@@ -150,16 +93,22 @@ const BeautyOffers = () => {
           <div className="beauty_item_img_box">
             <img alt="test product" src={item.image} />
           </div>  
-          <div style={{ backgroundColor:`${item.color}` }} className="beauty_item_txt_box">
+          <div className="beauty_item_txt_box">
           <Heading  as='h6' size='xs' mt="-5px" >
           {item.title}
           </Heading>
-            <Text fontSize='sm' ml="0px" mt="5px">{item.desc}</Text>
+            <Text fontSize='sm' ml="0px" mt="5px">{item.sub_desc1}</Text>
+            <Text fontSize='xs' ml="0px" mt="10px" color="#868487">{item.sub_desc2}</Text>
+            <Text fontSize='xs' ml="0px" mt="5px" color="#868487">{item.sub_desc3}</Text>
+            <button style={{ backgroundColor:`${item.color}` }} className="beauty_item_txt_btn"> <Heading as='h6' size='xs'>
+            Apply
+  </Heading></button>
           </div>
           </div>
         );
       })}
     </ItemsCarousel>
+    <hr style={{ margin:"40px 0" }} />
   </div>
   )
 }

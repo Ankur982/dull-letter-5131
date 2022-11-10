@@ -130,8 +130,8 @@ const SellingFast = () => {
   ];
   return (
     <div style={{ padding: `${chevronWidth}px 2px` }} className="selling_container">
-         <Heading as='h4' size='md'>
-         Choosen For You
+         <Heading as='h4' size='md' mb='30px'>
+         Selling Fast
         </Heading>
 
     <ItemsCarousel

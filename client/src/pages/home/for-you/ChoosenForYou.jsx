@@ -130,7 +130,7 @@ const ChoosenForYou = () => {
   ];
   return (
     <div style={{ padding: `${chevronWidth}px 2px` }} className="choose_container">
-         <Heading as='h4' size='md'>
+         <Heading as='h4' size='md' mb='30px'>
          Choosen For You
         </Heading>
 
@@ -149,6 +149,9 @@ const ChoosenForYou = () => {
           <div className="choose_item">
           <div className="choose_item_img_box">
             <img alt="test product" src={item.image} />
+            <button className='choose_item_img_btn'><Heading  as='h6' size='xs' p="5px" >
+            Quicklook
+          </Heading></button>
           </div>  
           <div style={{ backgroundColor:`${item.color}` }} className="choose_item_txt_box">
           <Heading  as='h6' size='xs' mt="-5px" >
