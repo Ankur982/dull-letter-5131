@@ -1,20 +1,21 @@
 .main-grid{
     margin: auto;
-    padding: 2rem;
+    justify-content: space-between;
     font-family: "Helvetica neue",Arial, Helvetica, sans-serif;
 }
-.head{
+.head-basket{
     font-size: 1.5rem;
     font-weight: 600;
 }
 .item-box{
     width: 40rem;
     padding: 1rem;
-    border: 1px solid green;
+    margin-left: 8rem;
 }
 .payment-box{
     width: 20rem;
-    border: 1px solid red;
+    margin-top: 3.7rem;
+    margin-left: 8rem;
 }
 .creditcard{
     border: 1px solid rgb(213, 201, 201);
@@ -42,7 +43,7 @@
 }
 .sh-l1{
     padding: 0.5rem;
-    background-color: aliceblue;
+    background-color: white;
 }
 .sh-l1-1{
     display: flex;
@@ -63,7 +64,7 @@
     padding: 0.5rem;
     display: flex;
     gap: 1rem;
-    background-color: aliceblue;
+    background-color: white;
 }
 .sh-l2-1{
     padding: 0.5rem;
@@ -108,4 +109,100 @@
     padding: 0.3rem 0rem;
     width: 5rem;
     margin-top: 2rem;
+}
+.total-details{
+    border: 1px solid rgb(213, 201, 201);
+    padding: 0.5rem;
+    margin: 0.5rem ;
+}
+.td1{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+}
+.td1-1:hover{
+   text-decoration: underline;
+}
+.td2{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    line-height: 3rem; 
+    font-weight: 600;
+}
+.td3{
+    font-size: 0.8rem;
+}
+.td-btn{
+    margin-top: 1rem;
+    text-align: center;
+    justify-content: center;
+}
+.td-btn1{
+    background-color: rgb(242, 32, 32);
+    padding: 0.4rem 1rem;
+    color: white;
+    border-radius: 1.2rem;
+    font-weight: 600;
+    width: 16rem;
+}
+.td-btn2{
+    padding: 0.3rem 1rem;
+    border-radius: 1.2rem;
+    font-weight: 600;
+    border: 2px solid black;
+    margin-top: 0.5rem;
+    width: 15.5rem;
+}
+.promo{
+    border: 1px solid rgb(213, 201, 201);
+    padding: 0.5rem;
+    margin: 1rem 0.5rem;
+    padding: 1rem 0.5rem;
+}
+.gift-main{
+    padding: 0.5rem;
+}
+.gift-1{
+    display: flex;
+    margin: 0.5rem;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+.gift-2{
+    border: 1px solid rgb(213, 201, 201);
+    padding: 0.5rem 0rem;
+}
+.gift-2-1{
+    display: flex;
+    gap: 1rem;
+}
+.gift-2-2{
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem 0rem;
+    justify-content: flex-end;
+}
+.gift-btn{
+    border: 2px solid black;
+    border-radius: 2rem;
+    font-size: 12px;
+    font-weight: 700;
+    width: 8rem;
+    margin-right: 0.5rem;
+}
+.assist{
+    border: 1px solid rgb(213, 201, 201);
+    padding: 0.5rem;
+    margin: 0.5rem 0rem;
+}
+.g-link:hover{
+    text-decoration: underline;
+}
+.card-flex{
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    margin: 0.5rem 0rem;
 }

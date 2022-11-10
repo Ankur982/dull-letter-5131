@@ -6,7 +6,7 @@ import { FaCreditCard } from "react-icons/fa"
 const Item = () => {
   return (
     <Box>
-        <Text className='head'>My Basket</Text>
+        <Text className='head-basket'>My Basket</Text>
             <Box className='creditcard'>
                 <Text fontWeight={'700'} fontSize={'1rem'}>The RAAGS Credit Card Program</Text>
                 <Box className='credit-flex'>

@@ -1,10 +1,11 @@
-
-import Cart from './components/cart_page/Cart';
+import Checkout from "./components/checkoutPage/Checkout";
+// import Cart from "./components/cart_page/Cart";
 
 function App() {
   return (
     <div >
-      <Cart />
+      <Checkout />
+      {/* <Cart /> */}
     </div>
   );
 }
