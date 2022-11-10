@@ -1,7 +1,7 @@
 import { Heading, Link, Text } from '@chakra-ui/react';
 import React, { useState } from 'react'
 import ItemsCarousel from "react-items-carousel";
-import "./SellingFast.css";
+import "./InsiderRewards.css";
 import { ChevronRightIcon, AddIcon, WarningIcon, ChevronLeftIcon } from '@chakra-ui/icons'
 
 const InsiderRewards = () => {
@@ -10,108 +10,90 @@ const InsiderRewards = () => {
   const chevronWidth = 8;
   const items = [
     {
-        "title": "Charlotte Tilbury",
-        "image":"https://www.sephora.com/productimages/sku/s2419786-main-zoom.jpg?imwidth=166",
-        "desc":"Charlotte Tilbury",
+        "title": "Dior",
+        "image":"https://www.sephora.com/productimages/sku/s2392140-main-zoom.jpg?imwidth=122",
+        "desc":"Capture Totale Super Potent Age-Defying",
         "color":"#8ec9e9"
-        
     },
     {
-        "title": "MAKEUP BY MARIO",
-        "image":"https://www.sephora.com/productimages/sku/s2594364-main-zoom.jpg?imwidth=166",
-        "desc":"Mario's Lip Lift™ Kit",
+        "title": "LANEIGE",
+        "image":"https://www.sephora.com/productimages/sku/s2544583-main-zoom.jpg?imwidth=122",
+        "desc":"Hypoallergenic Cica Sleeping Mask",
         "color":"#dcb796" 
-        
     },
     {
-        "title": "Charlotte Tilbury",
-        "image":"https://www.sephora.com/productimages/sku/s2619146-main-zoom.jpg?imwidth=166",
-        "desc":"Pillow Talk Beautifying Lip Set",
+        "title": "Smashbox",
+        "image":"https://www.sephora.com/productimages/sku/s2356442-main-zoom.jpg?imwidth=122",
+        "desc":"Photo Finish Oil & Shine Control Primer",
         "color":"#01474f"
-        
     },
     {
-        "title": "HAUS LABS BY LADY GAGA",
-        "image":"https://www.sephora.com/productimages/sku/s2597268-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=166",
-        "desc":"Triclone Skin Tech Medium Coverage Foundation with..",
+        "title": "Laura Mercier",
+        "image":"https://www.sephora.com/productimages/sku/s2413219-main-zoom.jpg?imwidth=122",
+        "desc":"Pure Canvas Primer - Blurring",
+        "color":"#59a19e" 
+    },
+    {
+        "title": "fresh",
+        "image":"https://www.sephora.com/productimages/sku/s2566891-main-zoom.jpg?imwidth=122",
+        "desc":"Soy pH-Balanced Hydrating Face Wash",
+        "color":"#8ec9e9"  
+    },
+    {
+        "title": "Caudalie",
+        "image":"https://www.sephora.com/productimages/sku/s2472967-main-zoom.jpg?imwidth=122",
+        "desc":"Vinosource Moisturizing Sorbet",
+        "color":"#dcb796" 
+    },
+    {
+        "title": "Living Proof",
+        "image":"https://www.sephora.com/productimages/sku/s2372811-main-zoom.jpg?imwidth=122",
+        "desc":"No Frizz Intense Moisture Hair Mask",
+        "color":"#01474f"   
+    },
+    {
+        "title": "bareMinerals",
+        "image":"https://www.sephora.com/productimages/sku/s2590685-main-zoom.jpg?imwidth=122",
+        "desc":"Mineral Veil Talc Free Setting Powder.",
         "color":"#59a19e"
-        
-    },
-
-   
-
-    {
-        "title": "Fenty Beauty by Rihanna",
-        "image":"https://www.sephora.com/productimages/sku/s2590032-main-zoom.jpg?imwidth=166",
-        "desc":"Pro Filt’r Soft Matte Longwear Liquid Foundation.",
+    }, 
+  {
+        "title": "TULA Skincare",
+        "image":"https://www.sephora.com/productimages/sku/s2591501-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=122",
+        "desc":"Brightening Treatment Drops Triple Vitamin C",
         "color":"#8ec9e9"
         
-    },
-    {
-        "title": "Charlotte Tilbury",
-        "image":"https://www.sephora.com/productimages/sku/s2606085-main-zoom.jpg?imwidth=166",
-        "desc":"Airbrush Flawless Finish Setting Powder.",
-        "color":"#dcb796" 
-        
-    },
-    {
-        "title": "Sol de Janeiro",
-        "image":"https://www.sephora.com/productimages/sku/s1930759-main-zoom.jpg?imwidth=166",
-        "desc":"Brazilian Crush Cheirosa ’62 Bum Bum Hair & Body.",
-        "color":"#01474f"
         
     },
     {
         "title": "LANEIGE",
-        "image":"https://www.sephora.com/productimages/sku/s1966258-main-zoom.jpg?pb=2020-03-allure-readers-choice-2019&imwidth=166",
-        "desc":"Lip Sleeping Mask Intense Hydration with Vitamin C.",
-        "color":"#59a19e"
-        
-    },
-    
-  {
-        "title": "NARS",
-        "image":"https://www.sephora.com/productimages/sku/s2172310-main-zoom.jpg?imwidth=166",
-        "desc":"Radiant Creamy Concealer.",
-        "color":"#8ec9e9"
-        
-    },
-    {
-        "title": "Sol de Janeiro",
-        "image":"https://www.sephora.com/productimages/sku/s1802412-main-zoom.jpg?imwidth=166",
-        "desc":"Brazilian Bum Bum Body Cream",
+        "image":"https://www.sephora.com/productimages/sku/s2489862-main-zoom.jpg?imwidth=122",
+        "desc":"Water Bank Moisture Cream",
         "color":"#dcb796" 
-        
     },
     {
-        "title": "Charlotte Tilbury",
-        "image":"https://www.sephora.com/productimages/sku/s2244804-main-zoom.jpg?imwidth=166",
-        "desc":"Airbrush Flawless Longwear Foundation",
+        "title": "CLINIQUE",
+        "image":"https://www.sephora.com/productimages/sku/s2549574-main-zoom.jpg?imwidth=122",
+        "desc":" Quickliner™ For Eyes Intense Eyeliner",
         "color":"#01474f"
-        
     },
     {
-        "title": "Dior",
-        "image":"https://www.sephora.com/productimages/sku/s2579340-main-zoom.jpg?imwidth=166",
-        "desc":"Dior Addict Lip Glow",
+        "title": "Origins",
+        "image":"https://www.sephora.com/productimages/sku/s2548295-main-zoom.jpg?imwidth=122",
+        "desc":"Checks and Balances™ Frothy",
         "color":"#59a19e"
-        
     },
-    
-
     {
-        "title": "Glow Recipe",
-        "image":"https://www.sephora.com/productimages/sku/s2404846-main-zoom.jpg?pb=clean-planet-positive-badge-2021&imwidth=166",
-        "desc":"Watermelon Glow Niacinamide Dew Drops",
+        "title": "First Aid Beauty",
+        "image":"https://www.sephora.com/productimages/sku/s2366854-main-zoom.jpg?imwidth=122",
+        "desc":"Facial Radiance Pads",
         "color":"#8ec9e9"
-        
     },
     {
-        "title": "NARS",
-        "image":"https://www.sephora.com/productimages/sku/s2514586-main-zoom.jpg?imwidth=166",
-        "desc":"Light Reflecting Advanced Skincare Foundation",
+        "title": "Lancôme",
+        "image":"https://www.sephora.com/productimages/sku/s2461994-main-zoom.jpg?imwidth=122",
+        "desc":"Advanced Génifique Yeux Light-Pearl Eye",
         "color":"#dcb796" 
-        
     },
     {
         "title": "Sol de Janeiro",
@@ -131,9 +113,9 @@ const InsiderRewards = () => {
   return (
     <div style={{ padding: `${chevronWidth}px 2px` }} className="insider_container">
          <Heading as='h4' size='md'>
-         Choosen For You
+         Beauty Insider Rewards
         </Heading>
-
+        <Text fontSize='md' ml="0px" mt="5px" fontWeight="500" mb="30px">You have 0 points. Keep earning to redeem rewards!</Text>
     <ItemsCarousel
       requestToChangeActive={setActiveItemIndex}
       activeItemIndex={activeItemIndex}
@@ -149,18 +131,24 @@ const InsiderRewards = () => {
           <div className="insider_item">
           <div className="insider_item_img_box">
             <img alt="test product" src={item.image} />
+            <button className='insider_item_img_btn'><Heading  as='h6' size='xs' p="5px" >
+            Quicklook
+          </Heading></button>
           </div>  
           <div style={{ backgroundColor:`${item.color}` }} className="insider_item_txt_box">
           <Heading  as='h6' size='xs' mt="-5px" >
           {item.title}
           </Heading>
             <Text fontSize='sm' ml="0px" mt="5px">{item.desc}</Text>
+            <Text fontSize='sm' ml="0px" mt="5px">100 Points</Text>
+            <button style={{ backgroundColor:`${item.color}` }} className="insider_item_txt_btn"> <Heading as='h6' size='xs'>Add</Heading></button>
           </div>
           </div>
         );
       })}
     </ItemsCarousel>
+    <hr style={{ margin:"10px 0 50px 0"}} />
   </div>
   )
 }
-export default InsiderRewards
+export default InsiderRewards;

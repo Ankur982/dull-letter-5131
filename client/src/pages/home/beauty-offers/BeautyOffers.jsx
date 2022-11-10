@@ -108,7 +108,7 @@ const BeautyOffers = () => {
         );
       })}
     </ItemsCarousel>
-    <hr style={{ margin:"40px 0" }} />
+    <hr style={{ margin:"50px 0" }} />
   </div>
   )
 }
