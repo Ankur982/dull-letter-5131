@@ -19,10 +19,10 @@ import { Link } from 'react-router-dom';
 export default function Phonelogin() {
 const[number,setNumber]= useState("")
 
-
    function getOtp(e){
 e.prevent.Default();
 console.log(number)
+
    } 
   return (
     <>
@@ -40,7 +40,7 @@ console.log(number)
           bg={useColorModeValue('white', 'gray.700')}
           boxShadow={'lg'}
           p={8}>
-          <Stack spacing={4}>
+          <Stack spacing={6}>
            <form onSubmit={getOtp}>
             <FormControl id="password">
               <FormLabel>Phone Number</FormLabel>
