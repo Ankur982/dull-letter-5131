@@ -1,11 +1,12 @@
-import Home from './pages/home/Home';
+import AllRoutes from './AllRoutes';
+import './App.css';
 
 function App() {
   return (
-    <div>
-      <Home/>
+   <div>
+    <AllRoutes/>
     </div>
-  );
+  )
 }
 
 export default App;
