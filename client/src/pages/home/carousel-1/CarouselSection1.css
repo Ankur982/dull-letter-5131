@@ -1,0 +1,36 @@
+.card_container{
+    width: 100%;
+    background-color: white;
+}
+
+.carousel_btn_box_R{
+    border: 1px solid white;
+    color: white;
+    margin-right: 50px;
+    border-radius: 50%;
+    background-color: #323234;
+    opacity: 0.5;
+}
+
+.carousel_btn_box_L{
+    border: 1px solid white;
+    color: white;
+    margin-right: -50px;
+    border-radius: 50%;
+    background-color: #323234;
+    opacity: 0.5;
+}
+
+
+
+.card_item_img_box>img{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.card_item_txt_box{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 30px;
+}
+
