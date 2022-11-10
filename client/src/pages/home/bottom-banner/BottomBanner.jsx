@@ -8,45 +8,43 @@ const BottomBanner = () => {
         <hr style={{ margin:"50px 0" }} />
         <div className='bottomBanner_container'>
         <div className="bottomBanner_item">
-    <div style={{ backgroundColor:"#fecfc5" }} className="bottomBanner_item_txt_box">
+    <div style={{ backgroundColor:"#ffffff" }} className="bottomBanner_item_txt_box">
       <Heading as='h4' size='md' mt="-5px" >
-        Charlotte Tilbury's Greatest Hits
+        Our Commitment to Diversity, Equity & Inclusion  
       </Heading>
-      <Text fontSize='sm' ml="0px" mt="0px">
-        <Link to="#">Must-have makeup from a beauty icon.</Link></Text>
       <button>
         <Link to="#">SHOP NOW▸</Link></button>
     </div>
     <div className="bottomBanner_item_img_box">
-      <img alt="test product" src="https://www.sephora.com/contentimages/2022-11-9-charlotte-tilbury-holiday-collection-site-desktop-mweb-home-page-rwd-marketing-banner-bestsellers-800x256-en-us-can.jpg?imwidth=400" />
+      <img alt="test product" src="https://www.sephora.com/contentimages/homepage/060222/Homepage/RWD/homepage-reassurance-banner-diversity-inclusion-desktop-mobile-us-ca-slice.jpeg?imwidth=400" />
     </div>
   </div>
   <div className="bottomBanner_item">
-    <div style={{ backgroundColor:"#01474f" }} className="bottomBanner_item_txt_box">
+    <div style={{ backgroundColor:"#16603b" }} className="bottomBanner_item_txt_box">
       <Heading as='h4' size='md' mt="-5px">
-        Charlotte Tilbury's Greatest Hits
+      Get Your Gifts in Time
       </Heading>
       <Text fontSize='sm' ml="0px" mt="5px">
-        <Link to="#">Must-have makeup from a beauty icon.</Link></Text>
+        <Link to="#">Fast and easy options for stress-free holiday shopping. </Link></Text>
       <button>
-        <Link to="#">SHOP NOW▸</Link></button>
+        <Link to="#">LEARN MORE▸</Link></button>
     </div>
     <div className="bottomBanner_item_img_box">
-      <img alt="test product" src="https://www.sephora.com/contentimages/2022-holiday-launch-site-mobile-desktop-home-page-rwd-marketing-banner-holiday-hub-800x256-us-can-kohls.jpg?imwidth=400" />
+      <img alt="test product" src="https://www.sephora.com/contentimages/2022-holiday-launch-site-desktop-mobile-home-page-rwd-marketing-banner-bottom-banner-ease-and-convenience-800x256-us-can.jpg?imwidth=400" />
     </div>
   </div>
   <div className="bottomBanner_item">
-    <div style={{ backgroundColor:"#01474f" }} className="bottomBanner_item_txt_box">
+    <div style={{ backgroundColor:"#c6a886" }} className="bottomBanner_item_txt_box">
       <Heading as='h4' size='md' mt="-5px">
-        Charlotte Tilbury's Greatest Hits
+      Clean + Planet Positive
       </Heading>
       <Text fontSize='sm' ml="0px" mt="5px">
-        <Link to="#">Must-have makeup from a beauty icon.</Link></Text>
+        <Link to="#">Brands on a mission to change your skin and the earth.</Link></Text>
       <button>
-        <Link to="#">SHOP NOW▸</Link></button>
+        <Link to="#">LEARN MORE▸</Link></button>
     </div>
     <div className="bottomBanner_item_img_box">
-      <img alt="test product" src="https://www.sephora.com/contentimages/2022-11-seasonal-services-wave3-holiday-site-desktop-mobile-home-page-rwd-marketing-banner-us-800x256.jpg?imwidth=400" />
+      <img alt="test product" src="https://www.sephora.com/contentimages/homepage/060222/Homepage/RWD/homepage-reassurance-banner-clean-planet-positive-desktop-mobile-us-ca-slice.jpeg?imwidth=400" />
     </div>
   </div>
         </div>
