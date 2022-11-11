@@ -128,7 +128,7 @@ const JustDropped = () => {
     >
       {items.map((item, index) => {
         return (
-          <div className="dropped_item">
+          <div className="dropped_item" key={item.image}>
           <div className="dropped_item_img_box">
             <img alt="test product" src={item.image} />
             <button className='dropped_item_img_btn'><Heading  as='h6' size='xs' p="5px" >
