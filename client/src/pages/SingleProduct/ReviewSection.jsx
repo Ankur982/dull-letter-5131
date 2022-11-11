@@ -7,7 +7,7 @@ import io from "socket.io-client";
 const socket = io.connect("http://localhost:8081");
 
 function ReviewSection() {
-    const [isLargerThan600] = useMediaQuery("(min-width: 600px)");
+  const [isLargerThan600] = useMediaQuery("(min-width: 600px)");
   const [review, setReview] = useState("");
   const [message, setMessage] = useState("");
   //   const [historyMsg, setHistoryMsg] = useState("");

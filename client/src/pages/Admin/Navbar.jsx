@@ -1,6 +1,6 @@
 import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -13,13 +13,13 @@ function Navbar() {
       borderRadius="5px"
     >
       <Box>
-        <Link to="/">Products</Link>
+        <NavLink to={"/admin"}>Products</NavLink>
       </Box>
       <Box>
-        <Link to="/users">Users</Link>
+        <NavLink to="/users">Users</NavLink>
       </Box>
       <Box>
-        <Link to="/addproduct">Add a Products</Link>
+        <NavLink to="/admin/addproduct">Add a Products</NavLink>
       </Box>
     </Flex>
   );
