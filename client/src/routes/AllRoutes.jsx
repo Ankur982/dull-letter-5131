@@ -21,8 +21,20 @@ export default function AllRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={
+            <>
+              <Navbar />
+              <Login />
+              <Footer />
+            </>
+          } />
+        <Route path="/signup" element={
+           <>
+           <Navbar />
+           <Signup />
+           <Footer />
+         </>
+        } />
         <Route
           path="/myoders"
           element={
@@ -48,7 +60,7 @@ export default function AllRoutes() {
           element={
             <>
               <Navbar />
-              <MyWishlist />
+              <Product />
               <Footer />
             </>
           }
@@ -78,6 +90,7 @@ export default function AllRoutes() {
             <>
               <Navbar />
               <Cart />
+
               <Footer />
             </>
           }
