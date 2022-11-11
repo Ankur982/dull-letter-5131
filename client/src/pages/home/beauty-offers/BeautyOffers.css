@@ -1,0 +1,52 @@
+.beauty_container{
+    width: 85%;
+    margin: auto;
+    background-color: white;
+    margin-top: 40px;
+}
+.beauty_item{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.beauty_carousel_btn_box_R{
+    border: 1px solid white;
+    color: white;
+    margin-right: 50px;
+    border-radius: 50%;
+    background-color: #323234;
+    opacity: 0.5;
+}
+
+.beauty_carousel_btn_box_L{
+    border: 1px solid white;
+    color: white;
+    margin-right: -50px;
+    border-radius: 50%;
+    background-color: #323234;
+    opacity: 0.5;
+}
+
+
+
+.beauty_item_img_box>img{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.beauty_item_txt_box{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 15px;
+    height: 270px;
+}
+
+.beauty_item_txt_btn{
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-top: 25px;
+}
+

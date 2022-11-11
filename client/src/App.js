@@ -1,13 +1,12 @@
-import Checkout from "./components/checkoutPage/Checkout";
-// import Cart from "./components/cart_page/Cart";
+import './App.css';
+import AllRoutes from './routes/AllRoutes';
 
 function App() {
   return (
-    <div >
-      <Checkout />
-      {/* <Cart /> */}
+    <div>
+     <AllRoutes />
     </div>
-  );
+  )
 }
 
 export default App;

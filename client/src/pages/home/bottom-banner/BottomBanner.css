@@ -1,0 +1,34 @@
+.bottom_container{
+    width: 85%;
+    margin: auto;
+}
+.bottomBanner_container{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.bottomBanner_item{
+    width: 88%;
+    border: 1px solid grey;
+}
+
+.bottomBanner_item_img_box>img{
+    width: 100%;
+    /* border-top-left-radius: 5px;
+    border-top-right-radius: 5px; */
+}
+
+.bottomBanner_item_txt_box{
+    width: 100%;
+    /* border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; */
+    padding: 30px;
+}
+
+.bottomBanner_item_txt_box>button{
+    margin-top: 10px;
+}
+

@@ -1,0 +1,181 @@
+
+
+  .footer-section-1 {
+    height: 50px;
+    background-color: rgb(177, 173, 173);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+}
+
+.footer-section-2 {
+    padding: 0 5%;
+    background-color: black;
+    color: white;
+    padding: 25px;
+    padding-bottom: 77px;
+    
+
+}
+
+.label-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 30px;
+
+}
+
+.label-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+.label-container>div>img {
+    width: 30px;
+}
+
+.label-box>div {
+    margin-right: 15px;
+    margin-left: 15px;
+    align-self: flex-end;
+}
+
+hr {
+    background-color: rgb(85, 84, 84);
+    margin-bottom: 25px;
+}
+
+.details {
+    padding: 20px 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    line-height: 28px;
+}
+
+.details>div {
+    font-size: 14px;
+}
+
+.details>p {
+    width: 75px;
+}
+
+.countries {
+    width: 25px;
+    display: block;
+}
+
+.countries_box{
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.footer-section-3 {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+}
+
+.footer-section-3>div {
+    margin: auto;
+    margin-top: 180px;
+    /* width: 95%; */
+}
+
+.footer-section-3>h2 {
+
+    font-size: 25px;
+}
+
+.footer-section-3{
+    border: 5 px solid white;
+}
+.footer-section-3>div>button {
+    /* width: 20%; */
+    border-radius: 15px;
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.footer-section-3>div>div>input {
+    border-radius: 5px;
+    padding-left: 10px;
+    height: 40px;
+    width: 100%;
+
+}
+
+.footer-section-3>div {
+    display: flex;
+}
+
+.footer-section-box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.footer-section-sub-box {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+    font-size: 20px;
+    /* width: 310px; */
+}
+
+span {
+    margin-right: 15px;
+}
+
+.footer-section-4 {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    font-size: 14px;
+}
+
+#icons{
+    display: flex;
+    gap: 20px;
+}
+#icons>img {
+    width: 40px;
+}
+
+.details>div>h6 {
+    font-size: 18px;
+}
+
+.gapText>p{
+    line-height: 20px;
+    
+}
+
+
+@media all and (min-width: 768px) and (max-width: 1024px){
+
+
+    
+}
+
+
+@media all and (min-width: 320px) and (max-width: 640px){
+
+
+
+}

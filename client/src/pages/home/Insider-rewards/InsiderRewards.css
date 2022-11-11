@@ -1,0 +1,75 @@
+.insider_container{
+    width: 85%;
+    margin: auto;
+    background-color: white;
+    margin-top: -10px;
+}
+.insider_item{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.insider_carousel_btn_box_R{
+    border: 1px solid white;
+    color: white;
+    margin-right: 50px;
+    border-radius: 50%;
+    background-color: #323234;
+    opacity: 0.5;
+}
+
+.insider_carousel_btn_box_L{
+    border: 1px solid white;
+    color: white;
+    margin-right: -50px;
+    border-radius: 50%;
+    background-color: #323234;
+    opacity: 0.5;
+}
+.insider_item_img_box{
+    position: relative;
+}
+
+.insider_item:hover .insider_item_img_btn{
+    display: block;
+    /* margin-bottom: -80px; */
+  }
+
+.insider_item_img_btn{
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    display: none;
+    bottom: 0;
+    background-color: rgb(38, 38, 38);
+    color: #fff;
+    opacity: 0.8;
+    padding: 3px;
+}
+.insider_item_img_btn:hover{
+    cursor: pointer;
+}
+
+
+
+.insider_item_img_box>img{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.insider_item_txt_box{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 15px;
+    height: 170px;
+}
+
+.insider_item_txt_btn{
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 5px 20px;
+    margin-top: 20px;
+}
+

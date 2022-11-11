@@ -1,0 +1,92 @@
+#my_account_order_cont{
+    width: 1400px;
+    margin: auto;
+}
+.my_account_order_txt{
+    margin-top: 50px;
+    color: #2E3337;
+    font-size: 14px;
+    font-weight: 100;
+}
+a{
+    text-decoration: none;
+    color: #2E3337;
+}
+.hr_line {
+    width: 1400px;
+    
+}
+
+#my_account {
+    width: 1400px;
+    height: 119px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top:-20px;
+    padding: 16px 32px;
+    margin-bottom: -50px;
+}
+
+#my_acc_detail {
+    width: 668px;
+    height: 87px;
+
+    color: #2E3337;
+    margin-left: 20px;
+}
+
+.my_acc_btn2 {
+    width: 87px;
+    height: 44px;
+    margin-top: 20px;
+    background-color: #FFFFFF;
+    font-size: 14px;
+    margin-right: 20px;
+    color: #333333;
+    text-transform: uppercase;
+    text-align: center;
+    box-sizing: border-box;
+    border-style: solid;
+    background-color:#FFFFFF ;
+    text-decoration: none;
+}
+.my_acc_btn1{
+    width: 140px;
+    height: 44px;
+    margin-top: 20px;
+    background-color: #FFFFFF;
+    font-size: 14px;
+    margin-right: 20px;
+    color: #333333;
+    text-transform: uppercase;
+    text-align: center;
+    box-sizing: border-box;
+    border-style: solid;
+    background-color:#FFFFFF ;
+    text-decoration: none;
+}
+
+.my_acc_btn1:hover ,.my_acc_btn2:hover {
+    cursor: pointer;
+    background-color: #6cbdb7;
+}
+
+
+.int_txt {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.your_section {
+    width: 1400px;
+    color: #2E3337;
+    padding: 16px 16px 14px;
+    margin: auto;
+}
+.section_txt {
+    text-align: center;
+    font-weight: 200;
+    font-size: 36px;
+}
