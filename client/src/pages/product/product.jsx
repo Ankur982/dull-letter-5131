@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Sidebar from '../components/Sidebar'
-import {MakeupObject}  from "../assets/sidebar.values"
+import Sidebar from "../../components/Sidebar";
+import ProductCard from "../../components/ProductCard";
 import { Box ,Flex, SimpleGrid} from '@chakra-ui/react'
-import ProductCard from '../components/ProductCard'
-import axios from "axios"
+import axios from "axios";
+import { MakeupObject } from '../../assets/sidebar.value';
+
 const Product = () => {
   const [makeup,setMakeup]=useState([])
     let getData=()=>{
