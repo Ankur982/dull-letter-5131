@@ -13,7 +13,8 @@ import Cart from "../pages/cart/Cart";
 import Checkout from "../pages/checkoutPage/Checkout";
 import MyWishlist from "../pages/my-wishlist/MyWishlist";
 import SingleProduct from "../pages/SingleProduct/SingleProduct";
-import Product from "../pages/product/Product";
+import Product from "../pages/product/product";
+
 
 export default function AllRoutes() {
   return (
@@ -21,8 +22,20 @@ export default function AllRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={
+            <>
+              <Navbar />
+              <Login />
+              <Footer />
+            </>
+          } />
+        <Route path="/signup" element={
+           <>
+           <Navbar />
+           <Signup />
+           <Footer />
+         </>
+        } />
         <Route
           path="/myoders"
           element={
@@ -78,6 +91,7 @@ export default function AllRoutes() {
             <>
               <Navbar />
               <Cart />
+
               <Footer />
             </>
           }
