@@ -6,9 +6,13 @@ import Signup from "../components/Auth/signup";
 import Dashboard from "../components/Dashboard";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar";
+import AdminRoutes from "../pages/Admin/AdminRoutes";
 import Home from "../pages/home/Home";
 import MyOrder from "../pages/my-orders/MyOrder";
+import Cart from "../pages/cart/Cart";
+import Checkout from "../pages/checkoutPage/Checkout";
 import MyWishlist from "../pages/my-wishlist/MyWishlist";
+import SingleProduct from "../pages/SingleProduct/SingleProduct";
 import Product from "../pages/product/Product";
 
 export default function AllRoutes() {
@@ -62,11 +66,11 @@ export default function AllRoutes() {
           }
         />
         <Route
-          path="/products/id"
+          path="/products/:id"
           element={
             <>
               <Navbar />
-              <MyWishlist />
+              <SingleProduct />
               <Footer />
             </>
           }
@@ -75,12 +79,23 @@ export default function AllRoutes() {
           path="/admin"
           element={
             <>
+              <AdminRoutes />
+            </>
+          }
+        />
+
+        <Route
+          path="/basket"
+          element={
+            <>
               <Navbar />
-              <MyWishlist />
+              <Cart />
+
               <Footer />
             </>
           }
         />
+        <Route path="/checkout" element={<Checkout />} />
 
         {/* <Route path="/phonelogin" element={<Phonelogin />} /> */}
       </Routes>

@@ -14,7 +14,6 @@ import { getAdminProducts } from "../../store/AdminRoutes/AllProducts/adminProdu
 function Products() {
   const dispatch = useDispatch();
   const { loading, error, data } = useSelector((store) => store.adminProducts);
-  console.log(data);
 
   useEffect(() => {
     dispatch(getAdminProducts());

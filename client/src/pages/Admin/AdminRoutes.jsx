@@ -8,11 +8,34 @@ import Products from "./Products";
 function AdminRoutes() {
   return (
     <div>
-      <Navbar />
       <Routes>
-        <Route path="/" element={<Products />} />
-        <Route path="/users" element={<AllUsers />} />
-        <Route path="/addproduct" element={<AddProduct />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <Products />
+            </>
+          }
+        />
+        <Route
+          path="/users"
+          element={
+            <>
+              <Navbar />
+              <AllUsers />
+            </>
+          }
+        />
+        <Route
+          path="/admin/addproduct"
+          element={
+            <>
+              <Navbar />
+              <AddProduct />
+            </>
+          }
+        />
       </Routes>
     </div>
   );

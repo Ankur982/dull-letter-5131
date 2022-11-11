@@ -14,11 +14,11 @@ import {
   Text,
   useMediaQuery,
 } from "@chakra-ui/react";
-import Subcategory from "../../components/Subcategory";
-import AccordionComponent from "../../components/AccordionComponent";
+import AccordionComponent from "./AccordionComponent";
 import { getSingleProduct } from "../../store/SingleProduct/singleProduct.action";
 import { useEffect } from "react";
-import ReviewSection from "../../components/ReviewSection";
+import ReviewSection from "./ReviewSection";
+import Subcategory from "./Subcategory";
 
 function SingleProduct() {
   const [isLargerThan600] = useMediaQuery("(min-width: 600px)");
@@ -27,7 +27,7 @@ function SingleProduct() {
   const { loading, error, data } = useSelector((store) => store.singleProduct);
   console.log(data);
   useEffect(() => {
-    dispatch(getSingleProduct());
+    dispatch(getSingleProduct(id));
   }, [id]);
 
   // if (loading) {
@@ -191,7 +191,7 @@ function SingleProduct() {
             </Text>
           </Box>
           <Box m={5}>
-            <ReviewSection />
+            {/* <ReviewSection /> */}
           </Box>
         </Box>
       </Box>
