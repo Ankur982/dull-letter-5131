@@ -1,36 +1,327 @@
+import { BellIcon, EmailIcon, Search2Icon } from '@chakra-ui/icons';
+import { Heading, Link } from '@chakra-ui/react';
 import React from 'react';
 import "./Navbar.css"
 
 const Navbar = () => {
-  return (
-    <>
+return (
+<>
     <div id="nav1">
-        <a href="">
-            <h3>Get FREE shipping on all orders when you join Beauty Insider. Exclusions/terms apply.† <span className='hover-item-li'> LEARN MORE▸</span><i class="fa-solid fa-caret-right"></i></h3>
+        <a href="#">
+            <h3>Get FREE shipping on all orders when you join Beauty Insider. Exclusions/terms apply.† <span
+                    className='hover-item-li'> LEARN MORE▸</span><i class="fa-solid fa-caret-right"></i></h3>
         </a>
     </div>
     <div id="nav2">
         <div>
-            <p >SEPHORA</p>
+            <p>SEPHORA</p>
             <input type="text" name="" id="" placeholder="🔍 Search" />
-            <div>
+            <div className='dropdown'>
                 <span><img src="https://cdn-icons-png.flaticon.com/512/3443/3443338.png" alt="" /></span>
-                <p>Stores & Services <br/><span className='nav2-sub-section'>Pick a Store</span> </p>
+                <p>Stores & Services <br /><span className='nav2-sub-section'>Pick a Store</span> </p>
+                <div className="dropdown-content" style={{ marginTop:"520px" }}>
+                    <div className='dropdown_container1'>
+                        <button className='dropdown_container1_btn'>Choose Your Store</button>
+                        <div style={{ display:"flex", gap:"50px", margin: "20px 0 10px 0" }}>
+                            <Search2Icon />
+                            <Heading as='h5' size='sm'>Find a Sephora</Heading>
+                        </div>
+
+                        <div style={{ display:"flex", justifyContent:"space-between", marginBottom:"10px" }}>
+                            <Heading as='h5' size='sm'>Happening at Sephora</Heading>
+                            <Link to='#' color='blue.500'> View all</Link>
+                        </div>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img src="https://www.sephora.com/contentimages/meganav/icons/happening_services.jpg"
+                                    alt="img" />
+                            </div>
+                            <div>
+                                <h4>Services</h4>
+                                <p>Exciting launches, parties, and more!</p>
+                            </div>
+                        </div>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img src="https://www.sephora.com/contentimages/meganav/icons/happening_events_2.jpg"
+                                    alt="img" />
+                            </div>
+                            <div>
+                                <h4>Store Events</h4>
+                                <p>Discover topics tailored to your beauty interests</p>
+                            </div>
+                        </div>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img src="https://www.sephora.com/contentimages/meganav/icons/happening_new.jpg"
+                                    alt="img" />
+                            </div>
+                            <div>
+                                <h4>What's New in Store</h4>
+                                <p>Explore what's hot in your store</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-            <div>
+            <div className="dropdown">
                 <span><img src="https://cdn-icons-png.flaticon.com/512/1581/1581723.png" alt="" /></span>
                 <p>Community</p>
+                <div className="dropdown-content">
+                    <div className='dropdown_container1'>
+                        <div className='dropdown_container1_box'>
+                            <div className='dropdown_container1_sub_box1'>
+                                <div>
+                                    <img src="https://www.sephora.com/img/ufe/icons/me-active.svg" alt="img" />
+                                </div>
+                                <div>
+                                    <h4>Community Profile</h4>
+                                    <p>Join now to get started</p>
+                                </div>
+                            </div>
+                            <div>
+                                <BellIcon w={6} h={6} />
+                                <EmailIcon w={6} h={6} />
+                            </div>
+                        </div>
+                        <button className='dropdown_container1_btn'>Join Now</button>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img src="https://www.sephora.com/contentimages/meganav/icons/community_home.jpg"
+                                    alt="img" />
+                            </div>
+                            <div>
+                                <h4>Community Home</h4>
+                                <p>Ask questions, join challenges, and get recommendations from people like you</p>
+                            </div>
+                        </div>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img src="https://www.sephora.com/contentimages/meganav/icons/community_groups.jpg"
+                                    alt="img" />
+                            </div>
+                            <div>
+                                <h4>Groups</h4>
+                                <p>Discover topics tailored to your beauty interests</p>
+                            </div>
+                        </div>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img src="https://www.sephora.com/contentimages/meganav/icons/community_gallery.jpg"
+                                    alt="img" />
+                            </div>
+                            <div>
+                                <h4>Gallery</h4>
+                                <p>Add your photos and get inspired by fellow beauty lovers Featured Groups</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='dropdown_container2'>
+                        <div className='dropdown_sub_container'>
+                            <h1>Featured Groups</h1>
+                            <ul>
+                                <li>
+                                    Trending at Sephora
+                                </li>
+                                <li>
+                                    Trending at Sephora
+                                </li>
+                                <li>
+                                    Trending at Sephora
+                                </li>
+                            </ul>
+                        </div>
+                        <hr />
+                        <div className='dropdown_sub_container'>
+                            <h1>Featured Threads</h1>
+                            <ul>
+                                <li>
+                                    Trending at Sephora
+                                </li>
+                                <li>
+                                    Trending at Sephora
+                                </li>
+                                <li>
+                                    Trending at Sephora
+                                </li>
+                            </ul>
+                            <hr />
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div>
+            <div className='dropdown'>
                 <span><img src="https://cdn-icons-png.flaticon.com/512/94/94428.png" alt="" /></span>
                 <p id="btn">Sign In</p>
+                <div className="dropdown-content" style={{ marginTop:"510px" }}>
+                    <div className='dropdown_container1'>
+                        <div className='dropdown_container1_box'>
+                            <div className='dropdown_container1_sub_box1' style={{width:"100%"}}>
+                                <div>
+                                    <img src="https://www.sephora.com/img/ufe/icons/me-active.svg" alt="img" />
+                                </div>
+                                <div>
+                                    <h4>Happy Friday, Ankur. 🎉</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <hr  style={{margin:"5px 0"}}/>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img id='signin_dropdown_img'
+                                    src="https://www.sephora.com/img/ufe/icons/beauty-traits.svg" alt="img" />
+                            </div>
+                            <div>
+                                <h4>Beauty Preferences</h4>
+                                <p>Complete to see your personalized recommendations</p>
+                            </div>
+                        </div>
+                        <hr  style={{margin:"5px 0"}}/>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img id='signin_dropdown_img' src="https://www.sephora.com/img/ufe/icons/cc-outline.svg"
+                                    alt="img" />
+                            </div>
+                            <div>
+                                <h4>INSIDER • 0 Points</h4>
+                                <p>See your loyalty program savings, benefits, rewards</p>
+                            </div>
+                        </div>
+                        <hr  style={{margin:"5px 0"}}/>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img id='signin_dropdown_img'
+                                    src="https://www.sephora.com/img/ufe/icons/subscription.svg" alt="img" />
+                            </div>
+                            <div>
+                                <h4>Buy It Again</h4>
+                                <p>Reorder from in-store and online purchases</p>
+                            </div>
+                        </div>
+                        <hr  style={{margin:"5px 0"}}/>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img id='signin_dropdown_img' src="https://www.sephora.com/img/ufe/icons/track.svg"
+                                    alt="img" />
+                            </div>
+                            <div>
+                                <h4>Orders</h4>
+                                <p>View & track online or pickup orders</p>
+                            </div>
+                        </div>
+                        <hr  style={{margin:"5px 0"}}/>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img id='signin_dropdown_img'
+                                    src="https://www.sephora.com/img/ufe/icons/auto-replenish.svg" alt="img" />
+                            </div>
+                            <div>
+                                <h4>Auto-Replenish</h4>
+                                <p>View and manage your subscriptions</p>
+                            </div>
+                        </div>
+                        <hr  style={{margin:"5px 0"}}/>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img id='signin_dropdown_img' src="https://www.sephora.com/img/ufe/icons/heart.svg"
+                                    alt="img" />
+                            </div>
+                            <div>
+                                <h4>Loves</h4>
+                                <p>View saved products</p>
+                            </div>
+                        </div>
+                        <hr  style={{margin:"5px 0"}}/>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img id='signin_dropdown_img' src="https://www.sephora.com/img/ufe/icons/account.svg"
+                                    alt="img" />
+                            </div>
+                            <div>
+                                <h4>Account Settings</h4>
+                                <p>Payment, contact info, addresses, password</p>
+                            </div>
+                        </div>
+                        <hr  style={{margin:"5px 0"}}/>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img id='signin_dropdown_img'
+                                    src="https://www.sephora.com/img/ufe/icons/reward-bazaar.svg" alt="img" />
+                            </div>
+                            <div>
+                                <h4>Rewards Bazaar</h4>
+                                <p>Redeem items, samples, more</p>
+                            </div>
+                        </div>
+                        <hr  style={{margin:"5px 0"}}/>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img id='signin_dropdown_img' src="https://www.sephora.com/img/ufe/icons/cc-outline.svg"
+                                    alt="img" />
+                            </div>
+                            <div>
+                                <h4>Sephora Credit Card Program</h4>
+                                <p>Apply now</p>
+                            </div>
+                        </div>
+                        <hr  style={{margin:"5px 0"}}/>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img id='signin_dropdown_img'
+                                    src="https://www.sephora.com/productimages/sku/s2610293-main-zoom.jpg?imwidth=50"
+                                    alt="img" />
+                            </div>
+                            <div>
+                                <h4>Same-Day Unlimited</h4>
+                                <p>Subscribe today</p>
+                            </div>
+                        </div>
+                        <hr  style={{margin:"5px 0"}}/>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img id='signin_dropdown_img' src="https://www.sephora.com/img/ufe/icons/flash.svg"
+                                    alt="img" />
+                            </div>
+                            <div>
+                                <h4>Flash</h4>
+                                <p>Unlimited 1-2 Day Shipping Subscription</p>
+                            </div>
+                        </div>
+                        <hr  style={{margin:"5px 0"}}/>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img id='signin_dropdown_img'
+                                    src="https://www.sephora.com/img/ufe/icons/reservations.svg" alt="img" />
+                            </div>
+                            <div>
+                                <h4>Reservations</h4>
+                                <p>Manage your services, classes, events</p>
+                            </div>
+                        </div>
+                        <hr  style={{margin:"5px 0"}}/>
+                        <div className='dropdown_container1_sub_box2'>
+                            <div>
+                                <img id='signin_dropdown_img'
+                                    src="https://www.sephora.com/img/ufe/icons/recommendations.svg" alt="img" />
+                            </div>
+                            <div>
+                                <h4>Beauty Advisor Recommendations</h4>
+                                <p>Recommendations from your store visits</p>
+                            </div>
+                        </div>
+                        <hr  style={{margin:"5px 0"}}/>
+                        <button className='dropdown_container1_btn'>Sign Out</button>
+                    </div>
+                </div>
             </div>
         </div>
         <div>
             <img src="https://cdn-icons-png.flaticon.com/512/7174/7174950.png" alt="" class="search" />
             <img src="https://cdn-icons-png.flaticon.com/512/7777/7777990.png" alt="" class="search" />
-           <a href="addcart.html"> <img src="https://cdn-icons-png.flaticon.com/512/743/743131.png" alt="" class="search" /></a>
+            <a href="addcart.html"> <img src="https://cdn-icons-png.flaticon.com/512/743/743131.png" alt=""
+                    class="search" /></a>
         </div>
     </div>
     <div id="nav5">
@@ -53,13 +344,15 @@ const Navbar = () => {
                         <li><a href="" className='hover-item-li'>Quizzes & Buying Guides</a></li>
                         <li><a href="" className='hover-item-li'>Clean Beauty Guide</a></li>
                         <li><a href="" className='hover-item-li'>Clean+ Planet Positive Beauty Guide</a></li>
-                        
+
                     </ul>
                     <ul>
-                        <li><img src="https://www.sephora.com/contentimages/meganav/large/2022-june-body-site-desktop-global-navigation-button-us.jpg?imwidth=294" alt="" /></li>
+                        <li><img src="https://www.sephora.com/contentimages/meganav/large/2022-june-body-site-desktop-global-navigation-button-us.jpg?imwidth=294"
+                                alt="" /></li>
                     </ul>
                     <ul>
-                        <li><img src="https://www.sephora.com/contentimages/meganav/large/2022-6-9-haus-lady-gaga-bundle-b-site-desktop-global-navigation-button-en-us-can.jpg?imwidth=294" alt="" /></li>
+                        <li><img src="https://www.sephora.com/contentimages/meganav/large/2022-6-9-haus-lady-gaga-bundle-b-site-desktop-global-navigation-button-en-us-can.jpg?imwidth=294"
+                                alt="" /></li>
                     </ul>
                 </div>
             </li>
@@ -82,7 +375,7 @@ const Navbar = () => {
                         <li><a href="">The 7 Virtues</a></li>
                         <li><a href="">MAKEUP BY MARIO</a></li>
                         <li><a href="">Rare Beauty By Selena Gomez</a></li>
-                        
+
                     </ul>
                     <ul>
                         <li><a href="" className='hover-item-li'>Affordable Brands</a></li>
@@ -135,7 +428,7 @@ const Navbar = () => {
                         <li><a href="">Eyelash Serums</a></li>
                         <li><a href="">Eye Primer</a></li>
                         <li><a href="">Eye Sets</a></li>
-                        
+
                     </ul>
                     <ul>
                         <li><a href="" className='hover-item-li'>Lip</a></li>
@@ -411,7 +704,9 @@ const Navbar = () => {
                         <li><a href="" className='hover-item-li'>Allure Best of Beauty Tools & Brushes</a></li>
                     </ul>
                     <ul>
-                        <li><a href=""><img src="https://www.sephora.com/contentimages/meganav/large/2020-07-29-pro-brushes-site-desktop-global-navigation-button.jpg?imwidth=294" alt="" /></a></li>
+                        <li><a href=""><img
+                                    src="https://www.sephora.com/contentimages/meganav/large/2020-07-29-pro-brushes-site-desktop-global-navigation-button.jpg?imwidth=294"
+                                    alt="" /></a></li>
                     </ul>
                 </div>
             </li>
@@ -454,10 +749,12 @@ const Navbar = () => {
                         <li><a href="" className='hover-item-li'>Mini Size</a></li>
                         <li><a href="" className='hover-item-li'>Value Size</a></li>
                         <li><a href="" className='hover-item-li'>Sephora Collection</a></li>
-                        <li><a href="" >Allure Best Of Beauty Bath & Body</a></li>
+                        <li><a href="">Allure Best Of Beauty Bath & Body</a></li>
                     </ul>
                     <ul>
-                        <li><a href=""><img src="https://www.sephora.com/contentimages/meganav/large/2020-9-14-site-desktop-globalclassName='hover-item-li'-navigation-button-banner-sol-de-janeiro.jpg?imwidth=294" alt="" /></a></li>
+                        <li><a href=""><img
+                                    src="https://www.sephora.com/contentimages/meganav/large/2020-9-14-site-desktop-globalclassName='hover-item-li'-navigation-button-banner-sol-de-janeiro.jpg?imwidth=294"
+                                    alt="" /></a></li>
                     </ul>
                 </div>
             </li>
@@ -478,10 +775,14 @@ const Navbar = () => {
                         <li><a href="" className='hover-item-li'>Sephora Favorites</a></li>
                     </ul>
                     <ul>
-                        <li><a href=""><img src="https://www.sephora.com/contentimages/meganav/large/2020-07-29-site-global-navigation-button-evergreen-crossworld-minis.jpg?imwidth=294" alt="" /></a></li>
+                        <li><a href=""><img
+                                    src="https://www.sephora.com/contentimages/meganav/large/2020-07-29-site-global-navigation-button-evergreen-crossworld-minis.jpg?imwidth=294"
+                                    alt="" /></a></li>
                     </ul>
                     <ul>
-                        <li><a href=""><img src="https://www.sephora.com/contentimages/meganav/large/2020-12-23-site-dt-botnav-seph-coll-US.jpg?imwidth=294" alt="" /></a></li>
+                        <li><a href=""><img
+                                    src="https://www.sephora.com/contentimages/meganav/large/2020-12-23-site-dt-botnav-seph-coll-US.jpg?imwidth=294"
+                                    alt="" /></a></li>
                     </ul>
                 </div>
             </li>
@@ -526,7 +827,9 @@ const Navbar = () => {
                         <li><a href="" className='hover-item-li'>Gift Finder</a></li>
                     </ul>
                     <ul>
-                       <li><a href=""><img src="https://www.sephora.com/contentimages/meganav/large/site-desktop-global-navigation-button-evergreen-gift-card.jpg?imwidth=294" alt="" /></a></li>
+                        <li><a href=""><img
+                                    src="https://www.sephora.com/contentimages/meganav/large/site-desktop-global-navigation-button-evergreen-gift-card.jpg?imwidth=294"
+                                    alt="" /></a></li>
                     </ul>
                 </div>
             </li>
@@ -552,7 +855,9 @@ const Navbar = () => {
                         <li><a href="">Clean Beauty</a></li>
                     </ul>
                     <ul>
-                        <li><a href=""><img src="https://www.sephora.com/contentimages/meganav/large/2022-04-29-sc-instabrow-site-desktop-global-navigation-button-beauty-under-20-us.jpg?imwidth=294" alt="" /></a></li>
+                        <li><a href=""><img
+                                    src="https://www.sephora.com/contentimages/meganav/large/2022-04-29-sc-instabrow-site-desktop-global-navigation-button-beauty-under-20-us.jpg?imwidth=294"
+                                    alt="" /></a></li>
                     </ul>
                 </div>
             </li>
@@ -572,10 +877,14 @@ const Navbar = () => {
                         <li><a href="" className='hover-item-li'>Beauty Offers</a></li>
                     </ul>
                     <ul>
-                        <li><a href=""><img src="https://www.sephora.com/contentimages/meganav/large/slotting-sale-generic-site-desktop-global-navigation-button_copy-only.jpg?imwidth=294" alt="" /></a></li>
+                        <li><a href=""><img
+                                    src="https://www.sephora.com/contentimages/meganav/large/slotting-sale-generic-site-desktop-global-navigation-button_copy-only.jpg?imwidth=294"
+                                    alt="" /></a></li>
                     </ul>
                     <ul>
-                        <li><a href=""><img src="https://www.sephora.com/contentimages/meganav/large/site-desktop-global-navigation-button-evergreen-beauty-offers-abundance.jpg?imwidth=294" alt="" /></a></li>
+                        <li><a href=""><img
+                                    src="https://www.sephora.com/contentimages/meganav/large/site-desktop-global-navigation-button-evergreen-beauty-offers-abundance.jpg?imwidth=294"
+                                    alt="" /></a></li>
                     </ul>
                 </div>
             </li>
@@ -583,13 +892,12 @@ const Navbar = () => {
     </div>
     <div id="nav1" style={{backgroundColor:"#eeeeee"}}>
         <a href="" className='hover-item-li'>
-            <h3 style={{backgroundColor:"#eeeeee"}}>Shipping is delayed due to high demand. Need it sooner? Buy Online, Pick Up In Store or get Same-Day Delivery▸<i class="fa-solid fa-caret-right"></i></h3>
+            <h3 style={{backgroundColor:"#eeeeee"}}>Shipping is delayed due to high demand. Need it sooner? Buy Online,
+                Pick Up In Store or get Same-Day Delivery▸<i class="fa-solid fa-caret-right"></i></h3>
         </a>
     </div>
-    </>
-  )
+</>
+)
 }
 
 export default Navbar;
-
-
