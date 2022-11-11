@@ -1,0 +1,119 @@
+.head-check{
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding: 1rem 0rem;
+    font-family: "Helvetica neue",Arial, Helvetica, sans-serif;
+}
+.input-box{
+    margin: 1rem 5rem;
+    width: 40rem;
+    font-family: "Helvetica neue",Arial, Helvetica, sans-serif;
+}
+.c-head{
+    font-family: georgia, times, serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.i-box{
+    margin: 1rem 0rem;
+}
+.name-box{
+    display: flex;
+    gap:2rem;
+    margin: 1rem 0rem;
+}
+.loc{
+    font-size: 0.9rem;
+    color: rgb(48, 48, 246);
+}
+.loc:hover{
+    text-decoration: underline;
+}
+.save-btn{
+    margin: 2rem 0rem;
+    color: white;
+    background-color: black;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.7rem 2rem;
+}
+.options{
+    margin-top:1rem;
+}
+.place-order{
+    width: 20rem;
+    margin-top: 3.7rem;
+    margin-left: 8rem;
+}
+.place-main{
+    border: 1px solid rgb(213, 201, 201);
+    padding: 0.5rem;
+    margin: 0.5rem ;
+}
+.td1{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+}
+.td1-1:hover{
+   text-decoration: underline;
+}
+.td2{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    line-height: 3rem; 
+    font-weight: 600;
+}
+.td3{
+    font-size: 0.8rem;
+}
+.p-coupon{
+    margin: 1rem 0.5rem;
+}
+.cc-p{
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    padding: 0.5rem 0rem;
+}
+.c-btn{
+    border: 2px solid black;
+    border-radius: 2rem;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0.3rem 0rem;
+    width: 16rem;
+    margin: 0.5rem 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.place-btn{
+    margin: 1rem 1rem;
+    color: grey;
+    background-color: rgb(242, 241, 241);
+    border-radius: 2rem;
+    font-weight: 600;
+    width: 16rem;
+    padding: 0.7rem 2rem;
+}
+.c-footer{
+    background-color: black;
+    color: white;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+    font-size: 0.8rem;
+}
+.f-box{
+    margin-left: 35%;
+    display: flex;
+    line-height: 1.5rem;
+    gap: 1rem;
+}
+.f-link:hover{
+    text-decoration: underline;
+}
