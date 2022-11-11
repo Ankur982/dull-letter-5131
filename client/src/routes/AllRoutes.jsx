@@ -13,7 +13,8 @@ import Cart from "../pages/cart/Cart";
 import Checkout from "../pages/checkoutPage/Checkout";
 import MyWishlist from "../pages/my-wishlist/MyWishlist";
 import SingleProduct from "../pages/SingleProduct/SingleProduct";
-import Products from "../pages/Admin/Products";
+import Product from "../pages/product/product";
+
 
 export default function AllRoutes() {
   return (
@@ -60,7 +61,7 @@ export default function AllRoutes() {
           element={
             <>
               <Navbar />
-              <Products />
+              <Product />
               <Footer />
             </>
           }
