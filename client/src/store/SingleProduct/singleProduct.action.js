@@ -8,7 +8,9 @@ import {
 export const getSingleProduct = (id) => async (dispatch) => {
   dispatch({ type: GET_SINGLEPRODUCT_LOADING });
   try {
-    let response = await axios.get(`http://localhost:8080/${id}`);
+    let response = await axios.get(
+      `https://makeup-api.herokuapp.com/api/v1/products.json`
+    );
     dispatch({
       type: GET_SINGLEPRODUCT_SUCCESS,
       payload: response.data,
