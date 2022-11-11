@@ -1,34 +1,31 @@
 import {
-  GET_SINGLEPRODUCT_ERROR,
-  GET_SINGLEPRODUCT_LOADING,
-  GET_SINGLEPRODUCT_SUCCESS,
-} from "./singleProduct.types";
+  GET_ADMIN_PRODUCT_ERROR,
+  GET_ADMIN_PRODUCT_LOADING,
+  GET_ADMIN_PRODUCT_SUCCESS,
+} from "./adminProduct.types";
 
 const initalState = {
   loading: false,
   error: false,
-  data: {},
+  data: [],
 };
 
-export const singleProductReducer = (
-  state = initalState,
-  { type, payload }
-) => {
+export const adminProductReducer = (state = initalState, { type, payload }) => {
   switch (type) {
-    case GET_SINGLEPRODUCT_LOADING: {
+    case GET_ADMIN_PRODUCT_LOADING: {
       return {
         ...state,
         loading: true,
       };
     }
-    case GET_SINGLEPRODUCT_ERROR: {
+    case GET_ADMIN_PRODUCT_ERROR: {
       return {
         ...state,
         loading: false,
         error: true,
       };
     }
-    case GET_SINGLEPRODUCT_SUCCESS: {
+    case GET_ADMIN_PRODUCT_SUCCESS: {
       return {
         ...state,
         loading: false,

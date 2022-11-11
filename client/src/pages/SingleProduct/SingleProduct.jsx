@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   Box,
   Button,
+  Center,
   Flex,
   Image,
   Radio,
   RadioGroup,
+  Spinner,
   Stack,
   Text,
   useMediaQuery,
@@ -23,13 +25,23 @@ function SingleProduct() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { loading, error, data } = useSelector((store) => store.singleProduct);
-
+  console.log(data);
   useEffect(() => {
-    dispatch(getSingleProduct(id));
+    dispatch(getSingleProduct());
   }, [id]);
 
   // if (loading) {
-  //   return <h3>Loading ...</h3>;
+  //   return (
+  //     <Center h="500px">
+  //       <Spinner
+  //         thickness="4px"
+  //         speed="0.65s"
+  //         emptyColor="gray.200"
+  //         color="blue.500"
+  //         size="xl"
+  //       />
+  //     </Center>
+  //   );
   // }
 
   // if (error) {
