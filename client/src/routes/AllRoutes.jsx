@@ -14,6 +14,7 @@ import Checkout from "../pages/checkoutPage/Checkout";
 import MyWishlist from "../pages/my-wishlist/MyWishlist";
 import SingleProduct from "../pages/SingleProduct/SingleProduct";
 import Product from "../pages/product/product";
+import MyAccounts from "../components/my-accounts/MyAccounts";
 
 
 export default function AllRoutes() {
@@ -52,6 +53,16 @@ export default function AllRoutes() {
             <>
               <Navbar />
               <MyWishlist />
+              <Footer />
+            </>
+          }
+        />
+          <Route
+          path="/myaccounts"
+          element={
+            <>
+              <Navbar />
+              <MyAccounts />
               <Footer />
             </>
           }

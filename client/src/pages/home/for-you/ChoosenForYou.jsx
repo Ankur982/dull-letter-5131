@@ -146,7 +146,7 @@ const ChoosenForYou = () => {
     >
       {items.map((item, index) => {
         return (
-          <div className="choose_item">
+          <div className="choose_item" key={item.image}>
           <div className="choose_item_img_box">
             <img alt="test product" src={item.image} />
             <button className='choose_item_img_btn'><Heading  as='h6' size='xs' p="5px" >
