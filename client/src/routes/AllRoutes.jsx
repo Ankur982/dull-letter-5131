@@ -48,7 +48,7 @@ export default function AllRoutes() {
           element={
             <>
               <Navbar />
-              <MyWishlist />
+              <Product />
               <Footer />
             </>
           }

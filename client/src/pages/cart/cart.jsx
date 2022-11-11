@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, SimpleGrid,Text } from '@chakra-ui/react';
 import "./Cart.css"
 import Item from './Item';
@@ -7,6 +7,7 @@ import PaymentCard from './PaymentCard';
 import Giftcard from './Giftcard';
 
 const Cart = () => {
+  // const [ cartItem, setCardItem ] = useState([]);
   return (
           <SimpleGrid className='main-grid' columns={[1,null,1,2]} spacing={4}>
             <Box className='item-box'>
