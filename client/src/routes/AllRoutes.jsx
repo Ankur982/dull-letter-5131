@@ -14,6 +14,7 @@ import Checkout from "../pages/checkoutPage/Checkout";
 import MyWishlist from "../pages/my-wishlist/MyWishlist";
 import SingleProduct from "../pages/SingleProduct/SingleProduct";
 import Product from "../pages/product/Product";
+import ANavbar from "../pages/Admin/ANavbar";
 
 export default function AllRoutes() {
   return (
@@ -23,6 +24,7 @@ export default function AllRoutes() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/adminNavbar" element={<ANavbar/>}/>
         <Route
           path="/myoders"
           element={
