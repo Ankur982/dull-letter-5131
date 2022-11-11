@@ -36,6 +36,9 @@
 .choose_item_img_box>img{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .choose_item:hover .choose_item_img_btn{

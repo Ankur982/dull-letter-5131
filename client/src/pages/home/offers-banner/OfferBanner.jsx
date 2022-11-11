@@ -46,6 +46,7 @@ return (
       <img alt="test product" src="https://www.sephora.com/contentimages/2022-11-seasonal-services-wave3-holiday-site-desktop-mobile-home-page-rwd-marketing-banner-us-800x256.jpg?imwidth=400" />
     </div>
   </div>
+  
 </div>
 )
 }

@@ -1,0 +1,47 @@
+
+.guidance_container{
+    width: 85%;
+    display: flex;
+    margin: auto;
+}
+
+.guidance_box1{
+    text-align: start;
+    width: 25%;
+}
+
+.guidance_box2{
+    display: flex;
+    margin: auto;
+    gap: 8px;
+    width: 75%;
+    font-size: 15px;
+}
+
+.guidance_sub_box{
+    width: 14.2%;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgb(0 0 0 / 20%);
+    height: 130px;
+}
+
+.guidance_sub_box:nth-child(4){
+    width: 15%;
+}
+
+.guidance_sub_box:hover{
+    cursor: pointer;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.guidance_sub_box>img{
+    width: 50px;
+    display: flex;
+    margin: 20px 0px 0px 40px;
+    align-self: flex-end;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
