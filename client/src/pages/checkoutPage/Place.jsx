@@ -28,10 +28,6 @@ const Place = () => {
             <Text mb='0.5rem'>or <strong>afterpay 🛈</strong></Text>
             <Divider />
         </Box>
-        <Box className='p-coupon'>
-            <Text fontSize={"0.9rem"} mb='0.3rem' textAlign={"right"}>View featured offers</Text>
-            <Input type='text' placeholder='Promo or Reward Code' />
-        </Box>
         <Divider />
         <Box>
             <Text fontSize={'1rem'} fontWeight={700} textAlign='center' mt='0.5rem'>The Sephora Credit Card Program</Text>

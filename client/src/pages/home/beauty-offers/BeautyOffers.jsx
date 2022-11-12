@@ -89,7 +89,7 @@ const BeautyOffers = () => {
     >
       {items.map((item, index) => {
         return (
-          <div className="beauty_item">
+          <div className="beauty_item" key={item.image}>
           <div className="beauty_item_img_box">
             <img alt="test product" src={item.image} />
           </div>  
