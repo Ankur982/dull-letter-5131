@@ -14,6 +14,8 @@ const cartRoute = require("./routes/cart");
 
 const orderRoute = require("./routes/order");
 
+const wishlistRoute = require("./routes/wishlist")
+
 const stripeRoute = require("./routes/strip");
 
 const cors = require("cors");
@@ -36,6 +38,8 @@ app.use("/products", productRoute);
 app.use("/carts", cartRoute);
 
 app.use("/orders", orderRoute);
+
+app.use("wishlists", wishlistRoute)
 
 app.use("/checkout", stripeRoute);
 
