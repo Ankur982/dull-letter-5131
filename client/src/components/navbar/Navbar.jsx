@@ -1,3 +1,4 @@
+
 import { BellIcon, EmailIcon, Search2Icon } from "@chakra-ui/icons";
 import { Button, Heading, Link } from "@chakra-ui/react";
 import React from "react";
@@ -7,6 +8,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../context/UserAuthcontext";
 import "./Navbar.css";
+
 
 const Navbar = () => {
   const { user, logOut } = useUserAuth();

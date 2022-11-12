@@ -2,9 +2,12 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  Alert,
+  AlertIcon,
   Box,
   Button,
   Center,
+  color,
   Flex,
   Image,
   Radio,
@@ -13,9 +16,13 @@ import {
   Stack,
   Text,
   useMediaQuery,
+  useToast,
 } from "@chakra-ui/react";
 import AccordionComponent from "./AccordionComponent";
-import { getSingleProduct } from "../../store/SingleProduct/singleProduct.action";
+import {
+  addProductCart,
+  getSingleProduct,
+} from "../../store/SingleProduct/singleProduct.action";
 import { useEffect } from "react";
 import ReviewSection from "./ReviewSection";
 import Subcategory from "./Subcategory";
@@ -25,28 +32,51 @@ function SingleProduct() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { loading, error, data } = useSelector((store) => store.singleProduct);
-  console.log(data);
+  const toast = useToast();
+
   useEffect(() => {
     dispatch(getSingleProduct(id));
   }, [id]);
 
-  // if (loading) {
-  //   return (
-  //     <Center h="500px">
-  //       <Spinner
-  //         thickness="4px"
-  //         speed="0.65s"
-  //         emptyColor="gray.200"
-  //         color="blue.500"
-  //         size="xl"
-  //       />
-  //     </Center>
-  //   );
-  // }
+  const addToWishlist = () => {
+    console.log("hello");
+  };
 
-  // if (error) {
-  //   return <h3>Something Went Wrong !</h3>;
-  // }
+  const productData = {
+    productId: id,
+    quantity: 1,
+  };
+
+  const addToCart = (id) => {
+    let data = dispatch(addProductCart(productData))
+      .then((e) => {
+        toast({
+          title: "Product added to cart",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
+      })
+      .catch((err) => console.log(err));
+  };
+
+  if (loading) {
+    return (
+      <Center h="500px">
+        <Spinner
+          thickness="4px"
+          speed="0.65s"
+          emptyColor="gray.200"
+          color="blue.500"
+          size="xl"
+        />
+      </Center>
+    );
+  }
+
+  if (error) {
+    return <h3>Something Went Wrong !</h3>;
+  }
 
   return (
     <Stack>
@@ -56,21 +86,17 @@ function SingleProduct() {
         direction={isLargerThan600 ? "row" : "column"}
       >
         <Box width={isLargerThan600 ? "45%" : "100%"}>
-          <Image
-            m={"auto"}
-            w={"70%"}
-            src="https://www.sephora.com/productimages/sku/s2316172-main-zoom.jpg?imwidth=465"
-          />
+          <Image m={"auto"} w={"70%"} src={data.image_link} />
         </Box>
         <Box p={5} width={isLargerThan600 ? "45%" : "100%"}>
           <Box>
             <Text as="b" fontSize="14px">
-              Dior
+              {data.brand}
             </Text>
-            <Text fontSize="md">BACKSTAGE Face & Body Foundation</Text>
+            <Text fontSize="md">{data.name}</Text>
             <Box display={"flex"} mt={5}>
               <Box>
-                <Text as="b">$40.00 </Text>
+                <Text as="b">${data.price} </Text>
               </Box>
               <Text fontSize={"12px"} ml={1}>
                 or 4 payments of $13.50 with Klarna or afterpay
@@ -105,21 +131,42 @@ function SingleProduct() {
               </Box>
             </RadioGroup>
           </Box>
-          <Box mt={10}>
-            <Button
-              size={"lg"}
-              pl={20}
-              pr={20}
-              borderRadius={50}
-              fontSize="14px"
-              colorScheme="red"
-            >
-              Add to Basket <br /> for Standard Shipping{" "}
-            </Button>
-          </Box>
+          <Flex mt={10}>
+            <Box>
+              <Button
+                onClick={addToCart}
+                size={"lg"}
+                pl={20}
+                pr={20}
+                borderRadius={50}
+                fontSize="14px"
+                colorScheme="red"
+              >
+                Add to Basket <br /> for Standard Shipping{" "}
+              </Button>
+            </Box>
+            <Box ml={3} onClick={addToWishlist}>
+              <Image
+                width={50}
+                src="https://cdn-icons-png.flaticon.com/512/7777/7777990.png"
+                alt=""
+                className="search"
+              />
+            </Box>
+          </Flex>
         </Box>
       </Flex>
       <Box p={5} style={{ marginTop: "75px" }}>
+        <Box ml={3}>
+          <Text fontSize={"20px"} as="b">
+            Description
+          </Text>
+        </Box>
+        <Box ml={10} w="70%">
+          <Text noOfLines={[1, 2, 3]}>{data.description}</Text>
+        </Box>
+      </Box>
+      <Box p={5} style={{ marginTop: "30px" }}>
         <Box ml={3}>
           <Text fontSize={"20px"} as="b">
             About the Product
@@ -190,9 +237,7 @@ function SingleProduct() {
               Ratings & Reviews (2K)
             </Text>
           </Box>
-          <Box m={5}>
-            {/* <ReviewSection /> */}
-          </Box>
+          <Box m={5}>{/* <ReviewSection /> */}</Box>
         </Box>
       </Box>
       <Flex
