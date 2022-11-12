@@ -25,10 +25,17 @@ function SingleProduct() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { loading, error, data } = useSelector((store) => store.singleProduct);
-  console.log(data);
   useEffect(() => {
     dispatch(getSingleProduct(id));
   }, [id]);
+
+  const addToWishlist = () => {
+    console.log("hello");
+  };
+
+  const addToCart = () => {
+    console.log("hello");
+  };
 
   // if (loading) {
   //   return (
@@ -105,18 +112,29 @@ function SingleProduct() {
               </Box>
             </RadioGroup>
           </Box>
-          <Box mt={10}>
-            <Button
-              size={"lg"}
-              pl={20}
-              pr={20}
-              borderRadius={50}
-              fontSize="14px"
-              colorScheme="red"
-            >
-              Add to Basket <br /> for Standard Shipping{" "}
-            </Button>
-          </Box>
+          <Flex mt={10}>
+            <Box>
+              <Button
+                onClick={addToCart}
+                size={"lg"}
+                pl={20}
+                pr={20}
+                borderRadius={50}
+                fontSize="14px"
+                colorScheme="red"
+              >
+                Add to Basket <br /> for Standard Shipping{" "}
+              </Button>
+            </Box>
+            <Box ml={3} onClick={addToWishlist}>
+              <Image
+                width={50}
+                src="https://cdn-icons-png.flaticon.com/512/7777/7777990.png"
+                alt=""
+                className="search"
+              />
+            </Box>
+          </Flex>
         </Box>
       </Flex>
       <Box p={5} style={{ marginTop: "75px" }}>
@@ -191,7 +209,7 @@ function SingleProduct() {
             </Text>
           </Box>
           <Box m={5}>
-            {/* <ReviewSection /> */}
+            <ReviewSection />
           </Box>
         </Box>
       </Box>

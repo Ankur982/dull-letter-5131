@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import Sidebar from "../../components/Sidebar";
 import ProductCard from "../../components/ProductCard";
-import { Box ,Flex, SimpleGrid} from '@chakra-ui/react'
+import { Box, Flex, SimpleGrid } from "@chakra-ui/react";
 import axios from "axios";
-import { MakeupObject } from '../../assets/sidebar.value';
+import { MakeupObject } from "../../assets/sidebar.value";
+import { Link } from "react-router-dom";
 
 const Product = () => {
   const [makeup, setMakeup] = useState([]);
@@ -25,16 +26,20 @@ const Product = () => {
           <SimpleGrid columns={[1, 2, 3, 3, 4]} spacing="10" mt="5" mb="5">
             {makeup &&
               makeup.map((el, index) => (
-                <ProductCard
-                  key={el.id}
-                  id={el.id}
-                  image={el.image_link}
-                  name={el.name}
-                  brand={el.brand}
-                  colors={el.product_colors}
-                  price={el.price}
-                  rating={el.rating}
-                />
+                <>
+                  <Link to={`/products/${el.id}`}>
+                    <ProductCard
+                      key={el.id}
+                      id={el.id}
+                      image={el.image_link}
+                      name={el.name}
+                      brand={el.brand}
+                      colors={el.product_colors}
+                      price={el.price}
+                      rating={el.rating}
+                    />
+                  </Link>
+                </>
               ))}
           </SimpleGrid>
         </Box>
