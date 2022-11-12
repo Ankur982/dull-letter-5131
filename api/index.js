@@ -1,12 +1,35 @@
-const express = require('express')
+const express = require('express');
+
+const mongoose = require("mongoose");
+
+const dotenv = require("dotenv");
+
+const authRoute = require("./routes/auth")
+
+const userRoute = require("./routes/user")
+const productRoute = require("./routes/product")
+
+dotenv.config();
 
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get('/', (req,res) => res.send('hello'));
+app.use("/auth" , authRoute);
 
-app.listen(8080, () => { 
+app.use("/users", userRoute);
+
+app.use("/products", productRoute);
+
+mongoose.connect( process.env.MONGO_URL )
+.then(()=>{
+    console.log("DB connection successfull")
+})
+.catch((err)=>{
+    console.log(err)
+});
+
+app.listen( process.env.PORT || 8080, () => { 
     console.log('server started on port 8080');
 });
