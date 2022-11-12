@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const CartItem = ({name,image,price,brand,product_id}) => {
     const [quantity,setQuantity]  = useState(1);
-    console.log(typeof(quantity));
+    // console.log(typeof(quantity));
     const handleChange = (e) =>{
         setQuantity(e.target.value);
     }
