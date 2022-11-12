@@ -27,7 +27,7 @@ const Product = () => {
             {makeup &&
               makeup.map((el, index) => (
                 <>
-                  <Link to={`/products/${el.id}`}>
+                  <Link to={`/products/${el._id}`}>
                     <ProductCard
                       key={el.id}
                       id={el.id}

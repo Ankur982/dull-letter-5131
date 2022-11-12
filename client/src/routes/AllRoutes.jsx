@@ -11,10 +11,9 @@ import Home from "../pages/home/Home";
 import MyOrder from "../pages/my-orders/MyOrder";
 import MyWishlist from "../pages/my-wishlist/MyWishlist";
 import Product from "../pages/product/product";
-import SingleProduct from "../pages/SingleProduct/SingleProduct";
 import MyAccounts from "../components/my-accounts/MyAccounts";
 import Dashboard from "../components/Dashboard";
-
+import SingleProduct from "../pages/SingleProduct/SingleProduct";
 
 export default function AllRoutes() {
   return (
@@ -64,14 +63,14 @@ export default function AllRoutes() {
             </>
           }
         />
-        <Route
+        {/* <Route
           path="/admin"
           element={
             <>
               <AdminRoutes />
             </>
           }
-        />
+        /> */}
 
         {/* <Route path="/phonelogin" element={<Phonelogin />} /> */}
       </Routes>
