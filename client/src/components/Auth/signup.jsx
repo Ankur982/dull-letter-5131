@@ -1,4 +1,6 @@
 import React from 'react'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
     Flex,
     Box,
@@ -26,6 +28,8 @@ import { useUserAuth } from '../../context/UserAuthcontext';
 
 
 export default function Signup() {
+   const [fname,setfName]= useState("");
+   const [lname,setlName]= useState("")
     const [email,setEmail]= useState("");
     const [password,setPassword]= useState("");
     const [err,setErr]= useState("")
@@ -35,13 +39,69 @@ export default function Signup() {
 
     const handleSignup=async (e)=>{
      e.preventDefault()
-     setErr("")
+     if (!email || !password) {
+      toast.warn("Fields cant be empty !", {
+        position: "top-right",
+        theme: "colored",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    } else if (password.length < 6) {
+      toast.warn("Password should be of atleast 6 letters", {
+        position: "top-right",
+        autoClose: 1000,
+        theme: "colored",
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
      try{
-       await signUp(email,password)
-       Navigate("/login")
+      await signUp(email,password)
+      toast.success("Account created, redirecting to Login", {
+        position: "top-right",
+        autoClose: 1000,
+        theme: "colored",
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      const res=  await fetch("http://localhost:8080/auth/register",{
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body:JSON.stringify({
+           username:`${fname} ${lname}`,
+           email: email,
+           password: password
+        })
+      })
+      setTimeout(()=>{
+        Navigate("/login")
+      },1000)
+        
      }
      catch(e){
-     setErr(e.message)
+      toast.error("Wrong Credentials", {
+        position: "top-right",
+        autoClose: 1000,
+        theme: "colored",
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+
      }
 
 
@@ -53,13 +113,13 @@ export default function Signup() {
       align={'center'}
       justify={'center'}
       bg={'white'}>
-          {
+          {/* {
             err && <Alert status='error'>
             <AlertIcon />
             <AlertTitle>{err}</AlertTitle>
             <AlertDescription>Your Chakra experience may be degraded.</AlertDescription>
           </Alert>   
-          }
+          } */}
 
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
@@ -72,20 +132,20 @@ export default function Signup() {
           bg={useColorModeValue('white', 'gray.700')}
           boxShadow={'lg'}
           p={8}>
-              <form onSubmit={handleSignup}>
+              <form method='POST' onSubmit={handleSignup}>
           <Stack spacing={4}>
            
             <HStack>
               <Box>
                 <FormControl id="firstName" isRequired>
                   <FormLabel>First Name</FormLabel>
-                  <Input type="text" />
+                  <Input value={fname} onChange={e=>setfName(e.target.value)} type="text" />
                 </FormControl>
               </Box>
               <Box>
                 <FormControl id="lastName">
                   <FormLabel>Last Name</FormLabel>
-                  <Input type="text" />
+                  <Input value={lname} onChange={e=>setlName(e.target.value)} type="text" />
                 </FormControl>
               </Box>
             </HStack>
@@ -131,7 +191,7 @@ export default function Signup() {
          </form>
         </Box>
         
-      
+        <ToastContainer theme="colored" />
       </Stack>
     </Flex>
     </div>

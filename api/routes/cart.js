@@ -1,3 +1,4 @@
+const jwt = require("jsonwebtoken");
 const Cart = require("../models/Cart");
 const {
   verifyToken,
@@ -10,9 +11,21 @@ const router = require("express").Router();
 //CREATE
 
 router.post("/", verifyToken, async (req, res) => {
-  const newCart = new Cart(req.body);
+  const authHeader = req.headers.token;
+  const data = req.body;
 
   try {
+    let userData = jwt.verify(authHeader, process.env.JWT_SEC);
+    let productCart = {
+      userId: userData.id,
+      products: [
+        {
+          productId: data.productId,
+          quantity: data.quantity,
+        },
+      ],
+    };
+    const newCart = new Cart(productCart);
     const savedCart = await newCart.save();
     res.status(200).json(savedCart);
   } catch (err) {
