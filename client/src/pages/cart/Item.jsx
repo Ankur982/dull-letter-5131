@@ -8,10 +8,10 @@ const Item = () => {
     <Box>
         <Text className='head-basket'>My Basket</Text>
             <Box className='creditcard'>
-                <Text fontWeight={'700'} fontSize={'1rem'}>The RAAGS Credit Card Program</Text>
+                <Text fontWeight={'700'} fontSize={'1rem'}>The SEPHORA Credit Card Program</Text>
                 <Box className='credit-flex'>
                     <FaCreditCard size={'2rem'}/>
-                    <Text fontSize={'0.9rem'}>Save 25% on this order when you open and use either RAAGS Credit Card today*</Text>
+                    <Text fontSize={'0.9rem'}>Save 25% on this order when you open and use either SEPHORA Credit Card today*</Text>
                     <button className='credit-btn'>SEE DETAILS</button>
                 </Box>
                 <Text fontSize={'0.8rem'} color='gray.500'>*Subject to credit approval. Exclusions apply.</Text>

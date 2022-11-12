@@ -2,6 +2,7 @@
     margin: auto;
     justify-content: space-between;
     font-family: "Helvetica neue",Arial, Helvetica, sans-serif;
+    margin-bottom: 4rem;
 }
 .head-basket{
     font-size: 1.5rem;
@@ -118,7 +119,7 @@
 .td1{
     display: flex;
     justify-content: space-between;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.5rem;
 }
 .td1-1:hover{
