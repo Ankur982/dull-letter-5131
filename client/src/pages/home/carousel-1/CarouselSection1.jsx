@@ -52,7 +52,7 @@ const CarouselSection1 = () => {
     >
       {items.map((item, index) => {
         return (
-          <div className="card_item">
+          <div className="card_item" key={item.image}>
           <div className="card_item_img_box">
             <img alt="test product" src={item.image} />
           </div>  

@@ -14,7 +14,8 @@ import Checkout from "../pages/checkoutPage/Checkout";
 import MyWishlist from "../pages/my-wishlist/MyWishlist";
 import SingleProduct from "../pages/SingleProduct/SingleProduct";
 import Product from "../pages/product/Product";
-import ANavbar from "../pages/Admin/ANavbar";
+import MyAccounts from "../components/my-accounts/MyAccounts";
+
 
 export default function AllRoutes() {
   return (
@@ -22,9 +23,20 @@ export default function AllRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/adminNavbar" element={<ANavbar/>}/>
+        <Route path="/login" element={
+            <>
+              <Navbar />
+              <Login />
+              <Footer />
+            </>
+          } />
+        <Route path="/signup" element={
+           <>
+           <Navbar />
+           <Signup />
+           <Footer />
+         </>
+        } />
         <Route
           path="/myoders"
           element={
@@ -45,12 +57,22 @@ export default function AllRoutes() {
             </>
           }
         />
+          <Route
+          path="/myaccounts"
+          element={
+            <>
+              <Navbar />
+              <MyAccounts />
+              <Footer />
+            </>
+          }
+        />
         <Route
           path="/products"
           element={
             <>
               <Navbar />
-              <MyWishlist />
+              <Product />
               <Footer />
             </>
           }
@@ -65,14 +87,14 @@ export default function AllRoutes() {
             </>
           }
         />
-        <Route
+        {/* <Route
           path="/admin"
           element={
             <>
               <AdminRoutes />
             </>
           }
-        />
+        /> */}
 
         <Route
           path="/basket"
@@ -80,6 +102,7 @@ export default function AllRoutes() {
             <>
               <Navbar />
               <Cart />
+
               <Footer />
             </>
           }

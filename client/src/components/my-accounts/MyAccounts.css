@@ -1,0 +1,176 @@
+#my_account {
+    width: 1400px;
+    height: 119px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 16px 32px;
+}
+
+#my_acc_detail {
+    width: 668px;
+    height: 87px;
+    margin-top: 20px;
+    color: #2E3337;
+    margin-left: 20px;
+}
+
+.my_acc_btn {
+    width: 87px;
+    height: 44px;
+    margin-top: 50px;
+    background-color: #FFFFFF;
+    font-size: 14px;
+    margin-right: 20px;
+    color: #333333;
+    text-transform: uppercase;
+    text-align: center;
+    box-sizing: border-box;
+    border-style: solid;
+    background-color:#FFFFFF ;
+    text-decoration: none;
+}
+
+.hr_line {
+    width: 1400px;
+    top: 20px;
+    height: 1px;
+    margin-top: 10px;
+}
+
+.h1_lines {
+    font-weight: 200;
+}
+
+
+#acc_home {
+    display: flex;
+    width: 1400px;
+    height: 390px;
+    margin: auto;
+    padding: 16px 16px 40px;
+    color: #2E3337;
+}
+
+#acc_home_section,
+#acc_home_section1 {
+    width: 652px;
+    margin: auto;
+    margin: 0 16px;
+    color: #2E3337;
+
+    /* display: flex; */
+}
+
+.box_your_ref {
+    border: 1px solid;
+}
+
+.acc_home_section_box {
+    display: flex;
+    gap: 50px;
+}
+
+.section_txt {
+    text-align: center;
+    font-weight: 200;
+    font-size: 36px;
+}
+
+
+.view_details_btn {
+    width: 126px;
+    height: 42px;
+    display: block;
+    margin: auto;
+    padding: 12px;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-align: center;
+    box-sizing: border-box;
+    border-style: solid;
+    background-color: #333333;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+
+.view_details_btn:hover ,.my_acc_btn:hover {
+    cursor: pointer;
+    background-color: #6cbdb7;
+}
+
+.int_txt {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.acc_home_section_inner1 {
+    padding: 35px;
+}
+
+#view_details_btn2 {
+    margin-top: 20px;
+}
+
+.your_section {
+    width: 1400px;
+    color: #2E3337;
+    padding: 16px 16px 14px;
+    margin: auto;
+    
+}
+
+#customer_Service_section {
+    width: 300px;
+    height: 170px;
+    color: #2E3337;
+    border: 1px solid #2E3337;
+    margin: auto;
+    padding: 0, 16px;
+}
+
+.cust_section_icon {
+    width: 80px;
+    display: block;
+    margin: auto;
+}
+
+#Unavailable {
+    background-color: #f2f2f2;
+    padding: 10px 0;
+    margin-top: -0px;
+}
+
+.your_section_social{
+    width: 1400px;
+    color: #2E3337;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(auto,192px);
+    gap: 30px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+.your_section_box{
+    border: 1px solid ;
+    padding: 16px;
+}
+
+#contact_us_section{
+    width: 802px;
+    height: 160px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    margin-top: 32px;
+    border: 1px solid;
+    padding: 16px;
+    margin-bottom: 20px;
+  
+}
