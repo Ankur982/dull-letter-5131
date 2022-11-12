@@ -1,9 +1,7 @@
 const User = require("../models/User");
-const {
-  verifyToken,
-  verifyTokenAndAuthorization,
-  verifyTokenAndAdmin,
-} = require("./verifyToken");
+
+const fetchuser = require("./fetchuser");
+const { verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin } = require("./verifyToken");
 
 const router = require("express").Router();
 
@@ -54,19 +52,10 @@ router.get("/:id", verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
-//get all users
 
-// router.get("/", verifyTokenAndAdmin, async(req,res) => {
-//     try {
-//         const users = await User.find();
-
-//         res.status(200).json(users)
-//     } catch (err) {
-//         res.status(500).json(err)
-//     }
-// })
 
 //get latest 5 user APi: lh:8080/users/newusers?new=true or all get user
+
 
 router.get("/newusers", verifyTokenAndAdmin, async (req, res) => {
   const query = req.query.new;
@@ -108,4 +97,22 @@ router.get("/stats", verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
+
+//Get User Id by token
+
+router.post('/getuser', fetchuser, async(req,res) => {
+
+  try{
+    userId = req.user;
+    const user = await User.findById(userId).select("-password");
+
+    res.send(user);
+
+  } catch(err){
+    res.status(500).send("Internal Server Isues");
+  }
+});
+
+
 module.exports = router;
+
