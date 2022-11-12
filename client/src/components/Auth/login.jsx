@@ -46,7 +46,7 @@ async function signInGoogle(e){
   e.preventDefault()
   try{
   await googleSignIn();
-  navigate("/dashboard")
+  navigate("/")
   }catch(err){
       console.log(err.message)
   }
