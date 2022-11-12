@@ -87,14 +87,14 @@ export default function AllRoutes() {
             </>
           }
         />
-        <Route
+        {/* <Route
           path="/admin"
           element={
             <>
               <AdminRoutes />
             </>
           }
-        />
+        /> */}
 
         <Route
           path="/basket"
