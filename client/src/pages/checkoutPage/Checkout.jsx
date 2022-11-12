@@ -12,6 +12,7 @@ const Checkout = () => {
     const [street,setStreet] = useState("");
     const [zip,setZip] = useState("");
 
+
   return (
     <Box>
         <Box className='head-check'>

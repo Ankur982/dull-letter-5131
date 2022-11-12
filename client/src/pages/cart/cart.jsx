@@ -15,7 +15,7 @@ const Cart = () => {
   const { cartItems } = data;
   const navigate = useNavigate();
 
-  const totalSum = (cartitems) =>{
+  const totalSum = () =>{
     let t = cartItems.reduce(function (sum, elem, index, arr) {
       return sum + Number(elem.price);
     }, 0);
@@ -27,6 +27,10 @@ const Cart = () => {
   },[]);
 
   // console.log(total);
+
+  const removeFromCart =(id)=>{
+      let isExist = cartItems.find((item) => item.id === id);
+  }
  
   const checkout =()=>{
       navigate("/checkout");

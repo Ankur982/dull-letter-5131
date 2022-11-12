@@ -10,6 +10,10 @@ const PaymentCard = ({checkout,total}) => {
     const handleChange =(e) =>{
         setPromo(e.target.value);
     };
+
+    
+    //Promocode - FEST15 
+
     const ValidPromo =()=>{
         if(promo === 'FEST15'){
             total = (+total * (85/100)).toFixed(2);
@@ -20,7 +24,7 @@ const PaymentCard = ({checkout,total}) => {
     <Box>
         <Box className='total-details'>
             <Box className='td1'>
-                <Text>Merchandise Subtotal:</Text>
+                <Text>Merchandise Subtotal</Text>
                 <Text fontWeight={600}>$ {total}</Text>
             </Box>
             <Box className='td1'>
