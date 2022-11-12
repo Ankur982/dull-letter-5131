@@ -1,5 +1,6 @@
 import { BellIcon, EmailIcon, Search2Icon } from '@chakra-ui/icons';
-import { Heading, Link } from '@chakra-ui/react';
+import { Heading } from '@chakra-ui/react';
+import {Link } from "react-router-dom";
 import React from 'react';
 import "./Navbar.css"
 
@@ -320,8 +321,8 @@ return (
         <div>
             <img src="https://cdn-icons-png.flaticon.com/512/7174/7174950.png" alt="" class="search" />
             <img src="https://cdn-icons-png.flaticon.com/512/7777/7777990.png" alt="" class="search" />
-            <a href="addcart.html"> <img src="https://cdn-icons-png.flaticon.com/512/743/743131.png" alt=""
-                    class="search" /></a>
+            <Link to="/basket"> <img src="https://cdn-icons-png.flaticon.com/512/743/743131.png" alt="basket"
+                    class="search" /></Link>
         </div>
     </div>
     <div id="nav5">
