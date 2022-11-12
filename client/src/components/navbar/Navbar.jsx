@@ -86,7 +86,9 @@ return (
                                 <EmailIcon w={6} h={6} />
                             </div>
                         </div>
+                        <Link to="/login">
                         <button className='dropdown_container1_btn'>Join Now</button>
+                        </Link>
                         <div className='dropdown_container1_sub_box2'>
                             <div>
                                 <img src="https://www.sephora.com/contentimages/meganav/icons/community_home.jpg"
@@ -208,7 +210,8 @@ return (
                                     alt="img" />
                             </div>
                             <div>
-                                <h4>Orders</h4>
+                                
+                            <Link to="/myoders"><h4>Orders</h4></Link>
                                 <p>View & track online or pickup orders</p>
                             </div>
                         </div>
