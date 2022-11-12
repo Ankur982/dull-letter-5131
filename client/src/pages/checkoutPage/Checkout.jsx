@@ -1,10 +1,18 @@
 import { Box,Input,SimpleGrid,Text} from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./Checkout.css"
 import Place from './Place'
 
 const Checkout = () => {
+    const [address,setAddress] = useState([]);
+    const [fisrtname,setFirstname] = useState("");
+    const [lastname,setLastname] = useState("");
+    const [phone,setPhone] = useState("");
+    const [street,setStreet] = useState("");
+    const [zip,setZip] = useState("");
+
+
   return (
     <Box>
         <Box className='head-check'>

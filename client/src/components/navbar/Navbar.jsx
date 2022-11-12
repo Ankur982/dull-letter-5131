@@ -1,5 +1,6 @@
 import { BellIcon, EmailIcon, Search2Icon } from '@chakra-ui/icons';
-import { Heading, Link } from '@chakra-ui/react';
+import { Heading } from '@chakra-ui/react';
+import {Link } from "react-router-dom";
 import React from 'react';
 import "./Navbar.css"
 
