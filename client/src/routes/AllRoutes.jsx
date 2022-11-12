@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Login from "../components/Auth/login";
 // import Phonelogin from "../components/Auth/Phonelogin";
 import Signup from "../components/Auth/signup";
-import Dashboard from "../components/Dashboard";
+
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar";
 import AdminRoutes from "../pages/Admin/AdminRoutes";
@@ -13,7 +13,9 @@ import Cart from "../pages/cart/Cart";
 import Checkout from "../pages/checkoutPage/Checkout";
 import MyWishlist from "../pages/my-wishlist/MyWishlist";
 import SingleProduct from "../pages/SingleProduct/SingleProduct";
-import Product from "../pages/product/Product";
+import Product from "../pages/product/product";
+import MyAccounts from "../components/my-accounts/MyAccounts";
+import Dashboard from "../components/Dashboard";
 
 
 export default function AllRoutes() {
@@ -56,6 +58,16 @@ export default function AllRoutes() {
             </>
           }
         />
+          <Route
+          path="/myaccounts"
+          element={
+            <>
+              <Navbar />
+              <MyAccounts />
+              <Footer />
+            </>
+          }
+        />
         <Route
           path="/products"
           element={
@@ -76,14 +88,14 @@ export default function AllRoutes() {
             </>
           }
         />
-        <Route
+        {/* <Route
           path="/admin"
           element={
             <>
               <AdminRoutes />
             </>
           }
-        />
+        /> */}
 
         <Route
           path="/basket"

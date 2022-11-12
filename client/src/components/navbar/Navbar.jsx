@@ -319,10 +319,10 @@ return (
             </div>
         </div>
         <div>
-            <img src="https://cdn-icons-png.flaticon.com/512/7174/7174950.png" alt="" class="search" />
-            <img src="https://cdn-icons-png.flaticon.com/512/7777/7777990.png" alt="" class="search" />
-            <Link to="/basket"> <img src="https://cdn-icons-png.flaticon.com/512/743/743131.png" alt="basket"
-                    class="search" /></Link>
+            <img src="https://cdn-icons-png.flaticon.com/512/7174/7174950.png" alt="" className="search" />
+            <img src="https://cdn-icons-png.flaticon.com/512/7777/7777990.png" alt="" className="search" />
+            <a href="addcart.html"> <img src="https://cdn-icons-png.flaticon.com/512/743/743131.png" alt=""
+                    className="search" /></a>
         </div>
     </div>
     <div id="nav5">
@@ -894,7 +894,7 @@ return (
     <div id="nav1" style={{backgroundColor:"#eeeeee"}}>
         <a href="" className='hover-item-li'>
             <h3 style={{backgroundColor:"#eeeeee"}}>Shipping is delayed due to high demand. Need it sooner? Buy Online,
-                Pick Up In Store or get Same-Day Delivery▸<i class="fa-solid fa-caret-right"></i></h3>
+                Pick Up In Store or get Same-Day Delivery▸<i className="fa-solid fa-caret-right"></i></h3>
         </a>
     </div>
 </>

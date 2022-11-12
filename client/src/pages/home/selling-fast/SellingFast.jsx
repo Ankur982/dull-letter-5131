@@ -144,7 +144,7 @@ const SellingFast = () => {
     >
       {items.map((item, index) => {
         return (
-          <div className="selling_item">
+          <div className="selling_item" key={item.image}>
           <div className="selling_item_img_box">
             <img alt="test product" src={item.image} />
             <button className='selling_item_img_btn'><Heading  as='h6' size='xs' p="5px" >
