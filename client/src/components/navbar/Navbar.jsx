@@ -4,6 +4,7 @@ import { Button, Heading, Link } from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../context/UserAuthcontext";
@@ -466,14 +467,14 @@ console.log("1",user)
             alt=""
             className="search"
           />
-          <a href="addcart.html">
+          <Link to="/basket">
             {" "}
             <img
               src="https://cdn-icons-png.flaticon.com/512/743/743131.png"
               alt=""
               className="search"
             />
-          </a>
+          </Link>
         </div>
       </div>
       <div id="nav5">
