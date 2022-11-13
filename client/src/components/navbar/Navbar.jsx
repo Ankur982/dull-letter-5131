@@ -10,16 +10,15 @@ import { useUserAuth } from "../../context/UserAuthcontext";
 import "./Navbar.css";
 
 
-const Navbar = () => {
-  const { user, logOut } = useUserAuth();
+  const Navbar = () => {
+  const {user, logOut } = useUserAuth();
   const [auth,setAuth]= useState(false)
   const Navigate = useNavigate();
 useEffect(()=>{
-if(user)
-{
-    setAuth(true)
-}
+  user ? setAuth(true): setAuth(false)
 },[user])
+
+console.log("auth",auth)
 console.log("1",user)
 
   function routeLogin() {
@@ -240,8 +239,9 @@ console.log("1",user)
               <Button>{user.email}</Button>
             </p> */}
                <p id="btn">
-                 {(auth)?<Button variant="ghost" onClick={routeLogin}>Sign In</Button>:
-               <Button variant="ghost" onClick={routeLogin}>Sign Out</Button>}
+                 {(!auth)?
+                 <Button variant="ghost" onClick={routeLogin}>Sign In</Button>:
+               <Button variant="ghost" onClick={handleLogout}>Sign Out</Button>}
              </p>
             
             <div className="dropdown-content" style={{ marginTop: "510px" }}>
@@ -445,12 +445,12 @@ console.log("1",user)
                   </div>
                 </div>
                 <hr style={{ margin: "5px 0" }} />
-                <button
+                {/* <button
                   onClick={handleLogout}
                   className="dropdown_container1_btn"
                 >
                   Sign Out
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
