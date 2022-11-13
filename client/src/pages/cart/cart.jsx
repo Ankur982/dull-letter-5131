@@ -32,6 +32,7 @@ const Cart = () => {
       let isExist = cartItems.find((item) => item.id === id);
   }
  
+  
   const checkout =()=>{
       navigate("/checkout");
   }
