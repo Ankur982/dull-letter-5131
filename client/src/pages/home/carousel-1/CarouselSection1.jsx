@@ -1,8 +1,9 @@
-import { Heading, Link, Text } from '@chakra-ui/react';
+import { Heading, Text } from '@chakra-ui/react';
 import React, { useState } from 'react'
 import ItemsCarousel from "react-items-carousel";
 import "./CarouselSection1.css";
 import { ChevronRightIcon, AddIcon, WarningIcon, ChevronLeftIcon } from '@chakra-ui/icons'
+import {Link} from "react-router-dom"
 
 const CarouselSection1 = () => {
 
@@ -52,7 +53,7 @@ const CarouselSection1 = () => {
     >
       {items.map((item, index) => {
         return (
-          <div className="card_item" key={item.image}>
+          <Link to="/products"><div className="card_item" key={item.image}>
           <div className="card_item_img_box">
             <img alt="test product" src={item.image} />
           </div>  
@@ -64,6 +65,7 @@ const CarouselSection1 = () => {
             <button> <Link to="#">SHOP NOW▸</Link></button>
           </div>
           </div>
+          </Link>
         );
       })}
     </ItemsCarousel>
