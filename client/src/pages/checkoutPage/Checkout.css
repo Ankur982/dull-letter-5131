@@ -95,6 +95,7 @@
     margin: 1rem 1rem;
     color: grey;
     background-color: rgb(242, 241, 241);
+    border: 2px solid black;
     border-radius: 2rem;
     font-weight: 600;
     width: 16rem;

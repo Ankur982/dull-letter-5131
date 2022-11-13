@@ -8,7 +8,7 @@ const Place = () => {
     <Box className='place-main'>
         <Box className='td1'>
             <Text>Merchandise Subtotal</Text>
-            <Text fontWeight={600}>$15.00</Text>
+            <Text fontWeight={600}>$00.00</Text>
         </Box>
         <Box className='td1'>
             <Link to='#'><Text className='td1-1'>Shipping & Handling 🛈</Text></Link>
@@ -21,7 +21,7 @@ const Place = () => {
         <hr style={{border:"1px solid black"}} />
         <Box className='td2'>
             <Text>Estimated Total</Text>
-            <Text>$15.00</Text>
+            <Text>$00.00</Text>
         </Box>
         <Box className='td3'>
             <Text>or payments of $6.75 with <strong>Klarna.</strong></Text>
