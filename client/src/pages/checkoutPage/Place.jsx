@@ -8,7 +8,7 @@ const Place = () => {
     <Box className='place-main'>
         <Box className='td1'>
             <Text>Merchandise Subtotal</Text>
-            <Text fontWeight={600}>$15.00</Text>
+            <Text fontWeight={600}>$60.35</Text>
         </Box>
         <Box className='td1'>
             <Link to='#'><Text className='td1-1'>Shipping & Handling 🛈</Text></Link>

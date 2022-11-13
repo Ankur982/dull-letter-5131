@@ -6,9 +6,6 @@ import {
   GET_SINGLEPRODUCT_SUCCESS,
 } from "./singleProduct.types";
 
-
-
-
 const config = {
   headers: {
     token: JSON.parse(localStorage.getItem("token")),
@@ -16,11 +13,12 @@ const config = {
 };
 
 export const getSingleProduct = (id) => async (dispatch) => {
-
-
   dispatch({ type: GET_SINGLEPRODUCT_LOADING });
+
   try {
-    let response = await axios.get(`http://localhost:8080/products/find/${id}`);
+    let response = await axios.get(
+      `https://sephorabackend-production.up.railway.app/products/find/${id}`
+    );
     dispatch({
       type: GET_SINGLEPRODUCT_SUCCESS,
       payload: response.data,
@@ -36,7 +34,7 @@ export const getSingleProduct = (id) => async (dispatch) => {
 export const addProductCart = (data) => async (dispatch) => {
   try {
     let response = await axios.post(
-      "http://localhost:8080/carts",
+      "https://sephorabackend-production.up.railway.app/carts",
       data,
       config
     );

@@ -8,7 +8,9 @@ import {
 export const getAllOrders = () => async (dispatch) => {
   dispatch({ type: GET_ALL_ORDERS_LOADING });
   try {
-    let response = await axios.get("http://localhost:8080/orders");
+    let response = await axios.get(
+      "https://sephorabackend-production.up.railway.app/orders"
+    );
     dispatch({
       type: GET_ALL_ORDERS_SUCCESS,
       payload: response.data,

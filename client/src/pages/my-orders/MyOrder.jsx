@@ -1,5 +1,13 @@
 import React, { useEffect } from "react";
-import { Box, Button, ButtonGroup, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Heading,
+  Image,
+  SimpleGrid,
+  Text,
+} from "@chakra-ui/react";
 import { useState } from "react";
 import "./MyOrder.css";
 import { AiFillHeart } from "react-icons/ai";
@@ -30,18 +38,19 @@ const MyOrder = () => {
     getUserId();
   }, []);
 
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNmZkYzNhMjgwNDcxNjRhOTI3YWVlYSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NjgyODMxMDAsImV4cCI6MTY2ODU0MjMwMH0.ly2JOwCkBcA3GdHviu7E8lFCm8fgyWE_QfLE6HLDUmA";
+  const token = JSON.parse(localStorage.getItem("token"))||null;
 
-
-      const handleProductDetails = (id) => {
-    fetch(`http://localhost:8080/products/find/${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        token: token,
-      },
-    })
+  const handleProductDetails = (id) => {
+    fetch(
+      `https://sephorabackend-production.up.railway.app/products/find/${id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          token: token,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setDetails(data);
@@ -51,9 +60,8 @@ const MyOrder = () => {
       });
   };
 
-
   const getUserId = () => {
-    fetch("http://localhost:8080/users/getuser", {
+    fetch("https://sephorabackend-production.up.railway.app/users/getuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -70,13 +78,16 @@ const MyOrder = () => {
   };
 
   const getOrderData = (id) => {
-    fetch(`http://localhost:8080/orders/find/${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        token: token,
-      },
-    })
+    fetch(
+      `https://sephorabackend-production.up.railway.app/orders/find/${id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          token: token,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setOrderList(data);
@@ -89,12 +100,15 @@ const MyOrder = () => {
 
   const getItem = (id) => {
     console.log(id);
-    fetch(`http://localhost:8080/products/find/${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    fetch(
+      `https://sephorabackend-production.up.railway.app/products/find/${id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -166,23 +180,28 @@ const MyOrder = () => {
                 </div>
               ))}
               <div>
-
-              <Heading as='h3' size='lg' textAlign='center' m='40px'> Order Products Details </Heading>
+                <Heading as="h3" size="lg" textAlign="center" m="40px">
+                  {" "}
+                  Order Products Details{" "}
+                </Heading>
                 {orderArray &&
                   orderArray.map((e) => (
-                    <div key={e._id} style={{
-                      display: "flex",
-                      gap:"100px",
-                      textAlign:"start",
-                      margin:"auto",
-                      marginTop: "20px",
-                    }}>
+                    <div
+                      key={e._id}
+                      style={{
+                        display: "flex",
+                        gap: "100px",
+                        textAlign: "start",
+                        margin: "auto",
+                        marginTop: "20px",
+                      }}
+                    >
                       <div
                         style={{
                           display: "flex",
                           gap: "50px",
                           textAlign: "center",
-                          marginLeft:"350px"
+                          marginLeft: "350px",
                         }}
                       >
                         <h1>Product Id: {e._id}</h1>

@@ -1,26 +1,24 @@
-
 import { BellIcon, EmailIcon, Search2Icon } from "@chakra-ui/icons";
 import { Button, Heading } from "@chakra-ui/react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 
-import { useNavigate ,Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../context/UserAuthcontext";
 import "./Navbar.css";
 
-
-  const Navbar = () => {
-  const {user, logOut } = useUserAuth();
-  const [auth,setAuth]= useState(false)
+const Navbar = () => {
+  const { user, logOut } = useUserAuth();
+  const [auth, setAuth] = useState(false);
   const Navigate = useNavigate();
-useEffect(()=>{
-  user ? setAuth(true): setAuth(false)
-},[user])
+  useEffect(() => {
+    user ? setAuth(true) : setAuth(false);
+  }, [user]);
 
-console.log("auth",auth)
-console.log("1",user)
+  console.log("auth", auth);
+  console.log("1", user);
 
   function routeLogin() {
     Navigate("/login");
@@ -34,7 +32,7 @@ console.log("1",user)
       console.log(e.message);
     }
   };
-//   console.log(user.email);
+  //   console.log(user.email);
   return (
     <>
       <div id="nav1">
@@ -49,7 +47,9 @@ console.log("1",user)
       </div>
       <div id="nav2">
         <div>
-          <p><Link to="/">SEPHORA</Link></p> 
+          <p>
+            <Link to="/">SEPHORA</Link>
+          </p>
           <input type="text" name="" id="" placeholder="🔍 Search" />
           <div className="dropdown">
             <span>
@@ -235,16 +235,22 @@ console.log("1",user)
                 alt=""
               />
             </span>
-{/*          
+            {/*          
               <p id="btn">
               <Button>{user.email}</Button>
             </p> */}
-               <p id="btn">
-                 {(!auth)?
-                 <Button variant="ghost" onClick={routeLogin}>Sign In</Button>:
-               <Button variant="ghost" onClick={handleLogout}>Sign Out</Button>}
-             </p>
-            
+            <p id="btn">
+              {!auth ? (
+                <Button variant="ghost" onClick={routeLogin}>
+                  Sign In
+                </Button>
+              ) : (
+                <Button variant="ghost" onClick={handleLogout}>
+                  Sign Out
+                </Button>
+              )}
+            </p>
+
             <div className="dropdown-content" style={{ marginTop: "510px" }}>
               <div className="dropdown_container1">
                 <div className="dropdown_container1_box">
@@ -259,7 +265,7 @@ console.log("1",user)
                       />
                     </div>
                     <div>
-                      <h4>Hello {(auth)? user?.email: "Guest"} 🎉</h4>
+                      <h4>Hello {auth ? user?.email : "Guest"} 🎉</h4>
                     </div>
                   </div>
                 </div>
@@ -315,7 +321,9 @@ console.log("1",user)
                     />
                   </div>
                   <div>
-                    <h4><Link to="/myorders">Orders</Link></h4>
+                    <h4>
+                      <Link to="/myorders">Orders</Link>
+                    </h4>
                     <p>View & track online or pickup orders</p>
                   </div>
                 </div>
@@ -343,7 +351,9 @@ console.log("1",user)
                     />
                   </div>
                   <div>
-                    <h4><Link to="/mywishlists">Loves</Link></h4>
+                    <h4>
+                      <Link to="/mywishlists">Loves</Link>
+                    </h4>
                     <p>View saved products</p>
                   </div>
                 </div>
@@ -357,7 +367,9 @@ console.log("1",user)
                     />
                   </div>
                   <div>
-                    <h4><Link to="/myaccount">Account Settings</Link></h4>
+                    <h4>
+                      <Link to="/myaccount">Account Settings</Link>
+                    </h4>
                     <p>Payment, contact info, addresses, password</p>
                   </div>
                 </div>
@@ -685,179 +697,234 @@ console.log("1",user)
               </ul>
             </div>
           </li>
-          <li><Link to="/products"><a href="">Makeup</a></Link>
-                <div>
-                    <ul>
-                        <li><Link to="/products"><a href="" className='hover-item-li'>All Makeup</a></Link></li>
-                        <li><Link to="/products/face"><a href="" className='hover-item-li'>Face</a></Link></li>
-                        <li><Link to="/products/face"><a href="">Foundation</a></Link></li>
-                        <li><Link to="/products/face"><a href="">BB & CC Creams</a></Link></li>
-                        <li><Link to="/products/face"><a href="">Tinted Moisturizer</a></Link></li>
-                        <li><Link to="/products/face"><a href="">Concealer</a></Link></li>
-                        <li><Link to="/products/face"><a href="">Face Printer</a></Link></li>
-                        <li><Link to="/products/face"><a href="">Setting Spray & Powder</a></Link></li>
-                        <li><Link to="/products/face"><a href="">Highlighter</a></Link></li>
-                        <li><Link to="/products/face"><a href="">Contour</a></Link></li>
-                        <li><Link to="/products/face"><a href="">Color Correct</a></Link></li>
-                        <li><Link to="/products/face"><a href="">Face Sets</a></Link></li>
-                    </ul>
+          <li>
+            <Link to="/products">
+              <a href="">Makeup</a>
+            </Link>
+            <div>
               <ul>
                 <li>
-                <Link to="/products/eye">
-                  <a href="" className="hover-item-li">
-                    Eye
-                  </a>
+                  <Link to="/products">
+                    <a href="" className="hover-item-li">
+                      All Makeup
+                    </a>
                   </Link>
                 </li>
                 <li>
-                <Link to="/products/eye">
-                  <a href="">Eye Palettes</a>
+                  <Link to="/products/face">
+                    <a href="" className="hover-item-li">
+                      Face
+                    </a>
                   </Link>
                 </li>
                 <li>
-                <Link to="/products/eye">
-                  <a href="">Mascara</a>
+                  <Link to="/products/face">
+                    <a href="">Foundation</a>
                   </Link>
                 </li>
                 <li>
-                <Link to="/products/eye">
-                  <a href="">Eyeliner</a>
+                  <Link to="/products/face">
+                    <a href="">BB & CC Creams</a>
                   </Link>
                 </li>
                 <li>
-                <Link to="/products/eye">
-                  <a href="">Eyebrow</a>
+                  <Link to="/products/face">
+                    <a href="">Tinted Moisturizer</a>
                   </Link>
                 </li>
                 <li>
-                <Link to="/products/eye">
-                  <a href="">False EyeLashes</a>
+                  <Link to="/products/face">
+                    <a href="">Concealer</a>
                   </Link>
                 </li>
                 <li>
-                <Link to="/products/eye">
-                  <a href="">Face Printer</a>
+                  <Link to="/products/face">
+                    <a href="">Face Printer</a>
                   </Link>
                 </li>
                 <li>
-                <Link to="/products/eye">
-                  <a href="">Eye Shadow</a>
+                  <Link to="/products/face">
+                    <a href="">Setting Spray & Powder</a>
                   </Link>
                 </li>
                 <li>
-                <Link to="/products/eye">
-                  <a href="">Eyelash Serums</a>
+                  <Link to="/products/face">
+                    <a href="">Highlighter</a>
                   </Link>
                 </li>
                 <li>
-                <Link to="/products/eye">
-                  <a href="">Eye Primer</a>
+                  <Link to="/products/face">
+                    <a href="">Contour</a>
                   </Link>
                 </li>
                 <li>
-                <Link to="/products/eye">
-                  <a href="">Eye Sets</a>
+                  <Link to="/products/face">
+                    <a href="">Color Correct</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products/face">
+                    <a href="">Face Sets</a>
                   </Link>
                 </li>
               </ul>
               <ul>
                 <li>
-                <Link to="/products/lip">
-                  <a href="" className="hover-item-li">
-                    Lip
-                  </a>
+                  <Link to="/products/eye">
+                    <a href="" className="hover-item-li">
+                      Eye
+                    </a>
                   </Link>
                 </li>
                 <li>
-                <Link to="/products/lip">
-                  <a href="">Lipstick</a>
+                  <Link to="/products/eye">
+                    <a href="">Eye Palettes</a>
                   </Link>
                 </li>
                 <li>
-                <Link to="/products/lip">
-                  <a href="">Lip Gloss</a>
+                  <Link to="/products/eye">
+                    <a href="">Mascara</a>
                   </Link>
                 </li>
                 <li>
-                <Link to="/products/lip">
-                  <a href="">Lip Balm & Treatment</a>
+                  <Link to="/products/eye">
+                    <a href="">Eyeliner</a>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/products/lip">
-                  <a href="">Liquid Lipstick</a>
+                  <Link to="/products/eye">
+                    <a href="">Eyebrow</a>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/products/lip">
-                  <a href="">Lip Stain</a>
+                  <Link to="/products/eye">
+                    <a href="">False EyeLashes</a>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/products/lip">
-                  <a href="">Lip Liner</a>
+                  <Link to="/products/eye">
+                    <a href="">Face Printer</a>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/products/lip">
-                  <a href="">Lip Plumper</a>
+                  <Link to="/products/eye">
+                    <a href="">Eye Shadow</a>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/products/lip">
-                  <a href="">Lip Sets</a>
+                  <Link to="/products/eye">
+                    <a href="">Eyelash Serums</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products/eye">
+                    <a href="">Eye Primer</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products/eye">
+                    <a href="">Eye Sets</a>
                   </Link>
                 </li>
               </ul>
               <ul>
                 <li>
-                <Link to="/products/cheek">
-                  <a href="" className="hover-item-li">
-                    Cheek
-                  </a>
+                  <Link to="/products/lip">
+                    <a href="" className="hover-item-li">
+                      Lip
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products/lip">
+                    <a href="">Lipstick</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products/lip">
+                    <a href="">Lip Gloss</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products/lip">
+                    <a href="">Lip Balm & Treatment</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products/lip">
+                    <a href="">Liquid Lipstick</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products/lip">
+                    <a href="">Lip Stain</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products/lip">
+                    <a href="">Lip Liner</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products/lip">
+                    <a href="">Lip Plumper</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products/lip">
+                    <a href="">Lip Sets</a>
+                  </Link>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <Link to="/products/cheek">
+                    <a href="" className="hover-item-li">
+                      Cheek
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link to="/products/cheek">
-                  <a href="">Blush</a>
+                    <a href="">Blush</a>
                   </Link>
                 </li>
                 <li>
                   <Link to="/products/cheek">
-                  <a href="">Bronzer</a>
+                    <a href="">Bronzer</a>
                   </Link>
                 </li>
                 <li>
                   <Link to="/products/cheek">
-                  <a href="">Cheek Palettes</a>
+                    <a href="">Cheek Palettes</a>
                   </Link>
                 </li>
                 <li>
                   <Link to="/products/cheek">
-                  <a href="" className="hover-item-li">
-                    Value & Gift Sets
-                  </a>
+                    <a href="" className="hover-item-li">
+                      Value & Gift Sets
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link to="/products/cheek">
-                  <a href="" className="hover-item-li">
-                    Makeup Palettes
-                  </a>
+                    <a href="" className="hover-item-li">
+                      Makeup Palettes
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link to="/products/cheek">
-                  <a href="" className="hover-item-li">
-                    Brushes and Applicators
-                  </a>
+                    <a href="" className="hover-item-li">
+                      Brushes and Applicators
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link to="/products/cheek">
-                  <a href="" className="hover-item-li">
-                    Accessories
-                  </a>
+                    <a href="" className="hover-item-li">
+                      Accessories
+                    </a>
                   </Link>
                 </li>
                 <li>

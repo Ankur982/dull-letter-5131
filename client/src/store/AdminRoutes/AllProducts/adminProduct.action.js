@@ -8,7 +8,9 @@ import {
 export const getAdminProducts = () => async (dispatch) => {
   dispatch({ type: GET_ADMIN_PRODUCT_LOADING });
   try {
-    let response = await axios.get("http://localhost:8080/products");
+    let response = await axios.get(
+      "https://sephorabackend-production.up.railway.app/products/"
+    );
     dispatch({
       type: GET_ADMIN_PRODUCT_SUCCESS,
       payload: response.data,
