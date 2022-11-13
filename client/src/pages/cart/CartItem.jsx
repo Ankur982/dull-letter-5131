@@ -3,11 +3,12 @@ import "./Cart.css";
 import {Box,Text,Button,Image, Select } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-const CartItem = ({name,image,price,brand,product_id,quantity}) => {
-  
-    // const handleChange = (e) =>{
-    //     setQuantity(e.target.value);
-    // }
+const CartItem = ({name,image,price,brand,product_id}) => {
+    const [quantity,setQuantity]  = useState(1);
+    // console.log(typeof(quantity));
+    const handleChange = (e) =>{
+        setQuantity(e.target.value);
+    }
   return (
     <div>
         <Box className='sh-l2'>
@@ -29,15 +30,13 @@ const CartItem = ({name,image,price,brand,product_id,quantity}) => {
             </Box>
             <Box className='sh-l2-1-2'>
               <Box className='sh-btns'>
-                {/* <Select w='4.5rem' value={quantity} onChange={handleChange}>
+                <Select w='4.5rem' value={quantity} onChange={handleChange}>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
                   <option>4</option>
                   <option>5</option>
-                </Select> */}
-                <Button size={"sm"}>+</Button>
-                <Button size={'sm'}>-</Button>
+                </Select>
                 <Button size={'sm'} variant='link' color={'blue'}>Move to Loves</Button>
                 <Button size={'sm'} variant='link' color={'blue'}>Remove</Button>
               </Box>

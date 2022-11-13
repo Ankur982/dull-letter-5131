@@ -1,6 +1,7 @@
 
 import { BellIcon, EmailIcon, Search2Icon } from "@chakra-ui/icons";
 import { Button, Heading } from "@chakra-ui/react";
+import { Link } from "react-router-dom"
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -314,7 +315,7 @@ console.log("1",user)
                     />
                   </div>
                   <div>
-                    <h4>Orders</h4>
+                    <h4><Link to="/myorders">Orders</Link></h4>
                     <p>View & track online or pickup orders</p>
                   </div>
                 </div>
@@ -342,7 +343,7 @@ console.log("1",user)
                     />
                   </div>
                   <div>
-                    <h4>Loves</h4>
+                    <h4><Link to="/mywishlists">Loves</Link></h4>
                     <p>View saved products</p>
                   </div>
                 </div>
@@ -356,7 +357,7 @@ console.log("1",user)
                     />
                   </div>
                   <div>
-                    <h4>Account Settings</h4>
+                    <h4><Link to="/myaccount">Account Settings</Link></h4>
                     <p>Payment, contact info, addresses, password</p>
                   </div>
                 </div>
@@ -466,14 +467,14 @@ console.log("1",user)
             alt=""
             className="search"
           />
-          <a href="addcart.html">
+          <Link to="/basket">
             {" "}
             <img
               src="https://cdn-icons-png.flaticon.com/512/743/743131.png"
               alt=""
               className="search"
             />
-          </a>
+          </Link>
         </div>
       </div>
       <div id="nav5">

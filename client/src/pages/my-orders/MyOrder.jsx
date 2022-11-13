@@ -1,90 +1,114 @@
 import React, { useEffect } from "react";
-import { Button, ButtonGroup } from '@chakra-ui/react' 
+import { Box, Button, ButtonGroup, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import "./MyOrder.css";
+import { AiFillHeart } from "react-icons/ai";
+import { ModalComponent } from "../../components/Modal";
 const MyOrder = () => {
+  const [orderList, setOrderList] = useState();
+  const [isData, setIsData] = useState(false);
 
-    const [orderList, setOrderList] = useState();
-    const [isData, setIsData] = useState(false);
+  const [item, setitem] = useState();
+
+  const [orderArray, setOrderArray] = useState();
+
+  const [product, setProduct] = useState([]);
+
+  const [detail, setDetails] = useState();
+
+  console.log(orderList);
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedBox, setSelectedBox] = useState({});
+
+  const handleClick = (detail) => {
+    setIsModalVisible(true);
+    setSelectedBox(detail);
+  };
+
+  useEffect(() => {
+    getUserId();
+  }, []);
+
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNmZkYzNhMjgwNDcxNjRhOTI3YWVlYSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NjgyODMxMDAsImV4cCI6MTY2ODU0MjMwMH0.ly2JOwCkBcA3GdHviu7E8lFCm8fgyWE_QfLE6HLDUmA";
 
 
-    const [item, setitem] = useState()
+      const handleProductDetails = (id) => {
+    fetch(`http://localhost:8080/products/find/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: token,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setDetails(data);
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+      });
+  };
 
-    const [product , setProduct] = useState([])
-
-    console.log(orderList)
-
-    useEffect(() => {
-        getUserId();
-    }, []);
-
-
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNmZkYzNhMjgwNDcxNjRhOTI3YWVlYSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NjgyODMxMDAsImV4cCI6MTY2ODU0MjMwMH0.ly2JOwCkBcA3GdHviu7E8lFCm8fgyWE_QfLE6HLDUmA";
 
   const getUserId = () => {
     fetch("http://localhost:8080/users/getuser", {
-      method: "POST", 
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "token":token
-      }
+        token: token,
+      },
     })
       .then((res) => res.json())
       .then((data) => {
-        getOrderData(data._id)
+        getOrderData(data._id);
       })
       .catch((err) => {
         console.error("Error:", err);
       });
   };
 
-  const getOrderData= (id) => {
+  const getOrderData = (id) => {
     fetch(`http://localhost:8080/orders/find/${id}`, {
-      method: "GET", 
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "token":token
-      }
+        token: token,
+      },
     })
       .then((res) => res.json())
       .then((data) => {
-        setOrderList(data)
-        setIsData(true)
+        setOrderList(data);
+        setIsData(true);
       })
       .catch((err) => {
         console.error("Error:", err);
       });
   };
 
-  const getItem= (id) => {
-    console.log(id)
+  const getItem = (id) => {
+    console.log(id);
     fetch(`http://localhost:8080/products/find/${id}`, {
-      method: "GET", 
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
-      }
+      },
     })
       .then((res) => res.json())
       .then((data) => {
-        setProduct(data)
+        setProduct(data);
       })
       .catch((err) => {
         console.error("Error:", err);
       });
   };
 
+  const handleOrderDetails = (orderedItem) => {
+    setOrderArray(orderedItem);
+  };
 
- 
-
-  const handleOrderDetails = (orderedItem) =>{
-     orderedItem.map((e)=>{
-        getItem(e.productId)
-    })
-    
-  }
-
-
+  console.log(orderArray);
 
   return (
     <div style={{ marginBottom: "50px" }}>
@@ -114,24 +138,168 @@ const MyOrder = () => {
       <div className="your_section">
         <h1 className="section_txt">Active Orders</h1>
         <div id="your_order_section">
-            {
-                isData?
-            
+          {isData ? (
             <>
-            {orderList.map((e) => (
-              <div key={e._id} >
-                <div style={{display:"flex", gap:"50px", margin:"auto" , marginTop:"20px", textAlign:"center"}}>
+              {orderList.map((e) => (
+                <div key={e._id}>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "50px",
+                      margin: "auto",
+                      marginTop: "20px",
+                      textAlign: "center",
+                    }}
+                  >
                     <h1> Order Id: {e._id}</h1>
                     <p>Order Status: {e.status}</p>
                     <p>Order Amount: {e.amount}</p>
                     <p>Order created at: {e.createdAt}</p>
-                    <Button colorScheme='teal' size='md' onClick={()=>handleOrderDetails(e.products)}>Check Details</Button>   
+                    <Button
+                      colorScheme="teal"
+                      size="md"
+                      onClick={() => handleOrderDetails(e.products)}
+                    >
+                      Check Details
+                    </Button>
+                  </div>
                 </div>
-              </div> 
-            ))}
-          </>
-            :<p className="int_txt">You currently have no outstanding orders.</p>
-            }
+              ))}
+              <div>
+
+              <Heading as='h3' size='lg' textAlign='center' m='40px'> Order Products Details </Heading>
+                {orderArray &&
+                  orderArray.map((e) => (
+                    <div key={e._id} style={{
+                      display: "flex",
+                      gap:"100px",
+                      textAlign:"start",
+                      margin:"auto",
+                      marginTop: "20px",
+                    }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: "50px",
+                          textAlign: "center",
+                          marginLeft:"350px"
+                        }}
+                      >
+                        <h1>Product Id: {e._id}</h1>
+                        <p>Quantity: {e.quantity}</p>
+                      </div>
+                      <div>
+                        <Button
+                          colorScheme="teal"
+                          size="md"
+                          onClick={() => handleProductDetails(e.productId)}
+                        >
+                          Check Product Details
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+
+              {detail && (
+                <div>
+                  <SimpleGrid
+                    w={"90%"}
+                    columns={[1, 2, 3, 4]}
+                    padding={"10px"}
+                    spacing="20px"
+                    m="auto"
+                  >
+                    {
+                      <Box
+                        border={"1px solid rgb(169, 166, 166)"}
+                        bg="white"
+                        height={["390px", "470px", "550px", "480px"]}
+                        fontWeight={470}
+                        w="100%"
+                        m="auto"
+                        boxShadow="md"
+                        _hover={{
+                          cursor: "pointer",
+                          boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                        }}
+                      >
+                        <Text
+                          mb={"-1"}
+                          bg="#f6f6f6"
+                          fontSize={"26px"}
+                          fontWeight="500"
+                          w="10px"
+                          float={"right"}
+                          mr="2"
+                          mt={"0"}
+                          borderRadius="50px"
+                          _hover={{
+                            color: "red",
+                          }}
+                        >
+                          x
+                        </Text>
+                        <Image
+                          h={["40%", "50%", "60%", "60%"]}
+                          w={"85%"}
+                          m="auto"
+                          mt={"7"}
+                          src={detail.image_link}
+                          alt={detail.name}
+                        />
+                        <Text
+                          textAlign={"left"}
+                          ml={0}
+                          width={"90%"}
+                          m={"auto"}
+                          mt={5}
+                          _hover={{
+                            w: "90%",
+                          }}
+                        >
+                          {detail.name}
+                        </Text>
+                        <Text fontWeight={500} textAlign={"left"} ml={4}>
+                          ${detail.price}
+                          <AiFillHeart
+                            style={{
+                              fontSize: "23px",
+                              float: "right",
+                              marginRight: "16",
+                              color: "red",
+
+                              marginTop: "50px",
+                            }}
+                          />
+                        </Text>
+                        <br />
+                        <Button
+                          colorScheme={"green"}
+                          bg="red"
+                          color="white"
+                          mt={4}
+                          float="left"
+                          ml={4}
+                          size="md"
+                          onClick={() => handleClick(detail)}
+                        >
+                          View Details
+                        </Button>
+                      </Box>
+                    }
+                    <ModalComponent
+                      data={selectedBox}
+                      isOpen={isModalVisible}
+                      setIsOpen={setIsModalVisible}
+                    />
+                  </SimpleGrid>
+                </div>
+              )}
+            </>
+          ) : (
+            <p className="int_txt">You currently have no outstanding orders.</p>
+          )}
         </div>
       </div>
 
@@ -140,7 +308,6 @@ const MyOrder = () => {
       <div className="your_section">
         <h1 className="section_txt">Completed Orders</h1>
         <div id="your_subs_section">
-           
           <p className="int_txt">You currently have no completed orders.</p>
         </div>
       </div>

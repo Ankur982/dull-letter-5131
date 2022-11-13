@@ -1,3 +1,8 @@
+#wishlish_container > div{
+    margin: auto;
+    
+}
+
 #my_wishlist {
     width: 1300px;
     margin: auto;

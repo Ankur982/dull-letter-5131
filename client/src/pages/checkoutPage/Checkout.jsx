@@ -3,33 +3,15 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./Checkout.css"
 import Place from './Place'
-const initData = {
-    fName:"",
-    lName:"",
-    phone:"",
-    street:"",
-    zip:""
-};
+
 const Checkout = () => {
-    const [address,setAddress] = useState(initData);
-    const [firstname,setFirstname] = useState("");
+    const [address,setAddress] = useState([]);
+    const [fisrtname,setFirstname] = useState("");
     const [lastname,setLastname] = useState("");
     const [phone,setPhone] = useState("");
     const [street,setStreet] = useState("");
     const [zip,setZip] = useState("");
 
-
-    const handleSubmit = (e) =>{
-        e.preventDefault();
-        setAddress({
-            address,
-            fName: firstname,
-            lName: lastname,
-            phone: phone,
-            street: street,
-            zip:zip
-        })
-    };
 
   return (
     <Box>
@@ -41,29 +23,18 @@ const Checkout = () => {
                 <Text className='c-head'>Checkout</Text>
                 <hr style={{border:"1px solid black"}} />
                 <Text fontSize={'1.4rem'} fontWeight={800}>Shipping Address</Text>
-                
                 <Box className='i-box'>
-                    <Text>{address.fName} {address.lName},</Text>
-                    <Text>{address.phone}</Text>
-                    <Text>{address.street}</Text>
-                    <Text>{address.zip}</Text>
-                </Box>
-            
-                <form className='i-box' onSubmit={handleSubmit}>
                     <Box className='name-box'>
-                        <Input type='text' onChange={e =>setFirstname(e.target.value)} value={firstname} placeholder='First Name*' />
-                        <Input type='text' onChange={e =>setLastname(e.target.value)} value={lastname} placeholder='Last Name*' />
+                        <Input type='text' placeholder='First Name*' />
+                        <Input type='text' placeholder='Last Name*' />
                     </Box>
-                    <Input type='text' onChange={e =>setPhone(e.target.value)} value={phone} placeholder='Phone*' w='19rem' mb='1rem' />
-                    <Input type='text' onChange={e =>setStreet(e.target.value)} value={street} placeholder='Street Address*' mb='1rem'/>
-                    <Input type='text' onChange={e =>setZip(e.target.value)} value={zip} placeholder='ZIP/Postal Code*' w='10rem' mb='1rem' />
-                    <br />
-                    <button type='submit' className='save-btn'>Save & Continue</button>
-                </form>
-                
+                    <Input type='text' placeholder='Phone*' w='19rem' mb='1rem' />
+                    <Input type='text' placeholder='Street Address*' mb='1rem'/>
+                    <Input type='text' placeholder='ZIP/Postal Code*' w='10rem' mb='1rem' />
+                </Box>
                 <Text fontSize={'0.9rem'} fontWeight={600} mt='1rem'>Ship to FedEx Pickup Location 🛈</Text>
                 <Link to='#'><Text className='loc'>Select a location near you</Text></Link>
-               
+                <button className='save-btn'>Save & Continue</button>
                 <Box className='options'>
                     <hr style={{border:"1px solid red"}} />
                     <Text mt='1rem' fontSize={'1.6rem'} fontWeight={700}>Delivery & Gift Options</Text>
