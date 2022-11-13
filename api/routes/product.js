@@ -69,16 +69,18 @@ router.get("/", async (req, res) => {
     } else if (qCategory) {
       products = await Product.find({ "category": qCategory });
     } else if(qproduct_type){
-      products = await Product.find({ "product_type": qproduct_type });
+      const { page=1 , limit=10 , orderBy="price" , order="asc"} = req.query
+      products = await Product.find({ "product_type": qproduct_type }).sort({[orderBy]:order==="asc"?1:-1}).skip((page-1)*limit).limit(limit)
     }
     else {
-      products = await Product.find();
+      const { page=1 , limit=10 , orderBy="price" , order="asc"} = req.query
+      products = await Product.find().sort({[orderBy==="price"? Number(orderBy):orderBy]:order==="asc"?1:-1}).skip((page-1)*limit).limit(limit)
     }
-
     res.status(200).json(products);
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 
 module.exports = router;

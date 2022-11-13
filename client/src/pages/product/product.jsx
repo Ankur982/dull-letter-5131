@@ -1,22 +1,67 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../../components/Sidebar";
 import ProductCard from "../../components/ProductCard";
-import { Box, Flex, SimpleGrid } from "@chakra-ui/react";
+import { Box ,Flex, SimpleGrid,Select} from '@chakra-ui/react'
 import axios from "axios";
-import { MakeupObject } from "../../assets/sidebar.value";
+import { MakeupObject } from '../../assets/sidebar.value';
+import Pagination from '../../components/Pagination';
+import { useSearchParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
 const Product = () => {
+  const [searchParams,setSearchParams]=useSearchParams()
   const [makeup, setMakeup] = useState([]);
+  const [order,setOrder]=useState("asc")
+  const [orderBy,setOrderBy]=useState("name")
+  const [page, setPage] = useState(Number(searchParams.get("page"))||1)
+  const [totalPages, setTotalPages] = useState(0);
   let getData = () => {
     return axios
-      .get("https://makeup-api.herokuapp.com/api/v1/products.json")
-      .then((res) => setMakeup(res.data));
+      .get(`http://localhost:8080/products?page=${page}&limit=20&orderBy=${orderBy}&order=${order}`)
+      .then((res) => setMakeup(res.data))
+      
   };
   useEffect(() => {
-    getData();
-  }, []);
+    getData()
+    setTotalPages(makeup.length)
+  }, [order,orderBy,page]);
+  
+  useEffect(()=>{setSearchParams({page})},[page])
+  const handleChange=(e)=>{
+    const options = (e.target.value)
+if(options==="phl"){
+  setOrder("desc")
+  setOrderBy("price")
+}
+if(options==="plh"){
+  setOrder("asc")
+  setOrderBy("price")
+}
+if(options==="a-z"){
+  setOrder("asc")
+  setOrderBy("name")
+}
+if(options==="z-a"){
+  setOrder("desc")
+  setOrderBy("name")
+}
+if(options==="rating"){
+  setOrder("desc")
+  setOrderBy("rating")
+}
+  }
+
   return (
+    <>
+    <Box w="30%" ml="70%">
+    <Select onChange={handleChange} placeholder='Sorting' fontWeight={"bold"}>
+  <option value='phl'>Price High to Low</option>
+  <option value='plh'>Price Low to High</option>
+  <option value='a-z'>Ascending Order(A-Z)</option>
+  <option value='z-a'>Descending Order(Z-A)</option>
+  <option value='rating'>Sort by Rating</option>
+</Select>  
+</Box>
     <Flex>
       <Box w="23%">
         <Sidebar data={MakeupObject} />
@@ -27,10 +72,10 @@ const Product = () => {
             {makeup &&
               makeup.map((el, index) => (
                 <>
-                  <Link to={`/products/${el._id}`}>
+                  
                     <ProductCard
                       key={el.id}
-                      id={el.id}
+                      id={el._id}
                       image={el.image_link}
                       name={el.name}
                       brand={el.brand}
@@ -38,13 +83,18 @@ const Product = () => {
                       price={el.price}
                       rating={el.rating}
                     />
-                  </Link>
+                 
                 </>
               ))}
           </SimpleGrid>
         </Box>
       </Box>
+      
     </Flex>
+    <Box m="auto" w="35%" mb="30px" mt="20px">
+      <Pagination total={totalPages} current={page} changePage={setPage} />
+      </Box>
+    </>
   );
 };
 
