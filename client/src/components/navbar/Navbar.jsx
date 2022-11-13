@@ -1,12 +1,12 @@
 
 import { BellIcon, EmailIcon, Search2Icon } from "@chakra-ui/icons";
 import { Button, Heading } from "@chakra-ui/react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 
-import { useNavigate ,Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../context/UserAuthcontext";
 import "./Navbar.css";
 
