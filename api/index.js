@@ -39,7 +39,7 @@ app.use("/carts", cartRoute);
 
 app.use("/orders", orderRoute);
 
-app.use("wishlists", wishlistRoute)
+app.use("/wishlists", wishlistRoute)
 
 app.use("/checkout", stripeRoute);
 

@@ -23,10 +23,10 @@ router.post("/", verifyToken, async (req, res) => {
 
 
 //DELETE WISHLIST
-router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
+router.delete("/:id", verifyToken, async (req, res) => {
   try {
     await Wishlist.findByIdAndDelete(req.params.id);
-    res.status(200).json("Order has been deleted...");
+    res.status(200).json("wishlist has been deleted...");
   } catch (err) {
     res.status(500).json(err);
   }
