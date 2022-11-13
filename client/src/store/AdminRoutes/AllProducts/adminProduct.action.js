@@ -8,9 +8,7 @@ import {
 export const getAdminProducts = () => async (dispatch) => {
   dispatch({ type: GET_ADMIN_PRODUCT_LOADING });
   try {
-    let response = await axios.get(
-      "https://makeup-api.herokuapp.com/api/v1/products.json"
-    );
+    let response = await axios.get("http://localhost:8080/products");
     dispatch({
       type: GET_ADMIN_PRODUCT_SUCCESS,
       payload: response.data,

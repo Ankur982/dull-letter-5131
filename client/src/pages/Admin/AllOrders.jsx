@@ -20,10 +20,10 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllUsers } from "../../store/AdminRoutes/AllUsers/allUsers.action";
 
-function AllUsers() {
+function AllOrders() {
   const dispatch = useDispatch();
-  const { loading, error, data } = useSelector((store) => store.allUsers);
-
+  const { loading, error, data } = useSelector((store) => store.allOrders);
+  console.log(data);
   useEffect(() => {
     dispatch(getAllUsers());
   }, [dispatch]);
@@ -83,4 +83,4 @@ function AllUsers() {
   );
 }
 
-export default AllUsers;
+export default AllOrders;

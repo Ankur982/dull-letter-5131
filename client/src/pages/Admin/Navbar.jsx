@@ -21,6 +21,9 @@ function Navbar() {
       <Box>
         <NavLink to="/admin/addproduct">Add a Products</NavLink>
       </Box>
+      <Box>
+        <NavLink to="/admin/orders">Orders</NavLink>
+      </Box>
     </Flex>
   );
 }
