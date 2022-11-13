@@ -34,6 +34,7 @@ const Cart = () => {
 
   }
  
+  
   const checkout =()=>{
       navigate("/checkout");
   }

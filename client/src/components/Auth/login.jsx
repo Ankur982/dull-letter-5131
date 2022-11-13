@@ -1,4 +1,6 @@
 import React from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { FcGoogle, FcPhoneAndroid } from 'react-icons/fc';
 import {
   Flex,
@@ -30,14 +32,80 @@ export default function Login() {
 
     const handleLogin= async (e)=>{
      e.preventDefault()
+     if (!email || !password) {
+      toast.warn("Fields cant be empty !",{
+        position: "top-right",
+        theme: "colored",
+autoClose: 1000,
+hideProgressBar: false,
+closeOnClick: true,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+      })
+      return;
+    }
+    else if (password.length < 6) {
+      toast.warn("Password should be of atleast 6 letters",{   position: "top-right",
+      autoClose: 1000,
+      theme: "colored",
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,})
+    
+    }
      try{
        await logIn(email,password)
-      navigate("/dashboard")
+       const res=  await fetch("http://localhost:8080/auth/login",{
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body:JSON.stringify({
+           email: email,
+           password: password
+        })
+      })
+      .then((res) => res.json())
+      .then((e) => {
+          localStorage.setItem("token", JSON.stringify(e.accessToken
+            ))
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+      });
+    
+      // console.log("data",data)
+       toast.success('Login Sucessful', {
+        position: "top-right",
+        autoClose: 700,
+        theme: "colored",
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+        setTimeout(()=>{
+          navigate("/")
+        },10000)
+   
      }
     catch(error){
-    const errorCode = error.code;
-    const errorMessage = error.message;
-      console.log(errorMessage)
+     
+      toast.error('Wrong Credentials', {
+        position: "top-right",
+        autoClose: 1000,
+        theme: 'colored',
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+    
   };
 
     }
@@ -68,7 +136,7 @@ async function signInGoogle(e){
           bg={useColorModeValue('white', 'gray.700')}
           boxShadow={'lg'}
           p={8}>
-            <form onSubmit={handleLogin}>
+            <form method="POST" onSubmit={handleLogin}>
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
@@ -127,6 +195,7 @@ async function signInGoogle(e){
     <Center py={2}>Don't have an account?<Link to="/signup"> <Text as="u">SignUp</Text></Link> </Center>
     </form>
         </Box>
+        <ToastContainer theme="colored" />
       </Stack>
       
     </Flex>
