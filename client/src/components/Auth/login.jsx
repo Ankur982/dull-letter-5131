@@ -56,21 +56,24 @@ export default function Login() {
     }
     try {
       await logIn(email, password);
-      const res = await fetch("http://localhost:8080/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-      })
+      const res = await fetch(
+        "https://sephorabackend-production.up.railway.app/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
+        }
+      )
         .then((res) => res.json())
         .then((e) => {
           localStorage.setItem("token", JSON.stringify(e.accessToken) || "");
-          console.log(e)
-        }) 
+          console.log(e);
+        })
         .catch((err) => {
           console.error("Error:", err);
         });
@@ -88,7 +91,7 @@ export default function Login() {
       });
       setTimeout(() => {
         navigate("/");
-      }, 10000);
+      }, 1000);
     } catch (error) {
       toast.error("Wrong Credentials", {
         position: "top-right",

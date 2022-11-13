@@ -23,17 +23,19 @@ const MyWishlist = () => {
 
   console.log(wishlistList);
 
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNmZkYzNhMjgwNDcxNjRhOTI3YWVlYSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NjgyODMxMDAsImV4cCI6MTY2ODU0MjMwMH0.ly2JOwCkBcA3GdHviu7E8lFCm8fgyWE_QfLE6HLDUmA";
+  const token = JSON.parse(localStorage.getItem("token"))||null;
 
   const handleWishlistDetails = (id) => {
-    fetch(`http://localhost:8080/products/find/${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        token: token,
-      },
-    })
+    fetch(
+      `https://sephorabackend-production.up.railway.app/products/find/${id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          token: token,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -67,7 +69,7 @@ const MyWishlist = () => {
   }, []);
 
   const getUserId = () => {
-    fetch("http://localhost:8080/users/getuser", {
+    fetch("https://sephorabackend-production.up.railway.app/users/getuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -84,13 +86,16 @@ const MyWishlist = () => {
   };
 
   const getWishlistData = (id) => {
-    fetch(`http://localhost:8080/wishlists/find/${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        token: token,
-      },
-    })
+    fetch(
+      `https://sephorabackend-production.up.railway.app/wishlists/find/${id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          token: token,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setWishlistList(data);

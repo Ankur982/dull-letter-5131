@@ -9,7 +9,7 @@ export const getAdminProducts = () => async (dispatch) => {
   dispatch({ type: GET_ADMIN_PRODUCT_LOADING });
   try {
     let response = await axios.get(
-      "https://makeup-api.herokuapp.com/api/v1/products.json"
+      "https://sephorabackend-production.up.railway.app/products/"
     );
     dispatch({
       type: GET_ADMIN_PRODUCT_SUCCESS,

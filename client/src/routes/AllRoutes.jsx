@@ -7,7 +7,7 @@ import Signup from "../components/Auth/signup";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar";
 import AdminRoutes from "../pages/Admin/AdminRoutes";
-import Home from "../pages/home/home";
+import Home from "../pages/home/Home";
 import MyOrder from "../pages/my-orders/MyOrder";
 
 import MyWishlist from "../pages/my-wishlist/MyWishlist";

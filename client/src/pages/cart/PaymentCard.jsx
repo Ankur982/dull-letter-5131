@@ -53,9 +53,10 @@ const PaymentCard = ({checkout,total}) => {
         <Box className='promo'>
             <Text fontSize={"0.9rem"} textAlign={"right"}>View featured offers</Text>
             <Input type='text'
+
                 onChange={handleChange}
                 value={promo}
-                placeholder='Promo or Reward Code'
+                placeholder='Apply code FEST15'
             />
             <Button size={"md"} colorScheme={"red"} mt='1rem' onClick={()=>ValidPromo()}>APPLY PROMO</Button>
         </Box>

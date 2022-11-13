@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Center,
   Grid,
   GridItem,
@@ -7,6 +8,7 @@ import {
   Spinner,
   Text,
 } from "@chakra-ui/react";
+import axios from "axios";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAdminProducts } from "../../store/AdminRoutes/AllProducts/adminProduct.action";
@@ -18,6 +20,13 @@ function Products() {
   useEffect(() => {
     dispatch(getAdminProducts());
   }, [dispatch]);
+
+  const deleteProduct = (id) => {
+    let response = axios
+      .delete(`https://jsonplaceholder.typicode.com/users${id}`)
+      .then((e) => console.log(e.data))
+      .catch((e) => console.log(e));
+  };
 
   if (loading) {
     return (
@@ -44,7 +53,7 @@ function Products() {
       </Box>
       <Grid textAlign={"center"} p={2} templateColumns="repeat(5 ,1fr)" gap={6}>
         {data.map((e) => (
-          <GridItem border={"1px solid"} borderRadius="20px" p={2}>
+          <GridItem key={e._id} border={"1px solid"} borderRadius="20px" p={2}>
             <Image width="100%" src={e.image_link} />
             <Box display="flex" m={2}>
               <Text as="b" fontSize={"lg"}>
@@ -69,6 +78,9 @@ function Products() {
                 Category
               </Text>
               <Text fontSize={"md"}>{e.category}</Text>
+            </Box>
+            <Box>
+              <Button onClick={() => deleteProduct(e._id)}>Delete</Button>
             </Box>
           </GridItem>
         ))}
