@@ -1,11 +1,11 @@
 export const MakeupObject = {
     value: "Makeup",
     links: [
-        ["All Items", "http://"],
-        ["Face", "http://"],
-        ["Eye", "http://"],
-        ["Lip", "http://"],
-        ["Cheek", "http://"],
+        ["All Items", "/products"],
+        ["Face", "/products/face"],
+        ["Eye", "/products/eye"],
+        ["Lip", "/products/lip"],
+        ["Cheek", "/products/cheek"],
         
     ]
 }
