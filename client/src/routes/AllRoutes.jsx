@@ -14,6 +14,11 @@ import MyWishlist from "../pages/my-wishlist/MyWishlist";
 import Product from "../pages/product/product";
 import MyAccounts from "../components/my-accounts/MyAccounts";
 import Dashboard from "../components/Dashboard";
+import Face from "../pages/product/Face";
+import Eye from "../pages/product/Eye";
+import Lip from "../pages/product/Lip";
+import Cheek from "../pages/product/Cheek";
+
 import SingleProduct from "../pages/SingleProduct/SingleProduct";
 import Cart from "../pages/cart/Cart";
 import Checkout from "../pages/checkoutPage/Checkout";
@@ -98,6 +103,46 @@ export default function AllRoutes() {
             <>
               <Navbar />
               <SingleProduct />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/products/face"
+          element={
+            <>
+              <Navbar />
+              <Face/>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/products/eye"
+          element={
+            <>
+              <Navbar />
+              <Eye/>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/products/lip"
+          element={
+            <>
+              <Navbar />
+              <Lip/>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/products/cheek"
+          element={
+            <>
+              <Navbar />
+              <Cheek/>
               <Footer />
             </>
           }

@@ -1,5 +1,6 @@
 import React from 'react'
 import {Box,Text,Flex, Heading} from "@chakra-ui/react"
+import { Link } from 'react-router-dom';
 const Sidebar = ({data}) => {
   return (
   
@@ -9,7 +10,7 @@ const Sidebar = ({data}) => {
             data.links.map((el)=>{
                 let [text, link] = el;
                 return (
-                <a href={link}><Text textAlign={"left"} ml="40px" fontSize={"20px"} mb="20px">{text}</Text></a>
+                <Link to={link}><Text textAlign={"left"} ml="40px" fontSize={"20px"} mb="20px">{text}</Text></Link> 
             )  
             })
         }
