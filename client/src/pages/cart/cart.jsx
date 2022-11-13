@@ -17,11 +17,11 @@ const Cart = () => {
 
   const totalSum = () =>{
     let t = cartItems.reduce(function (sum, elem, index, arr) {
-      return sum + Number(elem.price) * elem.quantity;
+      return sum + Number(elem.price);
     }, 0);
     return t;
   }
-  
+
   useEffect(()=>{
     setTotal(totalSum(cartItems));
   },[]);
@@ -30,8 +30,6 @@ const Cart = () => {
 
   const removeFromCart =(id)=>{
       let isExist = cartItems.find((item) => item.id === id);
-
-
   }
  
   

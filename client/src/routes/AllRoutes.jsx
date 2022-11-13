@@ -15,17 +15,31 @@ import Product from "../pages/product/product";
 import MyAccounts from "../components/my-accounts/MyAccounts";
 import Dashboard from "../components/Dashboard";
 import SingleProduct from "../pages/SingleProduct/SingleProduct";
+import Cart from "../pages/cart/Cart";
+import Checkout from "../pages/checkoutPage/Checkout";
 
 export default function AllRoutes() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+        <Route path="/login" element={
+          <>
+          <Navbar />
+          <Login />
+          <Footer />
+        </>
+        } />
+        <Route path="/signup" element={
+          <>
+          <Navbar />
+          <Signup />
+          <Footer />
+        </>
+        } />
         <Route
-          path="/myoders"
+          path="/myorders"
           element={
             <>
               <Navbar />
@@ -44,6 +58,17 @@ export default function AllRoutes() {
             </>
           }
         />
+
+        <Route
+          path="/myaccount"
+          element={
+            <>
+              <Navbar />
+              <MyAccounts />
+              <Footer />
+            </>
+          }
+        />
         <Route
           path="/products"
           element={
@@ -54,6 +79,19 @@ export default function AllRoutes() {
             </>
           }
         />
+        <Route
+          path="/basket"
+          element={
+            <>
+              <Navbar />
+              <Cart />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route path="/checkout" element={<Checkout />} />
+
         <Route
           path="/products/:id"
           element={
