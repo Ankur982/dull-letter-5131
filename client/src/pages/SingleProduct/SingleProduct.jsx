@@ -32,8 +32,6 @@ function SingleProduct() {
   const [isLargerThan600] = useMediaQuery("(min-width: 600px)");
   const { id } = useParams();
   const dispatch = useDispatch();
-  const user= useUserAuth()
-  console.log("Arul",user.uid)
   const { loading, error, data } = useSelector((store) => store.singleProduct);
   const toast = useToast();
 

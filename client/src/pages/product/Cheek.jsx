@@ -7,7 +7,7 @@ import { MakeupObject } from '../../assets/sidebar.value';
 import Pagination from '../../components/Pagination';
 import { useSearchParams } from 'react-router-dom';
 
-const Eye = () => {
+const Cheek = () => {
   const [searchParams,setSearchParams]=useSearchParams()
   const [makeup, setMakeup] = useState([]);
   const [order,setOrder]=useState("asc")
@@ -16,7 +16,7 @@ const Eye = () => {
   const [totalPages, setTotalPages] = useState(0);
   let getData = () => {
     return axios
-      .get(`http://localhost:8080/products?product_type=mascara&page=${page}&limit=20&orderBy=${orderBy}&order=${order}`)
+      .get(`http://localhost:8080/products?product_type=bronzer&page=${page}&limit=20&orderBy=${orderBy}&order=${order}`)
       .then((res) => setMakeup(res.data))
       
   };
@@ -93,4 +93,4 @@ if(options==="rating"){
   );
 };
 
-export default Eye;
+export default Cheek;
