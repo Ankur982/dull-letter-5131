@@ -1,18 +1,23 @@
 import axios from "axios";
+
 import {
   GET_SINGLEPRODUCT_ERROR,
   GET_SINGLEPRODUCT_LOADING,
   GET_SINGLEPRODUCT_SUCCESS,
 } from "./singleProduct.types";
 
+
+
+
 const config = {
   headers: {
-    token:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNmZjOTI3OTdiYTVlOGIyNDhmNzM3OSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NjgyNzA0MTAsImV4cCI6MTY2ODUyOTYxMH0.b18kw0RyMGVasfzhdr-2iT3QgXn6fZQtNgM1vmmj6NQ",
+    token: JSON.parse(localStorage.getItem("token")),
   },
 };
 
 export const getSingleProduct = (id) => async (dispatch) => {
+
+
   dispatch({ type: GET_SINGLEPRODUCT_LOADING });
   try {
     let response = await axios.get(`http://localhost:8080/products/find/${id}`);

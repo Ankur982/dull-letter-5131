@@ -68,6 +68,16 @@ progress: undefined,
            password: password
         })
       })
+      .then((res) => res.json())
+      .then((e) => {
+          localStorage.setItem("token", JSON.stringify(e.accessToken
+            ))
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+      });
+    
+      // console.log("data",data)
        toast.success('Login Sucessful', {
         position: "top-right",
         autoClose: 700,
@@ -80,7 +90,7 @@ progress: undefined,
         });
         setTimeout(()=>{
           navigate("/")
-        },1000)
+        },10000)
    
      }
     catch(error){
