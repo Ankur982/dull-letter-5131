@@ -13,7 +13,7 @@ import Cart from "../pages/cart/Cart";
 import Checkout from "../pages/checkoutPage/Checkout";
 import MyWishlist from "../pages/my-wishlist/MyWishlist";
 import SingleProduct from "../pages/SingleProduct/SingleProduct";
-import Product from "../pages/product/product";
+import Product from "../pages/product/Product";
 import MyAccounts from "../components/my-accounts/MyAccounts";
 import Dashboard from "../components/Dashboard";
 
