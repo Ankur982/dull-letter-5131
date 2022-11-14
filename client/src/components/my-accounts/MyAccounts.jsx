@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import "./MyAccounts.css"
 const MyAccounts = () => {
   return (
@@ -43,7 +44,7 @@ const MyAccounts = () => {
 
 
         <div id="acc_home_section1">
-            <h1 className="section_txt">My Wishlist</h1>
+            <h1 className="section_txt"><Link to="/mywishlists">My Wishlist</Link></h1>
             <div className="box_your_ref">
                 <p className="int_txt">View your favorite products</p>
                 <div className="acc_home_section_box">
@@ -57,7 +58,7 @@ const MyAccounts = () => {
     <div className="your_section">
         <h1 className="section_txt">Your Orders</h1>
         <div id="your_order_section">
-            <p className="int_txt">You currently have no orders.</p>
+            <p className="int_txt"> <Link to="/mywishlists">Check Your Ordered Details.</Link></p>
         </div>
     </div>
 

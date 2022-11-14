@@ -38,6 +38,8 @@ const MyOrder = () => {
     getUserId();
   }, []);
 
+  console.log(orderList)
+
   const token = JSON.parse(localStorage.getItem("token"))||null;
 
   const handleProductDetails = (id) => {
@@ -154,7 +156,7 @@ const MyOrder = () => {
         <div id="your_order_section">
           {isData ? (
             <>
-              {orderList.map((e) => (
+              {orderList && orderList.map((e) => (
                 <div key={e._id}>
                   <div
                     style={{
@@ -184,7 +186,7 @@ const MyOrder = () => {
                   {" "}
                   Order Products Details{" "}
                 </Heading>
-                {orderArray &&
+                { 
                   orderArray.map((e) => (
                     <div
                       key={e._id}

@@ -24,49 +24,12 @@ const MyWishlist = () => {
   console.log(wishlistList);
 
   const token = JSON.parse(localStorage.getItem("token"))||null;
-
-  const handleWishlistDetails = (id) => {
-    fetch(
-      `https://sephorabackend-production.up.railway.app/products/find/${id}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          token: token,
-        },
-      }
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setProduct(data);
-      })
-      .catch((err) => {
-        console.error("Error:", err);
-      });
-  };
-
-  const handleClickDelete = (id) => {
-    // fetch(`http://localhost:8080/wishlists/${id}`, {
-    //   method: "DELETE",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     token: token,
-    //   },
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data)
-    //   })
-    //   .catch((err) => {
-    //     console.error("Error:", err);
-    //   });
-
-    alert("Item Removed from your cart");
-  };
-
+  
   useEffect(() => {
     getUserId();
   }, []);
+
+  //.................................get current user functionality.......................................//
 
   const getUserId = () => {
     fetch("https://sephorabackend-production.up.railway.app/users/getuser", {
@@ -85,17 +48,16 @@ const MyWishlist = () => {
       });
   };
 
+//................................. wishlist data for loged user.......................................//
+
   const getWishlistData = (id) => {
-    fetch(
-      `https://sephorabackend-production.up.railway.app/wishlists/find/${id}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          token: token,
-        },
-      }
-    )
+    fetch(`https://sephorabackend-production.up.railway.app/wishlists/find/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: token,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setWishlistList(data);
@@ -106,22 +68,50 @@ const MyWishlist = () => {
       });
   };
 
-  //   const getItem = (id) => {
-  //     console.log(id);
-  //     fetch(`http://localhost:8080/products/find/${id}`, {
-  //       method: "GET",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setProduct(data);
-  //       })
-  //       .catch((err) => {
-  //         console.error("Error:", err);
-  //       });
-  //   };
+
+//................................. wishlist product details for loged user.......................................//
+
+
+
+  const handleWishlistDetails = (id) => {
+    fetch(`https://sephorabackend-production.up.railway.app/products/find/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: token,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data);
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+      });
+  };
+
+  //.................................Delete wishlist item of logeduser...................................//
+
+  const handleClickDelete = (id) => {
+    fetch(`https://sephorabackend-production.up.railway.app/wishlists/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        token: token,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        window.location.reload();
+        alert("Item Deleted from Wishlist")
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+      });
+  };
+
+
 
   return (
     <>
@@ -142,7 +132,7 @@ const MyWishlist = () => {
                       textAlign: "center",
                     }}
                   >
-                    <h1> Order Id: {e.productId}</h1>
+                    <h1> Product Id: {e.productId}</h1>
                     <p>Order Status: In Wishlist</p>
 
                     <p>Order created at: {e.createdAt}</p>
@@ -219,6 +209,7 @@ const MyWishlist = () => {
                         <Text fontWeight={500} textAlign={"left"} ml={4}>
                           ${product.price}
                           <AiFillHeart
+                          onClick={() => handleClickDelete(product._id)}
                             style={{
                               fontSize: "23px",
                               float: "right",

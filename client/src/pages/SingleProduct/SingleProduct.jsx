@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -31,6 +31,11 @@ import { useUserAuth } from "../../context/UserAuthcontext";
 function SingleProduct() {
   const [isLargerThan600] = useMediaQuery("(min-width: 600px)");
   const { id } = useParams();
+
+  const [userId, setuserId] = useState(null);
+
+  const [isAddedToWishlist, setIsAddedToWishlist] = useState(false);
+
   const dispatch = useDispatch();
   const { loading, error, data } = useSelector((store) => store.singleProduct);
   const toast = useToast();
@@ -39,9 +44,88 @@ function SingleProduct() {
     dispatch(getSingleProduct(id));
   }, [id]);
 
+  //.................................Add to wishlist functionality...............................................//
+
   const addToWishlist = () => {
-    console.log("hello");
+    console.log("id", id)
+    if(!isAddedToWishlist){
+      getUserId();
+    }else{
+      handleDeleteWishlist(id)
+    }
+    
   };
+
+  const token = JSON.parse(localStorage.getItem("token"))||null;
+
+  const getUserId = () => {
+    fetch("https://sephorabackend-production.up.railway.app/users/getuser", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        token: token,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setuserId(data._id)
+        handleAddWishlist(data._id);
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+      });
+  };
+
+  const handleAddWishlist = (userId) => {
+
+
+    fetch("https://sephorabackend-production.up.railway.app/wishlists/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        token: token,
+      },
+      body: JSON.stringify({
+        userId: userId,
+        productId:id
+      })
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        setIsAddedToWishlist(true)
+        alert("Item Added in Wishlist")
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+      });
+
+  }
+
+
+    //.................................Delete from wishlist functionality.......................................//
+
+const handleDeleteWishlist = (id) => {
+
+    fetch(`https://sephorabackend-production.up.railway.app/wishlists/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        token: token,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        setIsAddedToWishlist(false)
+        alert("Item Deleted from Wishlist")
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+      });
+
+  }
+
 
   const productData = {
     productId: id,
