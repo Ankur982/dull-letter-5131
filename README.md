@@ -38,7 +38,7 @@ Sephora is a French retailer that offers variety of beauty products including co
 - Product Filtering and Sorting
 - Product categories
 - Single Product Page
-- Wishlist
+- Specific user Wishlist
 - Specific user Order
 - Add to Cart with Promo Code
 - Checkout
