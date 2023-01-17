@@ -44,7 +44,7 @@ const MyOrder = () => {
 
   const handleProductDetails = (id) => {
     fetch(
-      `https://sephorabackend-production.up.railway.app/products/find/${id}`,
+      `https://sephora-backend.onrender.com/products/find/${id}`,
       {
         method: "GET",
         headers: {
@@ -63,7 +63,7 @@ const MyOrder = () => {
   };
 
   const getUserId = () => {
-    fetch("https://sephorabackend-production.up.railway.app/users/getuser", {
+    fetch("https://sephora-backend.onrender.com/users/getuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +81,7 @@ const MyOrder = () => {
 
   const getOrderData = (id) => {
     fetch(
-      `https://sephorabackend-production.up.railway.app/orders/find/${id}`,
+      `https://sephora-backend.onrender.com/orders/find/${id}`,
       {
         method: "GET",
         headers: {
@@ -103,7 +103,7 @@ const MyOrder = () => {
   const getItem = (id) => {
     console.log(id);
     fetch(
-      `https://sephorabackend-production.up.railway.app/products/find/${id}`,
+      `https://sephora-backend.onrender.com/products/find/${id}`,
       {
         method: "GET",
         headers: {

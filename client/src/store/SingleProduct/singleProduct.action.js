@@ -17,7 +17,7 @@ export const getSingleProduct = (id) => async (dispatch) => {
 
   try {
     let response = await axios.get(
-      `https://sephorabackend-production.up.railway.app/products/find/${id}`
+      `https://sephora-backend.onrender.com/products/find/${id}`
     );
     dispatch({
       type: GET_SINGLEPRODUCT_SUCCESS,
@@ -34,7 +34,7 @@ export const getSingleProduct = (id) => async (dispatch) => {
 export const addProductCart = (data) => async (dispatch) => {
   try {
     let response = await axios.post(
-      "https://sephorabackend-production.up.railway.app/carts",
+      "https://sephora-backend.onrender.com/carts",
       data,
       config
     );

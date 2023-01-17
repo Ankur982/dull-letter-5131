@@ -19,7 +19,7 @@ const Product = () => {
     return axios
 
       .get(
-        `https://sephorabackend-production.up.railway.app/products?page=${page}&limit=20&orderBy=${orderBy}&order=${order}`
+        `https://sephora-backend.onrender.com/products?page=${page}&limit=20&orderBy=${orderBy}&order=${order}`
       )
       .then((res) => setMakeup(res.data));
   };

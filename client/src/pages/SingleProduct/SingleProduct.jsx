@@ -59,7 +59,7 @@ function SingleProduct() {
   const token = JSON.parse(localStorage.getItem("token"))||null;
 
   const getUserId = () => {
-    fetch("https://sephorabackend-production.up.railway.app/users/getuser", {
+    fetch("https://sephora-backend.onrender.com/users/getuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +79,7 @@ function SingleProduct() {
   const handleAddWishlist = (userId) => {
 
 
-    fetch("https://sephorabackend-production.up.railway.app/wishlists/", {
+    fetch("https://sephora-backend.onrender.com/wishlists/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -107,7 +107,7 @@ function SingleProduct() {
 
 const handleDeleteWishlist = (id) => {
 
-    fetch(`https://sephorabackend-production.up.railway.app/wishlists/${id}`, {
+    fetch(`https://sephora-backend.onrender.com/wishlists/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

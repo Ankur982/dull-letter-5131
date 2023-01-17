@@ -30,7 +30,7 @@ function AllOrders() {
 
   const deleteUser = (id) => {
     let response = axios
-      .delete(`https://jsonplaceholder.typicode.com/users${id}`)
+      .delete(`https://sephora-backend.onrender.com/users${id}`)
       .then((e) => console.log(e.data))
       .catch((e) => console.log(e));
   };

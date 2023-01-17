@@ -9,7 +9,7 @@ export const getAllUsers = () => async (dispatch) => {
   dispatch({ type: GET_ALL_USERS_LOADING });
   try {
     let response = await axios.get(
-      "https://jsonplaceholder.typicode.com/users"
+      "https://sephora-backend.onrender.com/users"
     );
     dispatch({
       type: GET_ALL_USERS_SUCCESS,

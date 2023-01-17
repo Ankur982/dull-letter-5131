@@ -57,7 +57,7 @@ export default function Login() {
     try {
       await logIn(email, password);
       const res = await fetch(
-        "https://sephorabackend-production.up.railway.app/auth/login",
+        "https://sephora-backend.onrender.com/auth/login",
         {
           method: "POST",
           headers: {

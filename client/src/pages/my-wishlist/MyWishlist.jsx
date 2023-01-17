@@ -32,7 +32,7 @@ const MyWishlist = () => {
   //.................................get current user functionality.......................................//
 
   const getUserId = () => {
-    fetch("https://sephorabackend-production.up.railway.app/users/getuser", {
+    fetch("https://sephora-backend.onrender.com/users/getuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const MyWishlist = () => {
 //................................. wishlist data for loged user.......................................//
 
   const getWishlistData = (id) => {
-    fetch(`https://sephorabackend-production.up.railway.app/wishlists/find/${id}`, {
+    fetch(`https://sephora-backend.onrender.com/wishlists/find/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -74,7 +74,7 @@ const MyWishlist = () => {
 
 
   const handleWishlistDetails = (id) => {
-    fetch(`https://sephorabackend-production.up.railway.app/products/find/${id}`, {
+    fetch(`https://sephora-backend.onrender.com/products/find/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -93,7 +93,7 @@ const MyWishlist = () => {
   //.................................Delete wishlist item of logeduser...................................//
 
   const handleClickDelete = (id) => {
-    fetch(`https://sephorabackend-production.up.railway.app/wishlists/${id}`, {
+    fetch(`https://sephora-backend.onrender.com/wishlists/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

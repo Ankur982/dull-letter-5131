@@ -74,7 +74,7 @@ export default function Signup() {
         progress: undefined,
       });
       const res = await fetch(
-        "https://sephorabackend-production.up.railway.app/auth/register",
+        "https://sephora-backend.onrender.com/auth/register",
         {
           method: "POST",
           headers: {

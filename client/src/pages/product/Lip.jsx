@@ -17,7 +17,7 @@ const Lip = () => {
   let getData = () => {
     return axios
       .get(
-        `https://sephorabackend-production.up.railway.app/products?product_type=lipstick&page=${page}&limit=20&orderBy=${orderBy}&order=${order}`
+        `hhttps://sephora-backend.onrender.com/products?product_type=lipstick&page=${page}&limit=20&orderBy=${orderBy}&order=${order}`
       )
       .then((res) => setMakeup(res.data));
   };

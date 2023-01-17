@@ -9,7 +9,7 @@ export const getAdminProducts = () => async (dispatch) => {
   dispatch({ type: GET_ADMIN_PRODUCT_LOADING });
   try {
     let response = await axios.get(
-      "https://sephorabackend-production.up.railway.app/products/"
+      "https://sephora-backend.onrender.com/products/"
     );
     dispatch({
       type: GET_ADMIN_PRODUCT_SUCCESS,

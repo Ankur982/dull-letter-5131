@@ -16,7 +16,7 @@ const Eye = () => {
   const [totalPages, setTotalPages] = useState(0);
   let getData = () => {
     return axios
-      .get(`https://sephorabackend-production.up.railway.app/products?product_type=mascara&page=${page}&limit=20&orderBy=${orderBy}&order=${order}`)
+      .get(`https://sephora-backend.onrender.com/products?product_type=mascara&page=${page}&limit=20&orderBy=${orderBy}&order=${order}`)
       .then((res) => setMakeup(res.data))
       
   };
