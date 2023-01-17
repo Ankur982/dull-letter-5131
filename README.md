@@ -2,9 +2,9 @@
 
 We a group of five members have created a clone of [Sephora.com](https://www.sephora.com/) in our construct week at Masai School. We made a full stack application with both frontend and backend functionality.
 
-[Frontend Deployed Link](https://sephora-pink.vercel.app/)
+[Frontend Deployed Link](https://client-seven-nu.vercel.app/)
 
-[Backend Deployed Link](https://sephorabackend-production.up.railway.app/products)
+[Backend Deployed Link](https://sephora-backend.onrender.com/)
 
 # About 
 
