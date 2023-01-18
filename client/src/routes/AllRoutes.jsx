@@ -95,7 +95,7 @@ export default function AllRoutes() {
           }
         />
 
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout/:total" element={<Checkout />} />
 
         <Route
           path="/products/:id"

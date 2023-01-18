@@ -47,19 +47,18 @@ function SingleProduct() {
   //.................................Add to wishlist functionality...............................................//
 
   const addToWishlist = () => {
-    console.log("id", id)
-    if(!isAddedToWishlist){
+    console.log("id", id);
+    if (!isAddedToWishlist) {
       getUserId();
-    }else{
-      handleDeleteWishlist(id)
+    } else {
+      handleDeleteWishlist(id);
     }
-    
   };
 
-  const token = JSON.parse(localStorage.getItem("token"))||null;
+  const token = JSON.parse(localStorage.getItem("token")) || null;
 
   const getUserId = () => {
-    fetch("https://sephora-backend.onrender.com/users/getuser", {
+    fetch("http://localhost:8080/users/getuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +67,7 @@ function SingleProduct() {
     })
       .then((res) => res.json())
       .then((data) => {
-        setuserId(data._id)
+        setuserId(data._id);
         handleAddWishlist(data._id);
       })
       .catch((err) => {
@@ -76,10 +75,8 @@ function SingleProduct() {
       });
   };
 
-  const handleAddWishlist = (userId) => {
-
-
-    fetch("https://sephora-backend.onrender.com/wishlists/", {
+  const handleAddWishlist = () => {
+    fetch("http://localhost:8080/wishlists/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -87,27 +84,24 @@ function SingleProduct() {
       },
       body: JSON.stringify({
         userId: userId,
-        productId:id
-      })
+        productId: id,
+      }),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
-        setIsAddedToWishlist(true)
-        alert("Item Added in Wishlist")
+        console.log(data);
+        setIsAddedToWishlist(true);
+        alert("Item Added in Wishlist");
       })
       .catch((err) => {
         console.error("Error:", err);
       });
+  };
 
-  }
+  //.................................Delete from wishlist functionality.......................................//
 
-
-    //.................................Delete from wishlist functionality.......................................//
-
-const handleDeleteWishlist = (id) => {
-
-    fetch(`https://sephora-backend.onrender.com/wishlists/${id}`, {
+  const handleDeleteWishlist = (id) => {
+    fetch(`http://localhost:8080/wishlists/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -116,33 +110,40 @@ const handleDeleteWishlist = (id) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
-        setIsAddedToWishlist(false)
-        alert("Item Deleted from Wishlist")
+        console.log(data);
+        setIsAddedToWishlist(false);
+        alert("Item Deleted from Wishlist");
       })
       .catch((err) => {
         console.error("Error:", err);
       });
-
-  }
-
-
-  const productData = {
-    productId: id,
-    quantity: 1,
   };
 
-  const addToCart = (id) => {
-    let data = dispatch(addProductCart(productData))
-      .then((e) => {
-        toast({
-          title: "Product added to cart",
-          status: "success",
-          duration: 9000,
-          isClosable: true,
-        });
+  const addToCart = () => {
+    fetch("http://localhost:8080/carts/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        token: token,
+      },
+      body: JSON.stringify({
+        userId: userId,
+        products: [
+          {
+            productId: id,
+            quantity: 1,
+          },
+        ],
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        alert("Item Added in Cart");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.error("Error:", err);
+      });
   };
 
   if (loading) {

@@ -1,27 +1,28 @@
 import { Box, Divider, Input, Text } from '@chakra-ui/react'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { BsFillCreditCard2FrontFill} from "react-icons/bs";
 
 const Place = () => {
+    const {total} = useParams()
   return (
     <Box className='place-main'>
         <Box className='td1'>
             <Text>Merchandise Subtotal</Text>
-            <Text fontWeight={600}>$60.35</Text>
+            <Text fontWeight={600}>$ {total}</Text>
         </Box>
         <Box className='td1'>
             <Link to='#'><Text className='td1-1'>Shipping & Handling 🛈</Text></Link>
-           <Text fontWeight={600}>$-.--</Text>
+           <Text fontWeight={600}>$ 0</Text>
         </Box>
         <Box className='td1'>
             <Link to='#'><Text className='td1-1'>Estimated Taxes 🛈</Text></Link>
-            <Text fontWeight={600}>$-.--</Text>
+            <Text fontWeight={600}>$ 0</Text>
         </Box>
         <hr style={{border:"1px solid black"}} />
         <Box className='td2'>
             <Text>Estimated Total</Text>
-            <Text>$15.00</Text>
+            <Text>$ {total}</Text>
         </Box>
         <Box className='td3'>
             <Text>or payments of $6.75 with <strong>Klarna.</strong></Text>

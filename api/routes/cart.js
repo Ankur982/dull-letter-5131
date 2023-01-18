@@ -20,8 +20,8 @@ router.post("/", verifyToken, async (req, res) => {
       userId: userData.id,
       products: [
         {
-          productId: data.productId,
-          quantity: data.quantity,
+          productId: data.products[0].productId,
+          quantity: data.products[0].quantity,
         },
       ],
     };
@@ -62,7 +62,7 @@ router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
 //GET USER CART
 router.get("/find/:userId", verifyTokenAndAuthorization, async (req, res) => {
   try {
-    const cart = await Cart.findOne({ userId: req.params.userId });
+    const cart = await Cart.find({ userId: req.params.userId });
     res.status(200).json(cart);
   } catch (err) {
     res.status(500).json(err);

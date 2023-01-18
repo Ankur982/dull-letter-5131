@@ -1,6 +1,6 @@
 import { Box,Input,SimpleGrid,Text} from '@chakra-ui/react'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import "./Checkout.css"
 import Place from './Place'
 
@@ -12,6 +12,9 @@ const Checkout = () => {
     const [street,setStreet] = useState("");
     const [zip,setZip] = useState("");
 
+   
+
+    
 
   return (
     <Box>

@@ -29,11 +29,11 @@ const PaymentCard = ({checkout,total}) => {
             </Box>
             <Box className='td1'>
                 <Link to='#'><Text className='td1-1'>Shipping & Handling 🛈</Text></Link>
-                <Text fontWeight={600}>TBD</Text>
+                <Text fontWeight={600}>0</Text>
             </Box>
             <Box className='td1'>
                 <Link to='#'><Text className='td1-1'>Estimated Tax & Other Fees 🛈</Text></Link>
-                <Text fontWeight={600}>TBD</Text>
+                <Text fontWeight={600}>0</Text>
             </Box>
             <Box className='td2'>
                 <Text>Estimated Total</Text>
@@ -45,7 +45,7 @@ const PaymentCard = ({checkout,total}) => {
                 <Text color={'gray.500'}>Shipping and taxes calculated during checkout</Text>
             </Box>
             <Box className='td-btn'>
-                <button className='td-btn1' onClick={()=> checkout()}>Checkout Shipped Items</button>
+                <button className='td-btn1' onClick={()=> checkout(total)}>Checkout Shipped Items</button>
                 <br />
                 <button className='td-btn2'>Pay with Paypal</button>
             </Box>
