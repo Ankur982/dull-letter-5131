@@ -44,7 +44,7 @@ const Cart = () => {
 
 
   const getCardData = (id) => {
-    fetch(`http://localhost:8080/carts/find/${id}`, {
+    fetch(`https://sephora-backend.onrender.com/carts/find/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

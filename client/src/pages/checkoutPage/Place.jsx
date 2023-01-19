@@ -1,10 +1,100 @@
-import { Box, Divider, Input, Text } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Button, Divider, Input, Text } from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { BsFillCreditCard2FrontFill} from "react-icons/bs";
 
-const Place = () => {
+const Place = ({address}) => {
     const {total} = useParams()
+    const [orderItem, setOrderItem] = useState()
+    const [userId, setUserId] = useState();
+
+
+    const token = JSON.parse(localStorage.getItem("token"))||null;
+    useEffect(() => {
+        getUserId();  
+      }, []);
+    
+    
+      const getUserId = () => {
+        fetch("https://sephora-backend.onrender.com/users/getuser", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            token: token,
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            setUserId(data._id)
+            getCardData(data._id);
+          })
+          .catch((err) => {
+            console.error("Error:", err);
+          });
+      };
+    
+    
+      const getCardData = (id) => {
+        fetch(`https://sephora-backend.onrender.com/carts/find/${id}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            token: token,
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            setOrderItem(data)
+          })
+          .catch((err) => {
+            console.error("Error:", err);
+          });
+      };
+
+      console.log(orderItem)
+
+
+      const addToOrder = (data) => {
+        fetch("http://localhost:8080/orders/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            token: token,
+          },
+          body: JSON.stringify(data),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            alert("Order Placed Successfully");
+          })
+          .catch((err) => {
+            console.error("Error:", err);
+          });
+      };
+
+      const handleOrderPlace = () => {
+        let arr = []
+        orderItem.map((e)=>(
+            arr.push({
+                productId : e.products[0].productId,
+                quantity : e.products[0].quantity,
+            })
+        ))
+        const initState= {
+            userId: userId,
+            products: arr,
+            amount : total,
+            address : address,
+            status : "success"
+            }
+            addToOrder(initState)
+            
+      }
+
+   
+   
+  
   return (
     <Box className='place-main'>
         <Box className='td1'>
@@ -37,9 +127,9 @@ const Place = () => {
                 <Text>Save $6.75 on this order when you open and use either Sephora Credit Card today*</Text>
             </Box>
             <Text fontSize={'0.8rem'} color={'gray.500'}>*Subject to credit approval. Exclusions apply.</Text>
-            <button className='c-btn'>SEE DETAILS</button>
+            <Button className='c-btn'>SEE DETAILS</Button>
             <Divider />
-            <button className='place-btn'>Place Order</button>
+            <Button colorScheme='teal' className='place-btn' onClick={()=>handleOrderPlace()}>Place Order</Button>
         </Box>
     </Box>
   )

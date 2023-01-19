@@ -112,6 +112,7 @@ const MyWishlist = () => {
   };
 
 
+  console.log(wishlistList)
 
   return (
     <>

@@ -58,7 +58,7 @@ function SingleProduct() {
   const token = JSON.parse(localStorage.getItem("token")) || null;
 
   const getUserId = () => {
-    fetch("http://localhost:8080/users/getuser", {
+    fetch("https://sephora-backend.onrender.com/users/getuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +67,6 @@ function SingleProduct() {
     })
       .then((res) => res.json())
       .then((data) => {
-        setuserId(data._id);
         handleAddWishlist(data._id);
       })
       .catch((err) => {
@@ -75,8 +74,8 @@ function SingleProduct() {
       });
   };
 
-  const handleAddWishlist = () => {
-    fetch("http://localhost:8080/wishlists/", {
+  const handleAddWishlist = (userId) => {
+    fetch("https://sephora-backend.onrender.com/wishlists/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -101,7 +100,7 @@ function SingleProduct() {
   //.................................Delete from wishlist functionality.......................................//
 
   const handleDeleteWishlist = (id) => {
-    fetch(`http://localhost:8080/wishlists/${id}`, {
+    fetch(`https://sephora-backend.onrender.com/wishlists/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -120,14 +119,14 @@ function SingleProduct() {
   };
 
   const addToCart = () => {
-    fetch("http://localhost:8080/carts/", {
+    fetch("https://sephora-backend.onrender.com/carts/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         token: token,
       },
       body: JSON.stringify({
-        userId: userId,
+        userId: id,
         products: [
           {
             productId: id,

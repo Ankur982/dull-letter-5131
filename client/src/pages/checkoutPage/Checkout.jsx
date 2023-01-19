@@ -1,19 +1,18 @@
 import { Box,Input,SimpleGrid,Text} from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import "./Checkout.css"
 import Place from './Place'
 
 const Checkout = () => {
-    const [address,setAddress] = useState([]);
+    const [address,setAddress] = useState("");
     const [fisrtname,setFirstname] = useState("");
     const [lastname,setLastname] = useState("");
     const [phone,setPhone] = useState("");
     const [street,setStreet] = useState("");
     const [zip,setZip] = useState("");
-
+    const {total} = useParams()
    
-
     
 
   return (
@@ -32,7 +31,9 @@ const Checkout = () => {
                         <Input type='text' placeholder='Last Name*' />
                     </Box>
                     <Input type='text' placeholder='Phone*' w='19rem' mb='1rem' />
-                    <Input type='text' placeholder='Street Address*' mb='1rem'/>
+                    <Input type='text' onChange={(e)=>{
+                        setAddress(e.target.value);
+                    }} placeholder='Street Address*' mb='1rem'/>
                     <Input type='text' placeholder='ZIP/Postal Code*' w='10rem' mb='1rem' />
                 </Box>
                 <Text fontSize={'0.9rem'} fontWeight={600} mt='1rem'>Ship to FedEx Pickup Location 🛈</Text>
@@ -55,7 +56,7 @@ const Checkout = () => {
                 </Box>
             </Box>
             <Box className='place-order'>
-                <Place />
+                <Place address={address}/>
             </Box>
         </SimpleGrid>
         <Box className='c-footer'>
