@@ -1,20 +1,23 @@
-#my_account_order_cont{
+#my_account_order_cont {
     width: 1400px;
     margin: auto;
 }
-.my_account_order_txt{
+
+.my_account_order_txt {
     margin-top: 50px;
     color: #2E3337;
     font-size: 14px;
     font-weight: 100;
 }
-a{
+
+a {
     text-decoration: none;
     color: #2E3337;
 }
+
 .hr_line {
     width: 1400px;
-    
+
 }
 
 #my_account {
@@ -23,7 +26,7 @@ a{
     display: flex;
     justify-content: space-between;
     margin: auto;
-    margin-top:-20px;
+    margin-top: -20px;
     padding: 16px 32px;
     margin-bottom: -50px;
 }
@@ -48,10 +51,11 @@ a{
     text-align: center;
     box-sizing: border-box;
     border-style: solid;
-    background-color:teal ;
+    background-color: teal;
     text-decoration: none;
 }
-.my_acc_btn1{
+
+.my_acc_btn1 {
     width: 140px;
     height: 44px;
     margin-top: 20px;
@@ -66,7 +70,8 @@ a{
     text-decoration: none;
 }
 
-.my_acc_btn1:hover ,.my_acc_btn2:hover {
+.my_acc_btn1:hover,
+.my_acc_btn2:hover {
     cursor: pointer;
     background-color: #6cbdb7;
 }
@@ -83,8 +88,9 @@ a{
     color: #2E3337;
     padding: 16px 16px 14px;
     margin: auto;
-    
+
 }
+
 .section_txt {
     text-align: center;
     font-weight: 200;

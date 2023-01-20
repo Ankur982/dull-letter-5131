@@ -24,7 +24,6 @@ const MyOrder = () => {
 
   const [detail, setDetails] = useState();
 
-  console.log(orderList);
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedBox, setSelectedBox] = useState({});
@@ -38,21 +37,17 @@ const MyOrder = () => {
     getUserId();
   }, []);
 
-  console.log(orderList)
 
-  const token = JSON.parse(localStorage.getItem("token"))||null;
+  const token = JSON.parse(localStorage.getItem("token")) || null;
 
   const handleProductDetails = (id) => {
-    fetch(
-      `https://sephora-backend.onrender.com/products/find/${id}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          token: token,
-        },
-      }
-    )
+    fetch(`https://sephora-backend.onrender.com/products/find/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: token,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setDetails(data);
@@ -80,16 +75,13 @@ const MyOrder = () => {
   };
 
   const getOrderData = (id) => {
-    fetch(
-      `https://sephora-backend.onrender.com/orders/find/${id}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          token: token,
-        },
-      }
-    )
+    fetch(`https://sephora-backend.onrender.com/orders/find/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: token,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setOrderList(data);
@@ -101,16 +93,12 @@ const MyOrder = () => {
   };
 
   const getItem = (id) => {
-    console.log(id);
-    fetch(
-      `https://sephora-backend.onrender.com/products/find/${id}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
+    fetch(`https://sephora-backend.onrender.com/products/find/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -124,7 +112,7 @@ const MyOrder = () => {
     setOrderArray(orderedItem);
   };
 
-  console.log(orderArray);
+
 
   return (
     <div style={{ marginBottom: "50px" }}>
@@ -156,70 +144,70 @@ const MyOrder = () => {
         <div id="your_order_section">
           {isData ? (
             <>
-              {orderList && orderList.map((e) => (
-                <div key={e._id}>
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: "50px",
-                      margin: "auto",
-                      marginTop: "20px",
-                      textAlign: "center",
-                    }}
-                  >
-                    <h1> Order Id: {e._id}</h1>
-                    <p>Order Status: {e.status}</p>
-                    <p>Order Amount: {e.amount}</p>
-                    <p>Order created at: {e.createdAt}</p>
-                    <Button
-                      colorScheme="teal"
-                      size="md"
-                      onClick={() => handleOrderDetails(e.products)}
+              {orderList &&
+                orderList.map((e) => (
+                  <div key={e._id}>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: "50px",
+                        margin: "auto",
+                        marginTop: "20px",
+                        textAlign: "center",
+                      }}
                     >
-                      Check Details
-                    </Button>
+                      <h1> Order Id: {e._id}</h1>
+                      <p>Order Status: {e.status}</p>
+                      <p>Order Amount: {e.amount}</p>
+                      <p>Order created at: {e.createdAt}</p>
+                      <Button
+                        colorScheme="teal"
+                        size="md"
+                        onClick={() => handleOrderDetails(e.products)}
+                      >
+                        Check Details
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
               <div>
                 <Heading as="h3" size="lg" textAlign="center" m="40px">
                   {" "}
                   Order Products Details{" "}
                 </Heading>
-                { 
-                  orderArray?.map((e) => (
+                {orderArray?.map((e) => (
+                  <div
+                    key={e._id}
+                    style={{
+                      display: "flex",
+                      gap: "100px",
+                      textAlign: "start",
+                      margin: "auto",
+                      marginTop: "20px",
+                    }}
+                  >
                     <div
-                      key={e._id}
                       style={{
                         display: "flex",
-                        gap: "100px",
-                        textAlign: "start",
-                        margin: "auto",
-                        marginTop: "20px",
+                        gap: "50px",
+                        textAlign: "center",
+                        marginLeft: "350px",
                       }}
                     >
-                      <div
-                        style={{
-                          display: "flex",
-                          gap: "50px",
-                          textAlign: "center",
-                          marginLeft: "350px",
-                        }}
-                      >
-                        <h1>Product Id: {e._id}</h1>
-                        <p>Quantity: {e.quantity}</p>
-                      </div>
-                      <div>
-                        <Button
-                          colorScheme="teal"
-                          size="md"
-                          onClick={() => handleProductDetails(e.productId)}
-                        >
-                          Check Product Details
-                        </Button>
-                      </div>
+                      <h1>Product Id: {e._id}</h1>
+                      <p>Quantity: {e.quantity}</p>
                     </div>
-                  ))}
+                    <div>
+                      <Button
+                        colorScheme="teal"
+                        size="md"
+                        onClick={() => handleProductDetails(e.productId)}
+                      >
+                        Check Product Details
+                      </Button>
+                    </div>
+                  </div>
+                ))}
               </div>
 
               {detail && (

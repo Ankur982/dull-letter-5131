@@ -33,6 +33,31 @@ router.post("/", verifyToken, async (req, res) => {
   }
 });
 
+//delete all 
+router.post("/", verifyToken, async (req, res) => {
+  const authHeader = req.headers.token;
+
+
+  try {
+    let userData = jwt.verify(authHeader, process.env.JWT_SEC);
+    let productCart = {
+      userId: userData.id,
+      products: [
+        {
+          productId: data.products[0].productId,
+          quantity: data.products[0].quantity,
+        },
+      ],
+    };
+    const newCart = new Cart(productCart);
+    const savedCart = await newCart.save();
+    res.status(200).json(savedCart);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 //UPDATE
 router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
   try {
@@ -50,7 +75,7 @@ router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
 });
 
 //DELETE
-router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
+router.delete("/:id", verifyToken, async (req, res) => {
   try {
     await Cart.findByIdAndDelete(req.params.id);
     res.status(200).json("Cart has been deleted...");
@@ -58,6 +83,9 @@ router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+
 
 //GET USER CART
 router.get("/find/:userId", verifyTokenAndAuthorization, async (req, res) => {

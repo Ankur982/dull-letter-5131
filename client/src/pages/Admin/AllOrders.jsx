@@ -23,7 +23,6 @@ import { getAllUsers } from "../../store/AdminRoutes/AllUsers/allUsers.action";
 function AllOrders() {
   const dispatch = useDispatch();
   const { loading, error, data } = useSelector((store) => store.allOrders);
-  console.log(data);
   useEffect(() => {
     dispatch(getAllUsers());
   }, [dispatch]);

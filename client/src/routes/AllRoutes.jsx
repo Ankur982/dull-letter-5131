@@ -29,20 +29,26 @@ export default function AllRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-        <Route path="/login" element={
-          <>
-          <Navbar />
-          <Login />
-          <Footer />
-        </>
-        } />
-        <Route path="/signup" element={
-          <>
-          <Navbar />
-          <Signup />
-          <Footer />
-        </>
-        } />
+        <Route
+          path="/login"
+          element={
+            <>
+              <Navbar />
+              <Login />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <>
+              <Navbar />
+              <Signup />
+              <Footer />
+            </>
+          }
+        />
         <Route
           path="/myorders"
           element={
@@ -112,7 +118,7 @@ export default function AllRoutes() {
           element={
             <>
               <Navbar />
-              <Face/>
+              <Face />
               <Footer />
             </>
           }
@@ -122,7 +128,7 @@ export default function AllRoutes() {
           element={
             <>
               <Navbar />
-              <Eye/>
+              <Eye />
               <Footer />
             </>
           }
@@ -132,7 +138,7 @@ export default function AllRoutes() {
           element={
             <>
               <Navbar />
-              <Lip/>
+              <Lip />
               <Footer />
             </>
           }
@@ -142,7 +148,7 @@ export default function AllRoutes() {
           element={
             <>
               <Navbar />
-              <Cheek/>
+              <Cheek />
               <Footer />
             </>
           }

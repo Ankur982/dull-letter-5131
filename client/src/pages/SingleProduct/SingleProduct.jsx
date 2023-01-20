@@ -47,7 +47,6 @@ function SingleProduct() {
   //.................................Add to wishlist functionality...............................................//
 
   const addToWishlist = () => {
-    console.log("id", id);
     if (!isAddedToWishlist) {
       getUserId();
     } else {
@@ -88,7 +87,6 @@ function SingleProduct() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setIsAddedToWishlist(true);
         alert("Item Added in Wishlist");
       })
@@ -109,7 +107,6 @@ function SingleProduct() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setIsAddedToWishlist(false);
         alert("Item Deleted from Wishlist");
       })
@@ -137,7 +134,6 @@ function SingleProduct() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         alert("Item Added in Cart");
       })
       .catch((err) => {

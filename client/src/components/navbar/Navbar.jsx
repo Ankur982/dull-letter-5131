@@ -474,11 +474,14 @@ const Navbar = () => {
             alt=""
             className="search"
           />
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/7777/7777990.png"
-            alt=""
-            className="search"
-          />
+          <Link to="/mywishlists">
+            {" "}
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/7777/7777990.png"
+              alt=""
+              className="search"
+            />
+          </Link>
           <Link to="/basket">
             {" "}
             <img

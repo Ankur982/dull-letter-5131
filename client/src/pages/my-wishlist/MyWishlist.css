@@ -1,6 +1,6 @@
-#wishlish_container > div{
+#wishlish_container>div {
     margin: auto;
-    
+
 }
 
 #my_wishlist {
@@ -61,26 +61,27 @@
 
 }
 
-.hr_line{
+.hr_line {
     width: 1400px;
     margin-top: 70px;
 }
-#my_wishlist_imges{
+
+#my_wishlist_imges {
     width: 1300px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(2,auto);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
     gap: 30px;
     margin-top: 40px;
 }
 
-.my_wishlist_img{
+.my_wishlist_img {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     padding: 10px;
 }
 
-.my_wishlist_img img{
+.my_wishlist_img img {
     width: 100%;
-    
+
 }

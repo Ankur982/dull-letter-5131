@@ -19,12 +19,8 @@ const MyWishlist = () => {
     setSelectedBox(product);
   };
 
-  console.log(product);
+  const token = JSON.parse(localStorage.getItem("token")) || null;
 
-  console.log(wishlistList);
-
-  const token = JSON.parse(localStorage.getItem("token"))||null;
-  
   useEffect(() => {
     getUserId();
   }, []);
@@ -48,7 +44,7 @@ const MyWishlist = () => {
       });
   };
 
-//................................. wishlist data for loged user.......................................//
+  //................................. wishlist data for loged user.......................................//
 
   const getWishlistData = (id) => {
     fetch(`https://sephora-backend.onrender.com/wishlists/find/${id}`, {
@@ -68,10 +64,7 @@ const MyWishlist = () => {
       });
   };
 
-
-//................................. wishlist product details for loged user.......................................//
-
-
+  //................................. wishlist product details for loged user.......................................//
 
   const handleWishlistDetails = (id) => {
     fetch(`https://sephora-backend.onrender.com/products/find/${id}`, {
@@ -102,17 +95,14 @@ const MyWishlist = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        console.log(data);
         window.location.reload();
-        alert("Item Deleted from Wishlist")
+        alert("Item Deleted from Wishlist");
       })
       .catch((err) => {
         console.error("Error:", err);
       });
   };
-
-
-  console.log(wishlistList)
 
   return (
     <>
@@ -210,7 +200,7 @@ const MyWishlist = () => {
                         <Text fontWeight={500} textAlign={"left"} ml={4}>
                           ${product.price}
                           <AiFillHeart
-                          onClick={() => handleClickDelete(product._id)}
+                            onClick={() => handleClickDelete(product._id)}
                             style={{
                               fontSize: "23px",
                               float: "right",
