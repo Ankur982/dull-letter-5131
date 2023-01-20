@@ -59,7 +59,7 @@ Sephora is a French retailer that offers variety of beauty products including co
 
 ## Authors
 
-- [Ankur Singh](https://github.com/Ankur982)- Home Page, Wishlist Page, Order Page, Cart, Acount Details with Frontend and Backend Functionality & Created Whole Backend with Proper user Authentication.
+- [Ankur Singh](https://github.com/Ankur982)- Home Page, Wishlist Page, Order Page, Cart Page, Acount Details Page with Frontend and Backend Functionality & Created Whole Backend with Proper user Authentication.
 - [Gaurav Mishra](https://github.com/GauravMishra28) - Authorization 
 - [Rohit Mourya](https://github.com/MrRohitMI)- Products Section
 - [Arul Xavier](https://github.com/arulxavierax)- Single Product Page
