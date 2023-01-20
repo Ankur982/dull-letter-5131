@@ -17,8 +17,8 @@ const Navbar = () => {
     user ? setAuth(true) : setAuth(false);
   }, [user]);
 
-  console.log("auth", auth);
-  console.log("1", user);
+  // console.log("auth", auth);
+  // console.log("1", user);
 
   function routeLogin() {
     Navigate("/login");

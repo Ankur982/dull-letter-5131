@@ -187,7 +187,7 @@ const MyOrder = () => {
                   Order Products Details{" "}
                 </Heading>
                 { 
-                  orderArray.map((e) => (
+                  orderArray?.map((e) => (
                     <div
                       key={e._id}
                       style={{
